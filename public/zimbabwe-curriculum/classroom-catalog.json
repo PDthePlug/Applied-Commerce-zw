@@ -1,0 +1,3440 @@
+[
+  {
+    "id": "g8-t1-l01-001",
+    "grade": 8,
+    "term": 1,
+    "title": "WHO AM I?",
+    "number": 1,
+    "sourceUnitSHA256": "c53782a52a5c7b87f241a5ac0474231a7f046f4b9dbc5e552ff049cd382589cb",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l02-002",
+    "grade": 8,
+    "term": 1,
+    "title": "WHERE MY BELIEFS COME FROM",
+    "number": 2,
+    "sourceUnitSHA256": "2756b04355f585d044acbd33a67b918042cd7072f964dee6210ece0ceafd991f",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l03-003",
+    "grade": 8,
+    "term": 1,
+    "title": "PERSONAL EFFICACY",
+    "number": 3,
+    "sourceUnitSHA256": "85934a52ed50e44d02458af244cb76cf13be6316030b7f1ee2bfe008f031ec33",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l04-004",
+    "grade": 8,
+    "term": 1,
+    "title": "HOW OTHERS SHAPE US",
+    "number": 4,
+    "sourceUnitSHA256": "c167b0d83aeeb1a8f2c8730c6dbabcb3ea8e52f0f51a1029fffd935f43d50afa",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l05-005",
+    "grade": 8,
+    "term": 1,
+    "title": "WHAT DO I WANT?",
+    "number": 5,
+    "sourceUnitSHA256": "d7bcdf992cc6d5b230d0dc2adb3a3bae5082f888275258818526e16328b53b18",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l06-006",
+    "grade": 8,
+    "term": 1,
+    "title": "WHY GOALS MATTER",
+    "number": 6,
+    "sourceUnitSHA256": "e4db1048cfa92c2779e21c286e8349c2a1f972010a6b07af24bcf44229eb5856",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l07-007",
+    "grade": 8,
+    "term": 1,
+    "title": "MEETING MONEY",
+    "number": 7,
+    "sourceUnitSHA256": "1fea2686fcdd14852b84a1db0997d218235c01226833ce1e3a97628215f094d1",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l08-008",
+    "grade": 8,
+    "term": 1,
+    "title": "NEEDS VS WANTS",
+    "number": 8,
+    "sourceUnitSHA256": "9588fe9e701a3ac2f7be9a7c789a59e27cee8cd00d0192c768d8e8c81a4cf814",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l09-009",
+    "grade": 8,
+    "term": 1,
+    "title": "INTRODUCTION TO SAVING",
+    "number": 9,
+    "sourceUnitSHA256": "f054370b4de82b534832bfc37f433b3283218e3018028b19f0a077ce664f1dd4",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l10-010",
+    "grade": 8,
+    "term": 1,
+    "title": "SAVING STORIES",
+    "number": 10,
+    "sourceUnitSHA256": "dd7eb8caef702dc6aadad137d9d57e808de21c6b0349b80ed801bca020f9fdb5",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l11-011",
+    "grade": 8,
+    "term": 1,
+    "title": "MY FIRST SAVINGS GOAL",
+    "number": 11,
+    "sourceUnitSHA256": "9713286ac2ce0a9a91492a339763833b92be410f4f8db3fd82ef35af91272b4c",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l12-012",
+    "grade": 8,
+    "term": 1,
+    "title": "HOW TO SAVE SYSTEMATICALLY",
+    "number": 12,
+    "sourceUnitSHA256": "94bea9ecf32fdc39f564e7def8d87d8c71e41cfc0878c90fbad7bb086fa47b5d",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l13-013",
+    "grade": 8,
+    "term": 1,
+    "title": "WHERE MONEY COMES FROM",
+    "number": 13,
+    "sourceUnitSHA256": "36e921f27de227a337cd308fad6a2c4e7f317bad1885c71602daaedb6d236a41",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l14-014",
+    "grade": 8,
+    "term": 1,
+    "title": "THE HABIT OF DOING MORE THAN PAID FOR",
+    "number": 14,
+    "sourceUnitSHA256": "ed82b18d17ad81a9f206413d43f3dac5f5016022a54257e9416d21c5b3d5d0be",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l15-015",
+    "grade": 8,
+    "term": 1,
+    "title": "PROFITING FROM FAILURE",
+    "number": 15,
+    "sourceUnitSHA256": "b17f30199c99a5c2a78085ac0a9cddf6e886cb05953b1d117fb12786a3b2a776",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l16-016",
+    "grade": 8,
+    "term": 1,
+    "title": "PERSONAL INITIATIVE",
+    "number": 16,
+    "sourceUnitSHA256": "83affe68ec97d2343d9bf4ca8be801c87c2c93e97b81e9f2eecea1f56da372e9",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l17-017",
+    "grade": 8,
+    "term": 1,
+    "title": "ACCURATE THINKING",
+    "number": 17,
+    "sourceUnitSHA256": "9440363ee4c9a6dae3b7bf59be08ec7f7ddb95807bc32707f4f16fd457b7d430",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l18-018",
+    "grade": 8,
+    "term": 1,
+    "title": "SELF-DISCIPLINE",
+    "number": 18,
+    "sourceUnitSHA256": "5e96160adbaaa3b5df1cade00c86d85d9f9b85a598150255a1d215429bdfef8a",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l19-019",
+    "grade": 8,
+    "term": 1,
+    "title": "THE GOLDEN RULE WITH MONEY",
+    "number": 19,
+    "sourceUnitSHA256": "82abab93584fc1e64cef992c43a1e936868f904da68f950fec8a786f37d76e41",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t1-l20-020",
+    "grade": 8,
+    "term": 1,
+    "title": "FOUNDATIONS REVIEW AND PORTFOLIO CHECKPOINT",
+    "number": 20,
+    "sourceUnitSHA256": "b45946622da82ba97010e5bc556958f091fa1e6e550c42e6ce2ff687009da033",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l21-021",
+    "grade": 8,
+    "term": 1,
+    "title": "MY RELATIONSHIP WITH RESOURCES — NEXT CYCLE",
+    "number": 21,
+    "sourceUnitSHA256": "dfd855db00c2f3d3b3f8a543a866e288d07a4c9aa45cf87f6013c68580c5fd13",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l22-022",
+    "grade": 8,
+    "term": 1,
+    "title": "WHERE MONEY COMES FROM — DEEP DIVE",
+    "number": 22,
+    "sourceUnitSHA256": "7cead506ee22dfdf5bf47535d3af8c68b6f7ba060a69e1bd9606701e75981362",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l23-023",
+    "grade": 8,
+    "term": 1,
+    "title": "WORK AND VALUE REVISITED",
+    "number": 23,
+    "sourceUnitSHA256": "7db489371a2af43ac33541bb7923902c3fdaa81afc42e2d3d954f53a7a30d6b4",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l24-024",
+    "grade": 8,
+    "term": 1,
+    "title": "EMMANUEL’S TUCKSHOP — COSTS AND PROFIT",
+    "number": 24,
+    "sourceUnitSHA256": "9775bacd15686f5273dde4ad16edaceb24fc047207cefcd3e9c05361d71e9f02",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l25-025",
+    "grade": 8,
+    "term": 1,
+    "title": "KEEPING RECORDS — JOURNALS",
+    "number": 25,
+    "sourceUnitSHA256": "b101dfa94fa83c9366b908e86b62cd94cb2b83356f4e5994fa6b1832ca7303fe",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l26-026",
+    "grade": 8,
+    "term": 1,
+    "title": "WHAT IS INCOME? — ACTIVE VS PASSIVE",
+    "number": 26,
+    "sourceUnitSHA256": "6d6de4a993b1dfdca11d271730844a1b1b2013a5d77f354dd89e42aa1e2f8361",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l27-027",
+    "grade": 8,
+    "term": 2,
+    "title": "SMALL WAYS TO EARN",
+    "number": 27,
+    "sourceUnitSHA256": "b8b426ccdf7b94462f014f6c793277cc6effada0e65fb92acbfb99cde725dc28",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l28-028",
+    "grade": 8,
+    "term": 2,
+    "title": "CREATIVE WAYS TO EARN",
+    "number": 28,
+    "sourceUnitSHA256": "eea7a39f54107d75ecc77b483423d32d633442b88075b4ef22119668371d420d",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l29-029",
+    "grade": 8,
+    "term": 2,
+    "title": "THANDI'S MANGOES — PRICING AND NEGOTIATION",
+    "number": 29,
+    "sourceUnitSHA256": "1d8940b00359b839ca577291104a01d202e6b78b5191b500afd532134340a850",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l30-030",
+    "grade": 8,
+    "term": 2,
+    "title": "THE PSYCHOLOGY OF SPENDING",
+    "number": 30,
+    "sourceUnitSHA256": "d5637d638327ee8bf4c2db96a81be2a08136d09827cf10a8798a33e1eb0af732",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l31-031",
+    "grade": 8,
+    "term": 2,
+    "title": "WHY WE BUY WHAT WE BUY",
+    "number": 31,
+    "sourceUnitSHA256": "7dd862d97d00903028b2a4f27073faf045f666cfa0584bf8245ee7c93ed800f4",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l32-032",
+    "grade": 8,
+    "term": 2,
+    "title": "NEEDS VS WANTS REVISITED",
+    "number": 32,
+    "sourceUnitSHA256": "00f151d153f9f7831f091092e59370928665fdcb601c3c3467694790226ddf43",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l33-033",
+    "grade": 8,
+    "term": 2,
+    "title": "KARABO'S CHOICE — VALUES AND SPENDING",
+    "number": 33,
+    "sourceUnitSHA256": "8011c5c60986fb268c6daa39ea429231838fd711a8fdae40b695eacc72d7e57c",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l34-034",
+    "grade": 8,
+    "term": 2,
+    "title": "VALUE VS PRICE",
+    "number": 34,
+    "sourceUnitSHA256": "6a68bcb5fecbeb87a1c6d30d3a652db5958b3438f4827f9d1686490cfcb4d7f6",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l35-035",
+    "grade": 8,
+    "term": 2,
+    "title": "COMMUNITY ECONOMICS",
+    "number": 35,
+    "sourceUnitSHA256": "24d93be933ac04293fef47f6a2dd7530533acf7302628889e1e627bc25f43085",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l37-036",
+    "grade": 8,
+    "term": 2,
+    "title": "INTRODUCTION TO BUDGETING",
+    "number": 37,
+    "sourceUnitSHA256": "5d4213f6c6412cb2d47d3f520d80f80d3354d882cd9711b065de1bd63759f586",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l38-037",
+    "grade": 8,
+    "term": 2,
+    "title": "THEMBA'S POCKET MONEY — TRACKING AND LEAKAGE",
+    "number": 38,
+    "sourceUnitSHA256": "3768813de3a1429293eacc45fed33c5204954079c2c48b0711b07a44720a4441",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l39-038",
+    "grade": 8,
+    "term": 2,
+    "title": "BUSISIWE'S NOTEBOOK — FAMILY TRACKING",
+    "number": 39,
+    "sourceUnitSHA256": "e8ecda79c71ff946d63a4b41bba6da9a9f63104adf61500b773a9e0de2305771",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t2-l40-039",
+    "grade": 8,
+    "term": 2,
+    "title": "BUILDING YOUR FIRST BUDGET AND PROGRESS REFLECTION",
+    "number": 40,
+    "sourceUnitSHA256": "f5d1a718bd1fd074cc962a1fde10592bc8cfa33eed116af78d4ab14f718e0d3c",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l41-040",
+    "grade": 8,
+    "term": 2,
+    "title": "WHAT ARE HABITS?",
+    "number": 41,
+    "sourceUnitSHA256": "0a50b62c9c67bd0c0d711a74c889b788f68eea636c16b58caefcf38938de85d7",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l42-041",
+    "grade": 8,
+    "term": 2,
+    "title": "HOW HABITS FORM",
+    "number": 42,
+    "sourceUnitSHA256": "f58876919459bc878f3398592656e379f17448f2fe8d171bb980da6f2cdadf7a",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l43-042",
+    "grade": 8,
+    "term": 2,
+    "title": "THE MUKANDO HABIT",
+    "number": 43,
+    "sourceUnitSHA256": "100211a08e6e5cd1e5480874f32524ef62c0556124fac93ea0e60a8af10e1bfb",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l44-043",
+    "grade": 8,
+    "term": 2,
+    "title": "SAVING AS ROUTINE",
+    "number": 44,
+    "sourceUnitSHA256": "98f0d98c30f4114e1c795a83699f3dac05ca3ce36fd72a7e8bdb40325091613d",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l45-044",
+    "grade": 8,
+    "term": 2,
+    "title": "SMALL STEPS, BIG RESULTS",
+    "number": 45,
+    "sourceUnitSHA256": "d8c80627e2fdb2ff5584b94303c1de1decdd41c227022c07b4e397b782aa5618",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l46-045",
+    "grade": 8,
+    "term": 2,
+    "title": "THE COMPOUND EFFECT",
+    "number": 46,
+    "sourceUnitSHA256": "0e1c30dd6a5500b79ac61e2827c4318835cbe2778012992cc5c2d48800724918",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l47-046",
+    "grade": 8,
+    "term": 2,
+    "title": "CONSISTENCY OVER PERFECTION",
+    "number": 47,
+    "sourceUnitSHA256": "8358dc2c25217894a80589cebc1d3d47d84b4211349b3ad5744e74416aa93231",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l48-047",
+    "grade": 8,
+    "term": 2,
+    "title": "WHEN HABITS BREAK",
+    "number": 48,
+    "sourceUnitSHA256": "b2d8bc1552e323e8a78197c841aada4c781c52ef615e266795d2acd8bf200c5e",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l49-048",
+    "grade": 8,
+    "term": 2,
+    "title": "RECOVERING FROM SETBACKS",
+    "number": 49,
+    "sourceUnitSHA256": "4019dbb7aaa87b7cb2a7ce35d0383ac19e132d5eca6db9211e8d96545e74ab14",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l50-049",
+    "grade": 8,
+    "term": 2,
+    "title": "LEARNING FROM MISTAKES",
+    "number": 50,
+    "sourceUnitSHA256": "b1247abc413e5b5a2202e8b8e14ca4fbd357124c0d3385583835274b7ebfd982",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l51-050",
+    "grade": 8,
+    "term": 2,
+    "title": "THE GARDENERS OF MASHONALAND EAST",
+    "number": 51,
+    "sourceUnitSHA256": "a8d46b83115b413a5a6df68753afa829f0c1259831b72a6e89e13b07f1128f0d",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l52-051",
+    "grade": 8,
+    "term": 2,
+    "title": "HABITS THAT FEED FAMILIES",
+    "number": 52,
+    "sourceUnitSHA256": "35b6d7c64eb0bb135d5a528596b63ee42115473199b8b14ce32b69f670c8534f",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l53-052",
+    "grade": 8,
+    "term": 2,
+    "title": "HABITS AND IDENTITY",
+    "number": 53,
+    "sourceUnitSHA256": "f92215166aac7fd90812f8449020e7b9a334770a23ebcf63b0e2d75d66d5cad7",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l54-053",
+    "grade": 8,
+    "term": 3,
+    "title": "BECOMING A SAVER",
+    "number": 54,
+    "sourceUnitSHA256": "8156a115abea5502176bd1e060ba6b74d120205b198931bca400161657729722",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l55-054",
+    "grade": 8,
+    "term": 3,
+    "title": "BECOMING AN EARNER",
+    "number": 55,
+    "sourceUnitSHA256": "10232c00d3d8b9fc69ec31f824074717999ea29d12e863e52db4c53b56f88440",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l56-055",
+    "grade": 8,
+    "term": 3,
+    "title": "BECOMING A PLANNER",
+    "number": 56,
+    "sourceUnitSHA256": "2fd01cc9ac0196a2b1c95d63e8149c240341f3eec1afc0bb70593f2259a57a31",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l57-056",
+    "grade": 8,
+    "term": 3,
+    "title": "PROJECT LAUNCH — MY HABIT TRACKER",
+    "number": 57,
+    "sourceUnitSHA256": "e9443a2d0521eb2f2caccc57d602dcd63c44c7823bca9d4872f9381a2a85fac1",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l58-057",
+    "grade": 8,
+    "term": 3,
+    "title": "TRACKING FOR 21 DAYS — WEEK 1 CHECK-IN",
+    "number": 58,
+    "sourceUnitSHA256": "3c4bb06fbac0b362b1ba651ba3530a8d6b8545d65d47967ad6183b31d42551f7",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l59-058",
+    "grade": 8,
+    "term": 3,
+    "title": "MID-PROJECT CHECK — WEEK 2 REVIEW",
+    "number": 59,
+    "sourceUnitSHA256": "33185236a4d4a08e14e60e6d392a2a6c7f876036ec1766507214c46f24734053",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t3-l60-059",
+    "grade": 8,
+    "term": 3,
+    "title": "WHAT HABITS TAUGHT ME — PROJECT REFLECTION",
+    "number": 60,
+    "sourceUnitSHA256": "3ebfab8a22ba1f8b99f23a97da7ca5ce7e882483217c11790decaf22afa8b1b6",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l61-060",
+    "grade": 8,
+    "term": 3,
+    "title": "REVIEW — MY MONEY IDENTITY",
+    "number": 61,
+    "sourceUnitSHA256": "733f5e8f26e01a0cf64706ac95d554be0486b2c44eef9c297144d0cd38e953b6",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l62-061",
+    "grade": 8,
+    "term": 3,
+    "title": "REVIEW — MY RESOURCES",
+    "number": 62,
+    "sourceUnitSHA256": "e341dd78f7fd43dbbae7ae4b72ea337039738a6205bc8b965ef560f9fe4d58fe",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l63-062",
+    "grade": 8,
+    "term": 3,
+    "title": "REVIEW — MY HABITS",
+    "number": 63,
+    "sourceUnitSHA256": "4f768b7927e698b6e30f66839e6d43f0d85f2f9cda5d171cc18e298eb0bd2aaa",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l64-063",
+    "grade": 8,
+    "term": 3,
+    "title": "PUTTING IT ALL TOGETHER",
+    "number": 64,
+    "sourceUnitSHA256": "c8823e587defdb3ca087b6be425dc58ebf657fa14f986956e37c11402401a164",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l65-064",
+    "grade": 8,
+    "term": 3,
+    "title": "INTRODUCTION TO FINAL PROJECT",
+    "number": 65,
+    "sourceUnitSHA256": "684cc4bc1e7952a110e3ab267b9822af1d05a58bb900647c11cca12c3d80e56f",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l66-065",
+    "grade": 8,
+    "term": 3,
+    "title": "CHOOSING YOUR PROJECT",
+    "number": 66,
+    "sourceUnitSHA256": "5d89edbbfbf924cec2e6eebac14fee06f5724edd22f842c57b1c01a25349cc68",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l67-066",
+    "grade": 8,
+    "term": 3,
+    "title": "OPTION A — EARN AND SAVE PROJECT",
+    "number": 67,
+    "sourceUnitSHA256": "da4fa44e8a4c910acb18179b90b445decc1338952097522b061d883e415c8d9a",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l68-067",
+    "grade": 8,
+    "term": 3,
+    "title": "OPTION B — FAMILY INTERVIEW PROJECT",
+    "number": 68,
+    "sourceUnitSHA256": "893041f970ff879ff95f30b97a8fde41906852c4cc5397acacbb903b2200ab19",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l69-068",
+    "grade": 8,
+    "term": 3,
+    "title": "OPTION C — COMMUNITY ECONOMICS PROJECT",
+    "number": 69,
+    "sourceUnitSHA256": "b3f3c3e89e8b7b75ce1338ac54996a141b397b7be48e589ea541b084c66822fa",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l70-069",
+    "grade": 8,
+    "term": 3,
+    "title": "PROJECT PLANNING",
+    "number": 70,
+    "sourceUnitSHA256": "f1319f54f8d0e4c88a6764e80c9062653a53074dee81906a4b279a3ba86d1103",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l71-070",
+    "grade": 8,
+    "term": 3,
+    "title": "PROJECT EXECUTION — WEEK 1",
+    "number": 71,
+    "sourceUnitSHA256": "2a838d1319bc60725049b9d6364cae931200003d27c74ce5d762f946c36c721f",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l72-071",
+    "grade": 8,
+    "term": 3,
+    "title": "PROJECT EXECUTION — WEEK 2 AND MID-PROJECT CHECK",
+    "number": 72,
+    "sourceUnitSHA256": "faf7f9ff7ef6807f8b3c09e1440428a8ac3980f83549f3c8de05402f56731301",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l73-072",
+    "grade": 8,
+    "term": 3,
+    "title": "PROJECT COMPLETION",
+    "number": 73,
+    "sourceUnitSHA256": "a9c1361821b3a63e66a375c33c17ae6ad33b87854de87af3625b453eb5ff738b",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l74-073",
+    "grade": 8,
+    "term": 3,
+    "title": "PRESENTATION PREPARATION",
+    "number": 74,
+    "sourceUnitSHA256": "a64f4ce758cffa493a84dd09750780e27ba656898787626882ac87be014389ef",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l75-074",
+    "grade": 8,
+    "term": 3,
+    "title": "final project PRESENTATIONS — DAY 1",
+    "number": 75,
+    "sourceUnitSHA256": "990ced7df2fabc72438a27cabec61940f23719444bedd85c1684ada6940c6537",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l76-075",
+    "grade": 8,
+    "term": 3,
+    "title": "FINAL PROJECT PRESENTATIONS — DAY 2 AND CELEBRATION",
+    "number": 76,
+    "sourceUnitSHA256": "6be04a8ae366dc38e74a1a84c1f27506652aa235b00720d7b5092d48cc871b32",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l77-076",
+    "grade": 8,
+    "term": 3,
+    "title": "CELEBRATION AND PROJECT REFLECTION",
+    "number": 77,
+    "sourceUnitSHA256": "84913dd7be46a0b355daa842c0a8503d16365bc334feeb34f8c87f5999c674f0",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l78-077",
+    "grade": 8,
+    "term": 3,
+    "title": "LOOKING BACK AT FORM 1",
+    "number": 78,
+    "sourceUnitSHA256": "50f73882bdefe9bf0c6a9a0845ba6c51062c7fd89bcffa48627c198da7388d16",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l79-078",
+    "grade": 8,
+    "term": 3,
+    "title": "LOOKING AHEAD TO FORM 2",
+    "number": 79,
+    "sourceUnitSHA256": "6b5c756d5b5585bf4dc3d162e722d16f84f77a3c1395f4d02c4be25ae5b7cec3",
+    "benchmark": false
+  },
+  {
+    "id": "g8-t4-l80-079",
+    "grade": 8,
+    "term": 3,
+    "title": "FINAL PORTFOLIO AND FAREWELL TO FORM 1",
+    "number": 80,
+    "sourceUnitSHA256": "31be0b6451dc2a34b7403dfb4d07fa11797eaee64a4d4f79d94a0aacd2b49fa9",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l01-001",
+    "grade": 9,
+    "term": 1,
+    "title": "WHERE WE HAVE BEEN, WHERE WE ARE GOING",
+    "number": 1,
+    "sourceUnitSHA256": "28517839910ff6b043adbccae39e3e5927d7108f92ccca0b1f8ff3bceb1a639c",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l02-002",
+    "grade": 9,
+    "term": 1,
+    "title": "MY VALUES — THE COMPASS",
+    "number": 2,
+    "sourceUnitSHA256": "30e706df33afe26a268ab0b203010f8bd6a27a343b7bf46c726088272f414b6f",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l03-003",
+    "grade": 9,
+    "term": 1,
+    "title": "MEETING ATLEHANG",
+    "number": 3,
+    "sourceUnitSHA256": "8dc152f855f32839bc2459a1018d056378e03e21d4d2fca1ecfebf9e8888011d",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l04-004",
+    "grade": 9,
+    "term": 1,
+    "title": "THE WORLD OF WORK — TWO ECONOMIES",
+    "number": 4,
+    "sourceUnitSHA256": "bd33a6de2317b93fafb7057ef9c62604268f9945befb76a30259773816bf418c",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l05-005",
+    "grade": 9,
+    "term": 1,
+    "title": "MAMA ROSE'S BACKYARD",
+    "number": 5,
+    "sourceUnitSHA256": "8f170149edc6011b99eb5a172cbb1c0873146ee545fbcd227726ef2fb79eee33",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l06-006",
+    "grade": 9,
+    "term": 1,
+    "title": "WHAT IS ENTERPRISE?",
+    "number": 6,
+    "sourceUnitSHA256": "aee7030dc5deab0ceb29658f14ba94bb925c88fafb4a2d0b1621a74d2004c098",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l07-007",
+    "grade": 9,
+    "term": 1,
+    "title": "SKILLS ARE ASSETS",
+    "number": 7,
+    "sourceUnitSHA256": "531feef87673e6e1f4d50f16cbc5fac1b5159fc4dbccc221ea01da054ca1e2b9",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l08-008",
+    "grade": 9,
+    "term": 1,
+    "title": "MY SKILL INVENTORY — THE COMPOUND SKILL",
+    "number": 8,
+    "sourceUnitSHA256": "c2c6fff16d9f710a12f4b6be6aaf52c78983648a0f0b47801acb049b6f1aebb0",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l09-009",
+    "grade": 9,
+    "term": 1,
+    "title": "THE ENTREPRENEUR'S EYE",
+    "number": 9,
+    "sourceUnitSHA256": "833e801a6030e7e77cde2c01ee7700875da0c9ce5072a062bb5a6f9d0228b941",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l10-010",
+    "grade": 9,
+    "term": 1,
+    "title": "PROBLEMS ARE OPPORTUNITIES",
+    "number": 10,
+    "sourceUnitSHA256": "40672f3b2f054abfb43e5eb17215ff0fb1a91b9f9d6f2e7ac3c49d2d72279800",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l11-011",
+    "grade": 9,
+    "term": 1,
+    "title": "CUSTOMERS AND VALUE",
+    "number": 11,
+    "sourceUnitSHA256": "7f6783a42ec94f10cdc6b5ea47a98b76cd5df305c6fdfa05769e7f9879dae7f1",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l12-012",
+    "grade": 9,
+    "term": 1,
+    "title": "PRICING YOUR WORK",
+    "number": 12,
+    "sourceUnitSHA256": "a15f17653dbe5bb32f839251039d990eb782890f08edd348b82ba029eea3311f",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l13-013",
+    "grade": 9,
+    "term": 1,
+    "title": "THE GRANT OFFICE — DAY 3",
+    "number": 13,
+    "sourceUnitSHA256": "57e29cee5ec502f1da18142e5bbdaace5467ff328097f4ffb098d6b2d7187695",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l14-014",
+    "grade": 9,
+    "term": 1,
+    "title": "PROJECT LAUNCH — MY ENTERPRISE PORTFOLIO",
+    "number": 14,
+    "sourceUnitSHA256": "1acedb53f042448d663db5bec9e26781146a06e917b59904a70122bd5564c92d",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l15-015",
+    "grade": 9,
+    "term": 1,
+    "title": "PROJECT WORKSHOP — PLANNING AND FEEDBACK",
+    "number": 15,
+    "sourceUnitSHA256": "3e78fa08f078e672760aa38c15bf58975362ac71b3901af521abfbd7791c8813",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t1-l16-016",
+    "grade": 9,
+    "term": 1,
+    "title": "ENTERPRISE FOUNDATIONS REVIEW AND PORTFOLIO",
+    "number": 16,
+    "sourceUnitSHA256": "3bc64a70eef0028005043862c80134e9cb8703079c96567dd5e8fb78181f4559",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l17-018",
+    "grade": 9,
+    "term": 1,
+    "title": "WHERE MONEY COMES FROM — THE FIRST VALUE",
+    "number": 17,
+    "sourceUnitSHA256": "e80a7849d6f697cc700317aeffd2397ccd038b01b3fc22e88d1f906e359fa712",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l18-019",
+    "grade": 9,
+    "term": 1,
+    "title": "FOLLOWING THE MONEY IN MY HOUSEHOLD",
+    "number": 18,
+    "sourceUnitSHA256": "d7017c073d1b8b9bb3e537f8ce3d000597f4fb262c7ac3767410de52d44d402a",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l19-020",
+    "grade": 9,
+    "term": 1,
+    "title": "THE JOURNEY OF A LOAF OF BREAD",
+    "number": 19,
+    "sourceUnitSHA256": "156dd88c6ac55173fbf83edda167c79b4d8e1fcb84a5ee24e9cb7f85d77bd1e1",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l20-021",
+    "grade": 9,
+    "term": 1,
+    "title": "THE FULL STORY OF A PRODUCT",
+    "number": 20,
+    "sourceUnitSHA256": "d7b154e2635e1f07776704ca8fac67046cbb0d362791389cdbd7569fb77c0f02",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l21-022",
+    "grade": 9,
+    "term": 1,
+    "title": "VALUE CHAINS — WHO BENEFITS?",
+    "number": 21,
+    "sourceUnitSHA256": "a4efed411d67a4b622390055031ae523be104246cd72872df367369c67630f8d",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l22-023",
+    "grade": 9,
+    "term": 1,
+    "title": "EMPLOYERS AND EMPLOYEES — TWO ROLES, DIFFERENT RISKS",
+    "number": 22,
+    "sourceUnitSHA256": "bc990ffb7e49663e1be84b34873ad2779eb66be2d2a0a5d311e4b4e50f46c259",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l23-024",
+    "grade": 9,
+    "term": 1,
+    "title": "MAPPING MY COMMUNITY'S MONEY — PROJECT LAUNCH",
+    "number": 23,
+    "sourceUnitSHA256": "a12289dcac45d647059c2b5c9cb29c88b652c316abc89cbca63f468fe2521cb8",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l24-025",
+    "grade": 9,
+    "term": 1,
+    "title": "THE KOMBI-RANK ECONOMY",
+    "number": 24,
+    "sourceUnitSHA256": "b2fceea17c8ec688a72701be66d8826df7dd6f2d0cacefffc934041acdac147a",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l25-026",
+    "grade": 9,
+    "term": 1,
+    "title": "MONEY IN, MONEY OUT",
+    "number": 25,
+    "sourceUnitSHA256": "548e223057a0826e57111eeeb2fc4a489de3dd199d0ebc45d731df5fe273895e",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l26-027",
+    "grade": 9,
+    "term": 1,
+    "title": "THE MUKANDO SYSTEM",
+    "number": 26,
+    "sourceUnitSHA256": "57b77946776175a9e79d060a7b511dd03a4c6814390ef22c27ed46ba553e9d1a",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l27-028",
+    "grade": 9,
+    "term": 1,
+    "title": "THE LEAKAGE AUDIT",
+    "number": 27,
+    "sourceUnitSHA256": "62daa4e2b9c2eb07d52d55905268dcc4c7eeba09cc762e48c476ec4aeb00dafb",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l28-029",
+    "grade": 9,
+    "term": 1,
+    "title": "MID-PROJECT CHECK-IN",
+    "number": 28,
+    "sourceUnitSHA256": "4febd7d4e8cb2b2196e880b11fb50c6c309e067e48f8df6172d257529028cba6",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l29-030",
+    "grade": 9,
+    "term": 1,
+    "title": "FINAL MAP AND ANALYSIS",
+    "number": 29,
+    "sourceUnitSHA256": "29eb56c1d76d24bc01cbcd0a723363b7e0625d685726c46eefdef15d1de83d2c",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l30-031",
+    "grade": 9,
+    "term": 1,
+    "title": "PRESENTATIONS",
+    "number": 30,
+    "sourceUnitSHA256": "39254c619bf8a9aec042504ca8963871e7bdd48f542cfb3b2ae642768dd31d6b",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l31-032",
+    "grade": 9,
+    "term": 1,
+    "title": "COMMUNITY ACTION PLAN",
+    "number": 31,
+    "sourceUnitSHA256": "0e414c593c38705e0e9029ffbbd285762b8e1fa0d037c5ab6cb614adf18ce032",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l32-033",
+    "grade": 9,
+    "term": 1,
+    "title": "FORM 2 TERM 1 LEARNING JOURNEY MAP",
+    "number": 32,
+    "sourceUnitSHA256": "17181b139dfc08a761d5a99d825974528997d8ee3988ebbaa4053c888e6bbf7d",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l33-034",
+    "grade": 9,
+    "term": 1,
+    "title": "FORM 2 TERM 1 REFLECTION — WORK, VALUE & MONEY",
+    "number": 33,
+    "sourceUnitSHA256": "7cba638704d276c15ede247a1cbf3af7d6be1a19d789fbb3e38ea059f2e428d6",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t2-l34-035",
+    "grade": 9,
+    "term": 1,
+    "title": "FORM 2 TERM 1 FAREWELL — LETTER TO MY FUTURE SELF",
+    "number": 34,
+    "sourceUnitSHA256": "ea782c3ae5ba78e0581043df23538004d1fdfb87e53012b1674b441a4528ad4c",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l35-024",
+    "grade": 9,
+    "term": 2,
+    "title": "HABITS AND IDENTITY REVISITED",
+    "number": 35,
+    "sourceUnitSHA256": "05053da42d1d6a6fda4fe626838f26f97415b10b04bb1745b95394302c8ac6df",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l36-025",
+    "grade": 9,
+    "term": 2,
+    "title": "THE POWER OF TINY HABITS",
+    "number": 36,
+    "sourceUnitSHA256": "162af4acc38fce57e00c164b68ccdeff4811feb0cc342638d484287dd2b33e7b",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l37-026",
+    "grade": 9,
+    "term": 2,
+    "title": "SMART+ GOALS",
+    "number": 37,
+    "sourceUnitSHA256": "5d2622c898c3660cbef124f8924de2d9aae0ae0f4d0c44e8da39b79aaa0c7a58",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l38-027",
+    "grade": 9,
+    "term": 2,
+    "title": "TIME MANAGEMENT",
+    "number": 38,
+    "sourceUnitSHA256": "89d4d5415e55f8737a2933612cbdb1933fd2d27a88f149bfda71e6b288cbef31",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l39-028",
+    "grade": 9,
+    "term": 2,
+    "title": "PROCRASTINATION AND MOTIVATION",
+    "number": 39,
+    "sourceUnitSHA256": "382b0e9e6ce2704397385a82224f5cacb3b91fa93e85134a6c285beec4b0924b",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l40-029",
+    "grade": 9,
+    "term": 2,
+    "title": "RESILIENCE — BOUNCING BACK",
+    "number": 40,
+    "sourceUnitSHA256": "bd9f937b01e550ac64ba0122f586bad120113ab53255273a86f80b9cebb11736",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l41-030",
+    "grade": 9,
+    "term": 2,
+    "title": "GRIT — PASSION AND PERSEVERANCE",
+    "number": 41,
+    "sourceUnitSHA256": "9131802b147580f0ede9ac330fe41f4f282af290ca2817aa15aa6a96e5b8945a",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l42-031",
+    "grade": 9,
+    "term": 2,
+    "title": "LEARNING FROM FAILURE — SMALL, CALCULATED TESTS",
+    "number": 42,
+    "sourceUnitSHA256": "52a5fcaa10409852da04d5abe989c65f3fe0a44836f19ad49b7caf570da4e610",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l43-032",
+    "grade": 9,
+    "term": 2,
+    "title": "GROWTH MINDSET — THE POWER OF YET",
+    "number": 43,
+    "sourceUnitSHA256": "65b4ffb7031e3bf8abb53adc75df087dfa83f1a6501ffb557f6bb155e12243d6",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l44-033",
+    "grade": 9,
+    "term": 2,
+    "title": "GROWTH MINDSET — IN PRACTICE",
+    "number": 44,
+    "sourceUnitSHA256": "6a1822a3730a825b35b8c7e3953fd6157a2999b33f23587eb1f929020758acf6",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l45-034",
+    "grade": 9,
+    "term": 2,
+    "title": "SELF-DISCIPLINE",
+    "number": 45,
+    "sourceUnitSHA256": "26289d49681b5779001b43a204145b6b23e0e17f746beb6c3c9560400861d81f",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l46-035",
+    "grade": 9,
+    "term": 2,
+    "title": "DECISION MAKING",
+    "number": 46,
+    "sourceUnitSHA256": "127183bb62665767c29145d4cff50a1efe828c311654d35263a31f4d937a065b",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l47-036",
+    "grade": 9,
+    "term": 2,
+    "title": "PEER PRESSURE AND CHOICES",
+    "number": 47,
+    "sourceUnitSHA256": "7b88306abccf8bd8b74c59fdbfa700d7d532d0cd2886072e10012ae0f32a22e2",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l48-037",
+    "grade": 9,
+    "term": 2,
+    "title": "DIGITAL HABITS, SUBSCRIPTIONS & MONEY",
+    "number": 48,
+    "sourceUnitSHA256": "133d879829e65b57f789fa00d99e65de20bcb50861350eca1ca198960b998d28",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l49-038",
+    "grade": 9,
+    "term": 2,
+    "title": "ONLINE SAFETY, PHISHING & SCAMS",
+    "number": 49,
+    "sourceUnitSHA256": "dc4d2c5ce5e6b969fd87fbf657f4198e0f6cc625244b61dafcd4596804f33471",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l50-039",
+    "grade": 9,
+    "term": 2,
+    "title": "HABIT TRANSFORMATION PROJECT — LAUNCH",
+    "number": 50,
+    "sourceUnitSHA256": "ecfcaff0b1a91ba59479ebcf51ddf112c74b3e8795e5ed12e25baaa02c9bf799",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l51-040",
+    "grade": 9,
+    "term": 2,
+    "title": "MIDPOINT CHECK-IN",
+    "number": 51,
+    "sourceUnitSHA256": "8839992b5b793e1f6aafd6b9b1aec9589c822839402c194a89ef7047974163fd",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l52-041",
+    "grade": 9,
+    "term": 2,
+    "title": "OVERCOMING OBSTACLES",
+    "number": 52,
+    "sourceUnitSHA256": "86d87f21ef029fcf055480efe1b6dd8afda9343bcc97592b39e90ebd6ba166f5",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l53-042",
+    "grade": 9,
+    "term": 2,
+    "title": "HABIT TRANSFORMATION — COMPLETION AND REFLECTION",
+    "number": 53,
+    "sourceUnitSHA256": "eb587e99aeb7cf415ca6ccf99c5cfc8ee69679d7f7549514aeaf12a84432f76c",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t3-l54-043",
+    "grade": 9,
+    "term": 2,
+    "title": "TERM 2 REFLECTION — HABITS, EXECUTION & NEXT MOVE",
+    "number": 54,
+    "sourceUnitSHA256": "6fd58771b4db31b973619e8b43f6c4773e896153ef19070bb624d0f064d91aa7",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l55-045",
+    "grade": 9,
+    "term": 3,
+    "title": "LOOKING BACK — WHAT WE HAVE LEARNED SO FAR",
+    "number": 55,
+    "sourceUnitSHA256": "6071f3bbfaaa8773e4be41a8e093fcac5de91d235ae26b9b01aa9adac1ee6c0a",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l56-046",
+    "grade": 9,
+    "term": 3,
+    "title": "MY PASSIONS AND MY COMMUNITY",
+    "number": 56,
+    "sourceUnitSHA256": "6386cb47ee4df4293ca301a23101baf81250cea99e33cc9272bdf0167ea664c8",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l57-047",
+    "grade": 9,
+    "term": 3,
+    "title": "INTRODUCTION TO SOCIAL ENTREPRENEURSHIP",
+    "number": 57,
+    "sourceUnitSHA256": "5e1e0f3947e747456953c53fb1a8f844e7b1b2974e0a8480d5563a0d8c67b60f",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l58-048",
+    "grade": 9,
+    "term": 3,
+    "title": "PROJECT LAUNCH — MY COMMUNITY ENTERPRISE PROJECT",
+    "number": 58,
+    "sourceUnitSHA256": "9532ce0c70090e1432dc6ffd1b4bff60b600f0361800938dd51a4afe7dfacc07",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l59-049",
+    "grade": 9,
+    "term": 3,
+    "title": "COMMUNITY NEEDS ASSESSMENT",
+    "number": 59,
+    "sourceUnitSHA256": "07b45f911f31cb5fd76294faebbce7e7a3aa21ad18cd027f4519b96fa3bb1b43",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l60-050",
+    "grade": 9,
+    "term": 3,
+    "title": "DESIGNING YOUR PROJECT",
+    "number": 60,
+    "sourceUnitSHA256": "1487593f7dcf4540c37ebab542940b70fecb68c5cef5c226b909fdcf313d8809",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l61-051",
+    "grade": 9,
+    "term": 3,
+    "title": "BUDGETING FOR YOUR PROJECT",
+    "number": 61,
+    "sourceUnitSHA256": "d5e83add132be9a69772cc798cf16a030224816dd801ee2499f836f09ef86f11",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l62-052",
+    "grade": 9,
+    "term": 3,
+    "title": "PARTNERSHIPS AND SUPPORT",
+    "number": 62,
+    "sourceUnitSHA256": "effe23842f056c5d1177b9e2c5e10150b4515ce1f3b7684d8e172363e2be9e9f",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l63-053",
+    "grade": 9,
+    "term": 3,
+    "title": "PROJECT EXECUTION — MAKING IT HAPPEN",
+    "number": 63,
+    "sourceUnitSHA256": "2fe34ab70ea4448dd0580fe10bbe6bdbd09c381eb591b8daf4d1f763292dd70a",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l64-054",
+    "grade": 9,
+    "term": 3,
+    "title": "MID-PROJECT CHECK-IN",
+    "number": 64,
+    "sourceUnitSHA256": "b8a304d2b652cad55d1a8e32203677e5e25d35b628f559f9e70b1a889fbc2b0a",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l65-055",
+    "grade": 9,
+    "term": 3,
+    "title": "PROBLEM-SOLVING ON THE GO",
+    "number": 65,
+    "sourceUnitSHA256": "fac8546900c1262219d8d547a84a48bbf6621d42fc6cb6a06895835957daa5af",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l66-056",
+    "grade": 9,
+    "term": 3,
+    "title": "PROJECT COMPLETION",
+    "number": 66,
+    "sourceUnitSHA256": "6409211eec85ba48d584e8f6e829420212cb2d6691b18b373930d7452050ea07",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l67-057",
+    "grade": 9,
+    "term": 3,
+    "title": "STORYTELLING YOUR PROJECT",
+    "number": 67,
+    "sourceUnitSHA256": "dbfde866cf000a0befa1478f622426536e645a8089844d0e1a7387d778246bce",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l68-058",
+    "grade": 9,
+    "term": 3,
+    "title": "PRESENTATION PREPARATION",
+    "number": 68,
+    "sourceUnitSHA256": "d3ec8e9c1ef6fc87845875078aa6d447635b364976320db15cee80d17b0bc320",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l69-059",
+    "grade": 9,
+    "term": 3,
+    "title": "PROJECT PRESENTATIONS — DAY 1",
+    "number": 69,
+    "sourceUnitSHA256": "6cf2297ed9c6a5fc4f00c7db20c5b374e397c5ab75e99517cb088e5ad691b140",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l70-060",
+    "grade": 9,
+    "term": 3,
+    "title": "PROJECT PRESENTATIONS — DAY 2 AND CELEBRATION",
+    "number": 70,
+    "sourceUnitSHA256": "0582409a86736bc8d9636dbf0aace9c66762eb71b46455c989d38370e833a572",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l71-061",
+    "grade": 9,
+    "term": 3,
+    "title": "PROJECT REFLECTION — WHAT I LEARNED",
+    "number": 71,
+    "sourceUnitSHA256": "c62d53dce472476fa15c17676414ea4f9b83bf428f70ab5a6eeb3e9d1f38b5c9",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l72-062",
+    "grade": 9,
+    "term": 3,
+    "title": "WHAT WE LEARNED ABOUT OUR COMMUNITY",
+    "number": 72,
+    "sourceUnitSHA256": "df3dac52bb2e35bf9f7af15dece3b9ab0bf3498b15e8be5201ad43cd5fdef39e",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l73-063",
+    "grade": 9,
+    "term": 3,
+    "title": "FORM 3 DIRECTION — WHAT WILL I STRENGTHEN NEXT?",
+    "number": 73,
+    "sourceUnitSHA256": "1fd766e8e3d40ebd5ccc992538e3814295fc5136b033564a606bd86ee6a5cce6",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l74-064",
+    "grade": 9,
+    "term": 3,
+    "title": "FORM 2 PORTFOLIO & LETTER TO FUTURE SELF",
+    "number": 74,
+    "sourceUnitSHA256": "b4f2cca41d5e814f92c6e3e7225e9476b9745feb7a0547b1937b245eb6084440",
+    "benchmark": false
+  },
+  {
+    "id": "g9-t4-l75-065",
+    "grade": 9,
+    "term": 3,
+    "title": "FAREWELL TO FORM 2",
+    "number": 75,
+    "sourceUnitSHA256": "03cb8daa581c7fe5c969e90b2266b60489b4fabfb064a44cb5a3d8c20d508f53",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l01-001",
+    "grade": 10,
+    "term": 1,
+    "title": "WHERE WE HAVE BEEN, WHERE WE ARE GOING",
+    "number": 1,
+    "sourceUnitSHA256": "341edfb93df5c860e9f06b479cfa5959d6396da38b538b557eee6597cc48761e",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l02-002",
+    "grade": 10,
+    "term": 1,
+    "title": "VALUE REVISITED — THE KITCHEN THAT ALMOST BROKE",
+    "number": 2,
+    "sourceUnitSHA256": "35110ad0806af9b0db1f390dbca71ef39e1346845374e776077a464d0f1ff781",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l03-003",
+    "grade": 10,
+    "term": 1,
+    "title": "KARABO'S PAYSLIP — UNDERSTANDING THE SYSTEM YOU ENTER",
+    "number": 3,
+    "sourceUnitSHA256": "d0fee2610bb95d784ed5440e012d6196752e325caba2d0e4cc41a39e13e85913",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l04-004",
+    "grade": 10,
+    "term": 1,
+    "title": "INCOME — THE CONTROL SPECTRUM",
+    "number": 4,
+    "sourceUnitSHA256": "4a7f5a16d940cd5edb2dd9fee5f10033e4fc48247ba001cce86e0f1db2aa1f95",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l05-005",
+    "grade": 10,
+    "term": 1,
+    "title": "THABO'S MICRO-ENTERPRISE — THE SYSTEM THAT ALMOST BROKE",
+    "number": 5,
+    "sourceUnitSHA256": "31db82ecded37c27f1f5b8d12e3cf59f902b73d992d00860c5dac984691015d9",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l06-006",
+    "grade": 10,
+    "term": 1,
+    "title": "SOLE PROPRIETORSHIP AND PARTNERSHIP — THE STRUCTURE THAT PROTECTS OR DESTROYS",
+    "number": 6,
+    "sourceUnitSHA256": "28540b636eb8c74c3ccdb38eaf694a922ca582768be230a0803746dc5c035f8e",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l07-007",
+    "grade": 10,
+    "term": 1,
+    "title": "COOPERATIVES — THE POWER AND THE PERIL",
+    "number": 7,
+    "sourceUnitSHA256": "b111f49b6d9164ea5f64ec820e23aa501fd76710b159f8134f1244d36a8fe14c",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l08-008",
+    "grade": 10,
+    "term": 1,
+    "title": "SCALING AND EFFICIENCY — THE SYSTEM THAT OUTGREW ITS FOUNDER",
+    "number": 8,
+    "sourceUnitSHA256": "2555e028b3deeb5887d1e2733530b5db7c50cdff01f51113ebac05d087421e12",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l09-009",
+    "grade": 10,
+    "term": 1,
+    "title": "INTELLECTUAL PROPERTY — PROTECTING WHAT YOU BUILD",
+    "number": 9,
+    "sourceUnitSHA256": "3f4708cc6abb232c8738ccef0f43911b140e7fdedc159ccf48d9c7d29dc64ccf",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l10-010",
+    "grade": 10,
+    "term": 1,
+    "title": "SERVICE BUSINESS AND PRICING — NAMING THE VALUE",
+    "number": 10,
+    "sourceUnitSHA256": "981995b9d2c74600ae93a945c9876ddd4948f42601fc0e44c894487a13147963",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l11-011",
+    "grade": 10,
+    "term": 1,
+    "title": "COMPETITION, PESTLE & FIVE FORCES — THE SHOP THAT ADAPTED",
+    "number": 11,
+    "sourceUnitSHA256": "9aaacb5d005dc451da43f4bf630c65a3dea3b661aa9640547034c9c530e7d812",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l12-012",
+    "grade": 10,
+    "term": 1,
+    "title": "MARKETING AND BRANDING — THE TRUTH THAT SELLS",
+    "number": 12,
+    "sourceUnitSHA256": "ca97af62353d1e3c2ec603d8449dd3e2a7541fc5ca4001a599f4892d6c3297e2",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l13-013",
+    "grade": 10,
+    "term": 1,
+    "title": "PROJECT LAUNCH — MY VALUE-CREATION PLAN",
+    "number": 13,
+    "sourceUnitSHA256": "9cdfb2eee744036a4ae4beedfd1339322cdf9dd0b05c9080ea6d5483c4b9c57e",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l14-014",
+    "grade": 10,
+    "term": 1,
+    "title": "PROJECT WORKSHOP — PLANNING AND FEEDBACK",
+    "number": 14,
+    "sourceUnitSHA256": "b02935105f9a7a2e185cf162ce948dc5b161e8d8d1a13093acc73a1bcf829eb0",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l15-015",
+    "grade": 10,
+    "term": 1,
+    "title": "PROJECT PRESENTATIONS",
+    "number": 15,
+    "sourceUnitSHA256": "cd63bd152e372c6dcb3822d2f8cd58313b26b53a5c062281340ce60a5eed176c",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t1-l16-016",
+    "grade": 10,
+    "term": 1,
+    "title": "TERM REFLECTION AND PORTFOLIO",
+    "number": 16,
+    "sourceUnitSHA256": "411c640f7617adcc89bda6ec2da0d2c1e95596a9e57ba7b31cbeda5516c94cc7",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l17-017",
+    "grade": 10,
+    "term": 1,
+    "title": "SAVING VS INVESTING — PROTECTING MONEY FOR DIFFERENT JOBS",
+    "number": 17,
+    "sourceUnitSHA256": "00087ebcd9a7b5aed811e4a01d506db81fc92ce515f6b06d5c36b01dd8b63304",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l18-018",
+    "grade": 10,
+    "term": 1,
+    "title": "RISK AND RETURN — THE TRADE YOU CANNOT ESCAPE",
+    "number": 18,
+    "sourceUnitSHA256": "94cd7536c4a96a75f5294cf2decd85460d4dcf2a3908a066f42f27fdd2a7d698",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l19-019",
+    "grade": 10,
+    "term": 1,
+    "title": "COMPOUND INTEREST — THE RULE OF 72 AND THE SEED GOGO MARIA PLANTED AT 73",
+    "number": 19,
+    "sourceUnitSHA256": "4237710d47dc8106246faf927592914097b8061e30aa40832c860bf01e9b5369",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l20-020",
+    "grade": 10,
+    "term": 1,
+    "title": "ASSETS AND LIABILITIES — MR. PATEL'S DECISION",
+    "number": 20,
+    "sourceUnitSHA256": "b71e16fd20ac68d481ab9675c71d776be0b8e561d6b26b37b3479e12383eca56",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l21-021",
+    "grade": 10,
+    "term": 1,
+    "title": "BUILDING YOUR ASSET BASE — THE SEWING MACHINE PRINCIPLE",
+    "number": 21,
+    "sourceUnitSHA256": "0a5c1673ec8b05f715479f933872fdd69361a2ceae6d8c1b7ee74a6132e0eaee",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l22-022",
+    "grade": 10,
+    "term": 1,
+    "title": "COOPERATIVES AND COLLECTIVE INVESTING — THANDI'S GROWTH DECISION",
+    "number": 22,
+    "sourceUnitSHA256": "136671accc17801b1cae72501dca03ee4023a71d2833cef1bda0e74978d53435",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l23-023",
+    "grade": 10,
+    "term": 1,
+    "title": "DEBT — PURPOSE, COST & RISK",
+    "number": 23,
+    "sourceUnitSHA256": "8cd15fab1a48565610b81e48091fde710c4124e045385b992a3824a9f3d1743b",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l24-024",
+    "grade": 10,
+    "term": 1,
+    "title": "MANAGING DEBT — WHY THE MINIMUM CAN COST MORE",
+    "number": 24,
+    "sourceUnitSHA256": "27afdec29473726bc6e93c8c80f029aefa753ea35107ef28dfe3e04b7fcf7635",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l25-025",
+    "grade": 10,
+    "term": 1,
+    "title": "CREDIT RECORDS — THE FILE LENDERS MAY READ",
+    "number": 25,
+    "sourceUnitSHA256": "888207d9e38f60a8be735e18ac43aaade3b14146dc676878953c8a1b425e3279",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l26-026",
+    "grade": 10,
+    "term": 1,
+    "title": "INVESTMENT VEHICLES — MATCHING THE TOOL TO THE GOAL",
+    "number": 26,
+    "sourceUnitSHA256": "3e3a090ded08b3125d6dee4bcf696de0c9a328164eafade898497cfc553bd707",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l27-027",
+    "grade": 10,
+    "term": 1,
+    "title": "FUNDS, LISTED SECURITIES & FEES — TUMELO'S COMPARISON",
+    "number": 27,
+    "sourceUnitSHA256": "21e6b7f51b093db644502336291035d8445a838064e7eecde76ad0aeceb279e6",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l28-028",
+    "grade": 10,
+    "term": 1,
+    "title": "REINVESTMENT AND GROWTH — MR. PATEL'S SECOND FACTORY",
+    "number": 28,
+    "sourceUnitSHA256": "0c9372ba025a1bf920c8ae8699b9db7d4c32c9498a0018e4598cbde8c2f25135",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l29-029",
+    "grade": 10,
+    "term": 1,
+    "title": "FINANCIAL PLANNING — ZINHLE'S ONE-PAGE SYSTEM",
+    "number": 29,
+    "sourceUnitSHA256": "fb42aa8eb924dfcac9364609f9f1fae24634479651e9b16731d2589b492cdceb",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l30-030",
+    "grade": 10,
+    "term": 1,
+    "title": "INVESTMENT STRATEGIES — THEMBA'S DOLLAR-COST AVERAGING",
+    "number": 30,
+    "sourceUnitSHA256": "9e7455fa79e10f91f71de04315ccf758245d8cb292ec345ded20e332758184a8",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l31-031",
+    "grade": 10,
+    "term": 1,
+    "title": "PROJECT LAUNCH — MY INVESTMENT PLAN",
+    "number": 31,
+    "sourceUnitSHA256": "6d4291dad7e3cba5dba778df535d4db2c52259bb1a1c2be4f1f1d0ab872cb18d",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l32-032",
+    "grade": 10,
+    "term": 1,
+    "title": "PROJECT WORKSHOP — RESEARCH",
+    "number": 32,
+    "sourceUnitSHA256": "fd041e795f11e2dc2d8de19c389bbf62d652f6d80dfd3add20b3eba9f58df926",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l33-033",
+    "grade": 10,
+    "term": 1,
+    "title": "PROJECT WORKSHOP — PLANNING",
+    "number": 33,
+    "sourceUnitSHA256": "a3379f42acce1c9f9692ecca1a0d346e3dd53588ddc1e8c353999fb5b5877c28",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l34-034",
+    "grade": 10,
+    "term": 1,
+    "title": "PROJECT WORKSHOP — FEEDBACK",
+    "number": 34,
+    "sourceUnitSHA256": "081cb980b6ef0afbabf283d2c8c9a56610d267494876083f6317dd6097c0813f",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l35-035",
+    "grade": 10,
+    "term": 1,
+    "title": "PROJECT PRESENTATIONS",
+    "number": 35,
+    "sourceUnitSHA256": "699a5b5df85d19c259171790c73c118c6ea268b77af93b2cbbbd15d42ce54cb5",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t2-l36-036",
+    "grade": 10,
+    "term": 1,
+    "title": "TERM REFLECTION AND PORTFOLIO",
+    "number": 36,
+    "sourceUnitSHA256": "98907d40f0bac63aa328277c53fe47a983cc5b3a0e5dad06410b19968f595b26",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l37-037",
+    "grade": 10,
+    "term": 2,
+    "title": "INTRODUCTION TO SYSTEMS THINKING — THE KOMBI RANK AS A SYSTEM",
+    "number": 37,
+    "sourceUnitSHA256": "afbe20a2e9c5038977c519a359db7a7d0e55c48bdd3d221e1420d3fcec85e0da",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l38-038",
+    "grade": 10,
+    "term": 2,
+    "title": "SUPPLY CHAINS AS SYSTEMS — THE BOTTLENECK",
+    "number": 38,
+    "sourceUnitSHA256": "3a245766f61cb490f5b8f4748a95eda31231ae1bca14685aed0c724cf5e872c9",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l39-039",
+    "grade": 10,
+    "term": 2,
+    "title": "PERSONAL FINANCIAL SYSTEMS — YOUR MONEY AS A SYSTEM",
+    "number": 39,
+    "sourceUnitSHA256": "5878f58449eca442f4cdca555ffe27ffe94a238403e7b68a2e941edcc0be2669",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l40-040",
+    "grade": 10,
+    "term": 2,
+    "title": "DESIGNING YOUR FINANCIAL SYSTEM — THE LEVERAGE POINTS",
+    "number": 40,
+    "sourceUnitSHA256": "21da6c35285769e63257216431ff54bd99bbfa0a6f3e354a22c531d53f9b99a1",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l41-041",
+    "grade": 10,
+    "term": 2,
+    "title": "THE ZIMBABWE TAX SYSTEM — LEARNING TO READ THE CURRENT RULES",
+    "number": 41,
+    "sourceUnitSHA256": "90d94984354c94d0918317e0410b8874cedbf449d7adf3b3f9a93fc6605486cd",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l42-042",
+    "grade": 10,
+    "term": 2,
+    "title": "TAX PLANNING — LEGAL, ETHICAL & CURRENT",
+    "number": 42,
+    "sourceUnitSHA256": "2978322de423a3d35d3a45cd4534286d27edc883ab7adda8cd6f455555f93219",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l43-043",
+    "grade": 10,
+    "term": 2,
+    "title": "RETIREMENT — GOGO MARIA'S TABLE & THE POWER OF TIME",
+    "number": 43,
+    "sourceUnitSHA256": "0daad0ecd565275f4cf21559de9e67479d771471e9df1953a7861b66eca5c39f",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l44-044",
+    "grade": 10,
+    "term": 2,
+    "title": "RETIREMENT LAYERS — WHO BUILDS THE SYSTEM WHEN WORK STOPS?",
+    "number": 44,
+    "sourceUnitSHA256": "dfb18ce484fb080378d6532717264ae00fdf85626a7a22e591ccbaa4b11d0507",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l45-045",
+    "grade": 10,
+    "term": 2,
+    "title": "INSURANCE — THE BURNED GARAGE",
+    "number": 45,
+    "sourceUnitSHA256": "37a882f0e873bf93913077e9603130180f8d5643ee22a6173da2d594abfee228",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l46-046",
+    "grade": 10,
+    "term": 2,
+    "title": "TYPES OF INSURANCE — NALEDI AT THE KOMBI RANK",
+    "number": 46,
+    "sourceUnitSHA256": "a24add845528dbba1f16ad79c0a28e933405b1eccb988ae58d3b168b0f431f83",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l47-047",
+    "grade": 10,
+    "term": 2,
+    "title": "SUCCESSION & LEGACY PLANNING — GOGO MARIA'S WILL",
+    "number": 47,
+    "sourceUnitSHA256": "cff4867a2179ebb7cfe2462b5dc19dced0606ec1635c943f22a1c1ecc3dadf2d",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l48-048",
+    "grade": 10,
+    "term": 2,
+    "title": "WILLS, BENEFICIARIES & LEGAL FORMALITIES — ZIMBABWE",
+    "number": 48,
+    "sourceUnitSHA256": "2a6bc0eebc4f4be7bf5bd260f58c3ce99cc73d5d7f3251e5e62de491094ffa31",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l49-049",
+    "grade": 10,
+    "term": 2,
+    "title": "THE PSYCHOLOGY OF MONEY — MRS. NKOSI'S DELIVERY VISIT",
+    "number": 49,
+    "sourceUnitSHA256": "fa89f70b3abefb89e3d80cf2089200c37ea530cdc9c12489ef05a6fbae03c15a",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l50-050",
+    "grade": 10,
+    "term": 2,
+    "title": "PROJECT LAUNCH — MY FINANCIAL SYSTEM",
+    "number": 50,
+    "sourceUnitSHA256": "0d1aaf5c916283b776c1ddc6a0266d4e6c4b9a6dd779dea77a6f625b5b68834e",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l51-051",
+    "grade": 10,
+    "term": 2,
+    "title": "PROJECT WORKSHOP — DESIGNING YOUR SYSTEM",
+    "number": 51,
+    "sourceUnitSHA256": "5e12759bfd4a885ca19353759892549ac9b028ab9a7442167fa5c73abb769b42",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l52-052",
+    "grade": 10,
+    "term": 2,
+    "title": "PROJECT WORKSHOP — FEEDBACK AND REVISION",
+    "number": 52,
+    "sourceUnitSHA256": "4edd3df399fffda148ea7093f0329963e3506b3a1dd8c28588b52c76a8172a29",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l53-053",
+    "grade": 10,
+    "term": 2,
+    "title": "PROJECT PRESENTATIONS — DAY 1",
+    "number": 53,
+    "sourceUnitSHA256": "a7807d7cd278087bdef6f9d306d0ce8ccab8fa28874643088145cfd911f7786d",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l54-054",
+    "grade": 10,
+    "term": 2,
+    "title": "PROJECT PRESENTATIONS — DAY 2",
+    "number": 54,
+    "sourceUnitSHA256": "1e93aef4cd85a062a6c66535d01057afddf75d9abb100811ae70b5e9b39e59e6",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l55-055",
+    "grade": 10,
+    "term": 2,
+    "title": "SYSTEMS & PROTECTION CYCLE REFLECTION",
+    "number": 55,
+    "sourceUnitSHA256": "207de7b58d443c77071f3e7a53ee189a1f97f7c56a21fa0f6c794653f4fea2d6",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l56-056",
+    "grade": 10,
+    "term": 2,
+    "title": "SYSTEMS & PROTECTION PORTFOLIO CHECKPOINT",
+    "number": 56,
+    "sourceUnitSHA256": "2d94a4ffdf6afd7c42b1df0899339b84eebd35bc3ab8847431c47df5ca99f613",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l57-057",
+    "grade": 10,
+    "term": 2,
+    "title": "LETTER TO MY FUTURE SELF — SYSTEMS CHECKPOINT",
+    "number": 57,
+    "sourceUnitSHA256": "35132771275e6e2215e56a1cfcbeac21f6239df8cf7de85134c24a05b24fe9c6",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t3-l58-058",
+    "grade": 10,
+    "term": 2,
+    "title": "TRANSITION — FROM FINANCIAL SYSTEMS TO FINANCIAL INDEPENDENCE",
+    "number": 58,
+    "sourceUnitSHA256": "057e9bd8cbe23ba9b981865bd20b4d282ce35763505cbf9592d3d8f21d96ee34",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l59-059",
+    "grade": 10,
+    "term": 2,
+    "title": "FORM 3 TERM 2 REVIEW — WHAT HAVE I BUILT SO FAR?",
+    "number": 59,
+    "sourceUnitSHA256": "5181023741ea117cdd33c0718be1dc6f2f52e044e711dad537d299f3a01bcce1",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l60-060",
+    "grade": 10,
+    "term": 2,
+    "title": "WHAT IS FINANCIAL INDEPENDENCE? — MYAH'S EQUATION",
+    "number": 60,
+    "sourceUnitSHA256": "02ee0493f75d4ed3eebc31bd8d8518d4bc8698da4f565684d1d9006b108abe55",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l61-061",
+    "grade": 10,
+    "term": 2,
+    "title": "MULTIPLE INCOME STREAMS — THEMBA'S FOUR STREAMS AND THE ONE THAT FAILED",
+    "number": 61,
+    "sourceUnitSHA256": "5b9e2188633f720d4773f65ef7e9b100e3843551be6e8171c8fa39fab8ec7c4f",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l62-062",
+    "grade": 10,
+    "term": 2,
+    "title": "PASSIVE INCOME — ZOLA'S STORY",
+    "number": 62,
+    "sourceUnitSHA256": "cee4b065e8a110d249fee1745185c2c506f35c7c0ffa155ed8f9640247443156",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l63-063",
+    "grade": 10,
+    "term": 2,
+    "title": "SCALING — THEMBA AND MR. PATEL ON THE FACTORY FLOOR",
+    "number": 63,
+    "sourceUnitSHA256": "a646f9da9dbf70870ba9a2d060406f6af08aa762509a36e7c314c2adb0541096",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l64-064",
+    "grade": 10,
+    "term": 2,
+    "title": "ENTREPRENEURSHIP VS EMPLOYMENT — THE FORK REVISITED",
+    "number": 64,
+    "sourceUnitSHA256": "8286a92859a3e004a364aadcde94040efcacd946005f20f10737dd528b646745",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l65-065",
+    "grade": 10,
+    "term": 2,
+    "title": "ETHICS AND MONEY — MR. MOLOI AT MAMA ROSE'S KITCHEN",
+    "number": 65,
+    "sourceUnitSHA256": "e093a2f41e404e8aca988679b5be9c1f27f572444dbb2013be0c4ca73915caa2",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l66-066",
+    "grade": 10,
+    "term": 2,
+    "title": "SOCIALLY RESPONSIBLE INVESTING — ATLEHANG'S QUESTION",
+    "number": 66,
+    "sourceUnitSHA256": "f8533388bec46a45fcaf65d7fda71a037c1fdc6553784ec3a2771c05a0d44ada",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l67-067",
+    "grade": 10,
+    "term": 2,
+    "title": "IMPACT INVESTING — THANDIWE'S STORY AT THE KOMBI RANK",
+    "number": 67,
+    "sourceUnitSHA256": "1ffbe5d8c91235e6a7abaff64d4947443d99c41ab99a565ea8ba0f3ded30d9ae",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l68-068",
+    "grade": 10,
+    "term": 2,
+    "title": "LIFE DESIGN — MS. DANIELS' FINAL LESSON",
+    "number": 68,
+    "sourceUnitSHA256": "f7f3f783b1c996b4d595634511e69f75ac214d0a7eec9186422fc38102526178",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l69-069",
+    "grade": 10,
+    "term": 2,
+    "title": "FORM 3 TERM 2 CAPSTONE — MY FINANCIAL INDEPENDENCE PLAN",
+    "number": 69,
+    "sourceUnitSHA256": "833a5427ab7752ae2a14e896d8d0ac5c57225c18626040f269c51199a3dc293f",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l70-070",
+    "grade": 10,
+    "term": 2,
+    "title": "PROJECT WORKSHOPS — VISION, INCOME, INVESTING, FEEDBACK, COMPLETION",
+    "number": 70,
+    "sourceUnitSHA256": "ce8331c626bf814f7d9b9a5641f490bba86eaac7b595fea7898ebb6673a05e1a",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l75-071",
+    "grade": 10,
+    "term": 2,
+    "title": "PROJECT PRESENTATIONS — DAY 1",
+    "number": 75,
+    "sourceUnitSHA256": "6d1aac761786bda05854a4d1cdf0361b5f363831acab94a4b31cdd8f3c027fbd",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l76-072",
+    "grade": 10,
+    "term": 2,
+    "title": "PROJECT PRESENTATIONS — DAY 2 AND CELEBRATION",
+    "number": 76,
+    "sourceUnitSHA256": "833075ffa5186d95ff2bf8cc46f9e637a07b5337c677b107110c2aea6c9eb642",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l77-073",
+    "grade": 10,
+    "term": 2,
+    "title": "FORM 3 TERM 2 REFLECTION",
+    "number": 77,
+    "sourceUnitSHA256": "c5b1dd5c0f44a5d3d1ae282b013c72f13038bdd290b250ae2e2b3fbadede5dd1",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l78-074",
+    "grade": 10,
+    "term": 2,
+    "title": "FORM 3 TERM 2 PORTFOLIO ASSEMBLY",
+    "number": 78,
+    "sourceUnitSHA256": "d1432e017155628415d9c8cf6ef86d0e545ee7dd07b4b436f4faebb83511a089",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l79-075",
+    "grade": 10,
+    "term": 2,
+    "title": "LETTER TO MY FUTURE SELF — FORM 3 TERM 2",
+    "number": 79,
+    "sourceUnitSHA256": "f928cf74ee63125755563a067d96931268a1160af17f56102ed0f19e3c71037d",
+    "benchmark": false
+  },
+  {
+    "id": "g10-t4-l80-076",
+    "grade": 10,
+    "term": 2,
+    "title": "FAREWELL TO FORM 3 TERM 2 — LEVERAGE & LEADERSHIP AWAIT",
+    "number": 80,
+    "sourceUnitSHA256": "b324dc2229a3150e76e357babe7061f08ce9b7b45290a905f0d821137c9577d1",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l01-001",
+    "grade": 10,
+    "term": 3,
+    "title": "WELCOME TO FORM 3 TERM 3 — THE LEVERAGE & LEADERSHIP TERM",
+    "number": 1,
+    "sourceUnitSHA256": "7d67b2b7fd22e3695655d75bd1bc00c9be97380739db4a2a4da476f809a9de45",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l02-002",
+    "grade": 10,
+    "term": 3,
+    "title": "WHAT IS LEVERAGE?",
+    "number": 2,
+    "sourceUnitSHA256": "219ddc94a249a020a108ea1e04d9275e53cd3c83380c30fbab76aa81ca3ce8fd",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l03-003",
+    "grade": 10,
+    "term": 3,
+    "title": "MYAH'S BIG QUESTION — FORM 4 & POST-O-LEVEL VISION",
+    "number": 3,
+    "sourceUnitSHA256": "655acfb46b15143c8869bd9ee8998839019ccb364cc030329a9ce7d53c8ee3f9",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l04-004",
+    "grade": 10,
+    "term": 3,
+    "title": "TYPES OF LEVERAGE — DEEP DIVE",
+    "number": 4,
+    "sourceUnitSHA256": "a9c6c692866792ec5fe7af6cf4876aa842e6799a404a03641b7a4cd4db667246",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l05-005",
+    "grade": 10,
+    "term": 3,
+    "title": "FINANCIAL LEVERAGE — MR. DLAMINI'S STORY",
+    "number": 5,
+    "sourceUnitSHA256": "a2b535e267a7cc4d75df10a75ccb1bdb17cf8dfc2bcd48a0b8e53eb6dbf99e2e",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l06-006",
+    "grade": 10,
+    "term": 3,
+    "title": "PROPERTY LEVERAGE — A FICTIONAL FINANCE CASE",
+    "number": 6,
+    "sourceUnitSHA256": "e6dda30bc112264ed2f84ec6325970b0c38042e3a8fd8f2a90baf9841870ec19",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l07-007",
+    "grade": 10,
+    "term": 3,
+    "title": "CALCULATING LEVERAGE — THE MATH AT THE TUCKSHOP",
+    "number": 7,
+    "sourceUnitSHA256": "91e31b6eecda36fcb8315ccc5d570bafbf0065897cb68b9aed88dec92b3e4a41",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l08-008",
+    "grade": 10,
+    "term": 3,
+    "title": "RISK AND RETURN IN LEVERAGE — THEMBA'S LESSON",
+    "number": 8,
+    "sourceUnitSHA256": "0b15a3086b49dcd7bacd34e39392448b22892554dc7af64c50b43c3d35bef8e2",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l09-009",
+    "grade": 10,
+    "term": 3,
+    "title": "TIME LEVERAGE — THABO'S DELEGATION",
+    "number": 9,
+    "sourceUnitSHA256": "b74ae150ebe479c4ce5ce1555429d1e2736c531b50133057dac9bd540341698a",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l10-010",
+    "grade": 10,
+    "term": 3,
+    "title": "PEOPLE LEVERAGE — THABO BRINGS SOMEONE INTO THE BUSINESS",
+    "number": 10,
+    "sourceUnitSHA256": "19ea8d8f82526d2a0e5ad8d2744ac2ca0d884b5c73aa920a3e65583e993c1be0",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l11-011",
+    "grade": 10,
+    "term": 3,
+    "title": "SYSTEMS LEVERAGE — MR. PATEL'S FACTORY",
+    "number": 11,
+    "sourceUnitSHA256": "985a239de6022324fca7b3fce0f9e9f9c59275241d8b36525daa01e7ba2d4d93",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l12-012",
+    "grade": 10,
+    "term": 3,
+    "title": "TECHNOLOGY LEVERAGE — THEMBA'S ONLINE STORE",
+    "number": 12,
+    "sourceUnitSHA256": "4f7ecf3b10f6b4c592c20d4ef694bb9b1aa1d32ec651929013a924aabab78a58",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l13-013",
+    "grade": 10,
+    "term": 3,
+    "title": "KNOWLEDGE LEVERAGE — MYAH'S NOTEBOOKS",
+    "number": 13,
+    "sourceUnitSHA256": "a1a4e10accbe546d9347744041f04f70e2668c913cf36b0e5727580af37db26a",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l14-014",
+    "grade": 10,
+    "term": 3,
+    "title": "INTEGRATING THE SIX LEVERS — THE LEVERAGE MATRIX",
+    "number": 14,
+    "sourceUnitSHA256": "b467791f6fbc9de62110e14834a1ce203e4cf7e3dd5eeed8db320591467612bc",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l15-015",
+    "grade": 10,
+    "term": 3,
+    "title": "PROJECT LAUNCH — MY LEVERAGE PLAN",
+    "number": 15,
+    "sourceUnitSHA256": "5a6d4a91f562c17e2efa36f0a16136c2c33301a538d8d7c0f3455a88f1cfd2da",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l16-016",
+    "grade": 10,
+    "term": 3,
+    "title": "PROJECT WORKSHOP — DESIGN AND FEEDBACK",
+    "number": 16,
+    "sourceUnitSHA256": "0e864683eab5c89f8f946158c277002d7be14ebe493ab54d9ca0dcb1074f63a5",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l17-017",
+    "grade": 10,
+    "term": 3,
+    "title": "PROJECT WORKSHOP — REFINEMENT",
+    "number": 17,
+    "sourceUnitSHA256": "1dbb34c52e26264e9afa77f685859d16df7f88b84dba20742a43fa029bd0f981",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l18-018",
+    "grade": 10,
+    "term": 3,
+    "title": "PROJECT PRESENTATIONS — DAY 1",
+    "number": 18,
+    "sourceUnitSHA256": "80a6a70597204fcac275339fc798c3a5d4f67f293912989b9c839a8ac7171218",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l19-019",
+    "grade": 10,
+    "term": 3,
+    "title": "PROJECT PRESENTATIONS — DAY 2 AND CELEBRATION",
+    "number": 19,
+    "sourceUnitSHA256": "5caffc94b4f304c718edef7db3186a60a02581e1206015ac3827eea085dfb11f",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t1-l20-020",
+    "grade": 10,
+    "term": 3,
+    "title": "LEVERAGE CYCLE REFLECTION & PORTFOLIO CHECKPOINT",
+    "number": 20,
+    "sourceUnitSHA256": "e5c0516e4f924a1d94e231353041be6a497f6e17ea5eb6c0df8b04fce772653b",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l21-021",
+    "grade": 10,
+    "term": 3,
+    "title": "WHAT IS LEADERSHIP?",
+    "number": 21,
+    "sourceUnitSHA256": "c38253fe067d1f5d56796002db036c0e780763bfacdf30c7dcb14a2e8ea4a0d2",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l22-022",
+    "grade": 10,
+    "term": 3,
+    "title": "LEADING YOURSELF FIRST",
+    "number": 22,
+    "sourceUnitSHA256": "9f2c00b61216940368fb8ad9eb78415bc5bbdb74082d4a91314ebfd4df0a55b5",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l23-023",
+    "grade": 10,
+    "term": 3,
+    "title": "MYAH'S LEADERSHIP JOURNEY",
+    "number": 23,
+    "sourceUnitSHA256": "f074576a42d7fc63163216fb09e82e90a6e48a6130b8ee34ef70e5df064194b7",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l24-024",
+    "grade": 10,
+    "term": 3,
+    "title": "EMOTIONAL INTELLIGENCE — MS. NKOSI'S LESSON",
+    "number": 24,
+    "sourceUnitSHA256": "a3b9e74c4760651252b7eaec3d9c3964fe9990bb7ce37ebd5b68144dcb12a142",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l25-025",
+    "grade": 10,
+    "term": 3,
+    "title": "MS. NKOSI ON LEADING TEAMS",
+    "number": 25,
+    "sourceUnitSHA256": "858c5f38cd590fe441a66d9b6d2dfe892220ac2b32257464698265bfd36fc015",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l26-026",
+    "grade": 10,
+    "term": 3,
+    "title": "COMMUNICATION FOR LEADERS — LETHABO'S MISTAKE",
+    "number": 26,
+    "sourceUnitSHA256": "3756bd6c05c50d858a162dbd089ffa0644bf133c428467d9785c03cf31ce72a4",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l27-027",
+    "grade": 10,
+    "term": 3,
+    "title": "DIFFICULT CONVERSATIONS — THABO'S TEST AT THE TUCKSHOP",
+    "number": 27,
+    "sourceUnitSHA256": "cd6cd11c231acc1310ac42202cbf0b13ea544f1db8be330edfa3d5b726f689a4",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l28-028",
+    "grade": 10,
+    "term": 3,
+    "title": "DECISION-MAKING UNDER PRESSURE — EMMANUEL'S TUCKSHOP EMERGENCY",
+    "number": 28,
+    "sourceUnitSHA256": "f280f521e59ac3899a30cf6a065146528f9c9666b73460c120442f515782a7fd",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l29-029",
+    "grade": 10,
+    "term": 3,
+    "title": "THANDI LEADS A COOPERATIVE — LEADING PEERS",
+    "number": 29,
+    "sourceUnitSHA256": "1e1da8696120c847b51a77abc31366bc7567ef91456dfabe3347d0715d8eb707",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l30-030",
+    "grade": 10,
+    "term": 3,
+    "title": "LEADING THROUGH CHANGE — THE TUCKSHOP TRANSFORMS",
+    "number": 30,
+    "sourceUnitSHA256": "7aa9d59662eeb70144b2a20885f212c19da76ff0651d427f57db3b79df153b25",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l31-031",
+    "grade": 10,
+    "term": 3,
+    "title": "MENTORSHIP — LETHABO BECOMES THE TEACHER",
+    "number": 31,
+    "sourceUnitSHA256": "ff5c8ac35a9e3ddf8dd2471eb5396baf40a28b5f46414ada0867e16cf8b25eeb",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l32-032",
+    "grade": 10,
+    "term": 3,
+    "title": "THEMBA ON LEADERSHIP — THE REAL STORY",
+    "number": 32,
+    "sourceUnitSHA256": "ae190906fc95dae9573fbb9cb0672d4ff9c3e4852fb3a06f6cf368a80104b9c5",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l33-033",
+    "grade": 10,
+    "term": 3,
+    "title": "ETHICAL LEADERSHIP — MR. PATEL'S CHOICE",
+    "number": 33,
+    "sourceUnitSHA256": "522679839b2f7cdc3b9597b612b3460c9da24ffb6e14447c64937d1a2c729834",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l34-034",
+    "grade": 10,
+    "term": 3,
+    "title": "LEGAL & ETHICAL RESPONSIBILITY IN LEADERSHIP",
+    "number": 34,
+    "sourceUnitSHA256": "6e7bd4d97c37e2bd0bc811e0b6e2a47e00d0b60653429e5b7912174584cec380",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l35-035",
+    "grade": 10,
+    "term": 3,
+    "title": "PROJECT LAUNCH — MY LEADERSHIP PHILOSOPHY",
+    "number": 35,
+    "sourceUnitSHA256": "24f1f61297ab569e4230a81297ff4913782c6b0c02750312bde6696762d4957c",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l36-036",
+    "grade": 10,
+    "term": 3,
+    "title": "PROJECT WORKSHOP — REFINING YOUR PHILOSOPHY",
+    "number": 36,
+    "sourceUnitSHA256": "1e2e6d37d5d0bcb12fdeb5493ac14789fb89a6e65258f53949e19223a545fa04",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l37-037",
+    "grade": 10,
+    "term": 3,
+    "title": "PROJECT PRESENTATIONS — MY LEADERSHIP PHILOSOPHY — DAY 1",
+    "number": 37,
+    "sourceUnitSHA256": "5e1922d2b674eb875e18168e0e4549b892fcca42269a36728e7f2c5e7d1d187a",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l38-038",
+    "grade": 10,
+    "term": 3,
+    "title": "PROJECT PRESENTATIONS — DAY 2 AND CELEBRATION",
+    "number": 38,
+    "sourceUnitSHA256": "1e64b5899a3f26f57eb25af66a1fd383d2e7b9d1ff4da5138ac24c84c6f3b63a",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l39-039",
+    "grade": 10,
+    "term": 3,
+    "title": "TERM REFLECTION",
+    "number": 39,
+    "sourceUnitSHA256": "db3dc6e5de2a012a07b2b23673b39772847c6051640e7129c26e15b9e6c9594e",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t2-l40-040",
+    "grade": 10,
+    "term": 3,
+    "title": "FORM 3 FINAL PORTFOLIO & LETTER TO FUTURE SELF",
+    "number": 40,
+    "sourceUnitSHA256": "e4192dc0501ca89b22f9f86aae4d702da4798cd8698940edf8f26b7a3c194366",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l41-041",
+    "grade": 12,
+    "term": 1,
+    "title": "WEALTH BEYOND MONEY — GOGO MARIA'S WISDOM",
+    "number": 41,
+    "sourceUnitSHA256": "6862a7f0256376bdc54a9c65fd854779c6a8a404fda8a04f7eb85694b84e66c2",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l42-042",
+    "grade": 12,
+    "term": 1,
+    "title": "ADVANCED INVESTING — ZINHLE'S RETURN",
+    "number": 42,
+    "sourceUnitSHA256": "e3bfbb03f23841f58a6b01db8425357a5253655d32aaa722674b0b7ff903297f",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l43-043",
+    "grade": 12,
+    "term": 1,
+    "title": "PROPERTY INVESTMENT DEEP DIVE — CASH FLOW, RISK & TAX",
+    "number": 43,
+    "sourceUnitSHA256": "264172ba921ed9275d8de5c9398e006c68eead4ce523712a46fdf5106b2538e3",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l44-044",
+    "grade": 12,
+    "term": 1,
+    "title": "BUSINESS GROWTH STRATEGIES — MS. NKOSI'S LESSON",
+    "number": 44,
+    "sourceUnitSHA256": "08a7df0ae694fdb2d83f03e8c31f5f8a94ab8520f46bd04a78fd117710fb7d05",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l45-045",
+    "grade": 12,
+    "term": 1,
+    "title": "SCALING A BUSINESS — THEMBA'S REAL STORY",
+    "number": 45,
+    "sourceUnitSHA256": "161c5ccfcff9b6f45d06046d5bcdff5c24d9f2c9fa355a3e24f2712ab2e44325",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l46-046",
+    "grade": 12,
+    "term": 1,
+    "title": "CREATING MULTIPLE STREAMS AT SCALE — THEMBA'S CURRENT SYSTEM",
+    "number": 46,
+    "sourceUnitSHA256": "4433ed9f5df8fb903d9dba51922ccabe0485d1eb3fd92537705d64d1bca46e20",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l47-047",
+    "grade": 12,
+    "term": 1,
+    "title": "TAX-AWARE WEALTH BUILDING — ZIMBABWE RULES CHANGE",
+    "number": 47,
+    "sourceUnitSHA256": "2868f95e27ccf73ebc5b38faba280668ce4a1d23ff67b49111ff5008cd993bd2",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l48-048",
+    "grade": 12,
+    "term": 1,
+    "title": "PROTECTING WEALTH — MR. PATEL ON RISK MANAGEMENT",
+    "number": 48,
+    "sourceUnitSHA256": "64b4af06c1a9bd9f83911eea29257ae1196577e7307b88f9e6c9ecc481532924",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l49-049",
+    "grade": 12,
+    "term": 1,
+    "title": "IMPACT INVESTING — PURPOSE, EVIDENCE & GREENWASHING",
+    "number": 49,
+    "sourceUnitSHA256": "9b26b6b8d805f02c6d129c7dcbbddf3aaa6814f9199c84cbd0362ce6148daa2f",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l50-050",
+    "grade": 12,
+    "term": 1,
+    "title": "GLOBAL INVESTING — DIVERSIFICATION & CURRENCY RISK",
+    "number": 50,
+    "sourceUnitSHA256": "b49d86ba98f30ce4320aa5fea57eebf5e671ff223fd8667648fbf1e9840188ed",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l51-051",
+    "grade": 12,
+    "term": 1,
+    "title": "INTEGRATING THE WEALTH STRATEGIES — THE ARCHITECT'S SYNTHESIS",
+    "number": 51,
+    "sourceUnitSHA256": "f06e4745f5fb345aaa75373f5557db263d671b6d94719c6f8603cf688ca31f6c",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l52-052",
+    "grade": 12,
+    "term": 1,
+    "title": "PROJECT LAUNCH — MY 10-YEAR WEALTH PLAN",
+    "number": 52,
+    "sourceUnitSHA256": "e8a38ccf0f8a881412f19aba89be1dffb2cb1f9b74612e5f9cd22da5c6769bc5",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l53-053",
+    "grade": 12,
+    "term": 1,
+    "title": "PROJECT WORKSHOP — RESEARCH AND DESIGN",
+    "number": 53,
+    "sourceUnitSHA256": "66894380306811dd43ddded794f103479daf6f2964d22288dcb90301420736d6",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l54-054",
+    "grade": 12,
+    "term": 1,
+    "title": "PROJECT WORKSHOP — DESIGN AND FEEDBACK",
+    "number": 54,
+    "sourceUnitSHA256": "f6d651bb9704293dafa9bd1302602dc8b5564abacd81efb19149c3268eab0fb7",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l55-055",
+    "grade": 12,
+    "term": 1,
+    "title": "PROJECT PRESENTATIONS — MY 10-YEAR WEALTH PLAN — DAY 1",
+    "number": 55,
+    "sourceUnitSHA256": "e2db3534d5dcab5e790f3101bf694d1f0fff5b4ecdb053774f03188d1bde25e4",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l56-056",
+    "grade": 12,
+    "term": 1,
+    "title": "PROJECT PRESENTATIONS — DAY 2 AND CELEBRATION",
+    "number": 56,
+    "sourceUnitSHA256": "5d791f65fd815cc949d1bf6a3403be0e5ae6649311b676020a6df29b2b4d6c3d",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l57-057",
+    "grade": 12,
+    "term": 1,
+    "title": "TERM REFLECTION",
+    "number": 57,
+    "sourceUnitSHA256": "230dced2b2f3ebf2702f27d17c7a99b69339d1890b9d1ac91a6f89a4382c1507",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l58-058",
+    "grade": 12,
+    "term": 1,
+    "title": "PORTFOLIO ASSEMBLY",
+    "number": 58,
+    "sourceUnitSHA256": "d1f0415816de6e67a356a65109ee7302e2c6836c6628e21327b61f5f0e1544b2",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l59-059",
+    "grade": 12,
+    "term": 1,
+    "title": "LETTER TO MY FUTURE SELF — FORM 4 WEALTH CHECKPOINT",
+    "number": 59,
+    "sourceUnitSHA256": "f5f0cb323612398e687e3a6f736b24be3729de846c853222ae6f0b99d79e91fd",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t3-l60-060",
+    "grade": 12,
+    "term": 1,
+    "title": "ADVANCED WEALTH CHECKPOINT — LEGACY COMES NEXT",
+    "number": 60,
+    "sourceUnitSHA256": "31bda4d18d9afa03c4230a7449f0e02577f19cb61202e0c42af06c67c04bb145",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l61-061",
+    "grade": 12,
+    "term": 1,
+    "title": "WHAT IS LEGACY? — MAMA ROSE'S WISDOM",
+    "number": 61,
+    "sourceUnitSHA256": "38d4d58adbf5306f21a4a7388772d927cf2bdee46d0479d6008ff97c8b1ae88a",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l62-062",
+    "grade": 12,
+    "term": 1,
+    "title": "THE FOUR DIMENSIONS OF LEGACY — MYAH'S FRAMEWORK",
+    "number": 62,
+    "sourceUnitSHA256": "e19d2813f15564bea193cb4eb19ee8144248f7c7f35fc6e7045bbf839e359295",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l63-063",
+    "grade": 12,
+    "term": 1,
+    "title": "FINANCIAL LEGACY — ESTATE, BENEFICIARIES & SUCCESSION",
+    "number": 63,
+    "sourceUnitSHA256": "9fcca5e03e05cd624615901f87989cf964f745d3561fa6a4df314a100d207357",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l64-064",
+    "grade": 12,
+    "term": 1,
+    "title": "WILLS, TRUSTS & VALIDITY — THE ZIMBABWE LEGAL CHECK",
+    "number": 64,
+    "sourceUnitSHA256": "0e6eca4aeebabbf7ddb10f192daaa53d65aab4df3f185ecb95f18cc288e3a403",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l65-065",
+    "grade": 12,
+    "term": 1,
+    "title": "VALUES LEGACY — GOGO MARIA'S LETTERS",
+    "number": 65,
+    "sourceUnitSHA256": "184f511b728c8aff418c873ffbecc21e41668a477dd422cf45279f7d47cde033",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l66-066",
+    "grade": 12,
+    "term": 1,
+    "title": "MR. PATEL ON GIVING BACK — THE COMMUNITY CENTRE",
+    "number": 66,
+    "sourceUnitSHA256": "f6a401143bcd7dc28b46a662865677d2b20659436b8d9cd1ad66394c12eec00d",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l67-067",
+    "grade": 12,
+    "term": 1,
+    "title": "SOCIAL LEGACY — THANDIWE'S RECYCLING COOPERATIVE",
+    "number": 67,
+    "sourceUnitSHA256": "869caa774f75c60668072cb52a6bd4e494ff0961293edc6c75d29e59ace35bfc",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l68-068",
+    "grade": 12,
+    "term": 1,
+    "title": "ENVIRONMENTAL LEGACY — LETHABO'S QUESTION",
+    "number": 68,
+    "sourceUnitSHA256": "e1cc55b7d29bc347171b56ec56b7f5c76586827dff9fb99d5cd31201b22ec1a4",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l69-069",
+    "grade": 12,
+    "term": 1,
+    "title": "BALANCING PRESENT AND FUTURE — MYAH'S DILEMMA",
+    "number": 69,
+    "sourceUnitSHA256": "a749d52a8823febaf5b056ba28d9b20bd870072880cd45ef6b37bf11a1b8d598",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l70-070",
+    "grade": 12,
+    "term": 1,
+    "title": "ARCHITECTURE REVIEW — FROM FORM 3 INTO FORM 4",
+    "number": 70,
+    "sourceUnitSHA256": "1e3409c3d3c65e11474159bb517a67146534d273dde9438aa1eed2c9afa8b844",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l71-071",
+    "grade": 12,
+    "term": 1,
+    "title": "PROJECT LAUNCH — MY LIFE AND LEGACY PLAN",
+    "number": 71,
+    "sourceUnitSHA256": "fbebfce0202ac0719fde4afd5db39cd8dcde4eff355d6d77ceebd88c753c27c5",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l72-072",
+    "grade": 12,
+    "term": 1,
+    "title": "final project WORKSHOP — INTEGRATING YOUR PLAN",
+    "number": 72,
+    "sourceUnitSHA256": "8ad8166e84d806bc32014f3e2d71b48f50ab1e3d6d68781b97ae58e4085627f8",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l73-073",
+    "grade": 12,
+    "term": 1,
+    "title": "final project WORKSHOP — TIMELINE AND MILESTONES",
+    "number": 73,
+    "sourceUnitSHA256": "f381fe89ae1178c2f8b8ea8af48b5ca35334f301caac5720fc43245921bf74e8",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l74-074",
+    "grade": 12,
+    "term": 1,
+    "title": "final project WORKSHOP — FEEDBACK AND REFINEMENT",
+    "number": 74,
+    "sourceUnitSHA256": "e72956078d5925a52b00d7918bc6ad18de4d487e100aff39a868c694e0171998",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l75-075",
+    "grade": 12,
+    "term": 1,
+    "title": "final project PRESENTATIONS — MY LIFE AND LEGACY PLAN — DAY 1",
+    "number": 75,
+    "sourceUnitSHA256": "3decff703fb6ac0f19f5773dacf62049ddd63fea30c109ecb5ea8217cdbefd99",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l76-076",
+    "grade": 12,
+    "term": 1,
+    "title": "final project PRESENTATIONS — DAY 2 AND CELEBRATION",
+    "number": 76,
+    "sourceUnitSHA256": "7930e66e037defb0061171430a76282e2704ebe453176163924be2569888b7d5",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l77-077",
+    "grade": 12,
+    "term": 1,
+    "title": "FORM 4 TERM 1 REFLECTION — WEALTH & LEGACY",
+    "number": 77,
+    "sourceUnitSHA256": "ecd2553d0b9fc0be0b27c33cec070ce8dbc3c5cdf289b89c9fca6c1d3d64025a",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l78-078",
+    "grade": 12,
+    "term": 1,
+    "title": "FORM 4 TERM 1 PORTFOLIO ASSEMBLY",
+    "number": 78,
+    "sourceUnitSHA256": "6dc6084a9d40331be424eaf3d0d612844614d6d74ad45da38debe8c7fab55de4",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l79-079",
+    "grade": 12,
+    "term": 1,
+    "title": "LETTER TO MY FUTURE SELF — FORM 4 TERM 1",
+    "number": 79,
+    "sourceUnitSHA256": "82fa757c5102eec67e56db1411f227ffef4b7d1b5d23f9cbc91289a98e61f538",
+    "benchmark": false
+  },
+  {
+    "id": "g11-t4-l80-080",
+    "grade": 12,
+    "term": 1,
+    "title": "FORM 4 TERM 1 CLOSE — FROM ARCHITECTURE TO LAUNCH",
+    "number": 80,
+    "sourceUnitSHA256": "2eb5d7c0a5fb7d9ef9c2bcd33c745c46b829f5e01feb671da35a6017cf4a040c",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l01-001",
+    "grade": 12,
+    "term": 2,
+    "title": "FORM 4 TERM 2 — THE LAUNCH PHASE",
+    "number": 1,
+    "sourceUnitSHA256": "e7bf946ccda794d7677cf0fcaea194b027f00cdec5584f36eb997ae1b123ef92",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l02-002",
+    "grade": 12,
+    "term": 2,
+    "title": "WHAT CHANGES AT 18? — ADV. MKHIZE AT MAMA ROSE'S KITCHEN",
+    "number": 2,
+    "sourceUnitSHA256": "b30a48a9ca77551bf78655c43661f08d5b3fedfdefb058cefc355827a385d69f",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l03-003",
+    "grade": 12,
+    "term": 2,
+    "title": "LEGAL ADULTHOOD — CONTRACTS, RIGHTS & WHERE TO GET HELP",
+    "number": 3,
+    "sourceUnitSHA256": "257b7094ed28e1ccc8ab80f2074b51a8b5976beadd5cab24f79b6cc468d229e1",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l04-004",
+    "grade": 12,
+    "term": 2,
+    "title": "MANAGING YOUR OWN MONEY — MYAH'S FIRST ACCOUNT",
+    "number": 4,
+    "sourceUnitSHA256": "33952937bc1339ade0bedd1c1395eb690a83429df2fcfa87a9e1d0b54a0f3868",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l05-005",
+    "grade": 12,
+    "term": 2,
+    "title": "MYAH'S FIRST BIG DECISION — THE POST-O-LEVEL MATRIX",
+    "number": 5,
+    "sourceUnitSHA256": "de9d777ad6d464fd11ebcaa62d667fb8efd9a4099d1fd46425504429771df2e5",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l06-006",
+    "grade": 12,
+    "term": 2,
+    "title": "PATHWAYS AFTER FORM 4 — THE PANEL AT THE COMMUNITY HALL",
+    "number": 6,
+    "sourceUnitSHA256": "5d225d790f1c3ad0f72de57e44d35cefd1e982c041c794a94973ed95dd8000aa",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l07-007",
+    "grade": 12,
+    "term": 2,
+    "title": "TERTIARY APPLICATIONS — BUILD YOUR TRACKER",
+    "number": 7,
+    "sourceUnitSHA256": "2e50654e21af1d4910a901247fa0797127b3084bf2d5dc711efba91a87a7e011",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l08-008",
+    "grade": 12,
+    "term": 2,
+    "title": "BURSARIES, SCHOLARSHIPS, LOANS & FUNDING",
+    "number": 8,
+    "sourceUnitSHA256": "4af34937db7f300a847b58f71251067bf91ec60f28dedaf06cc7bc015dce6a7b",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l09-009",
+    "grade": 12,
+    "term": 2,
+    "title": "STRUCTURED GAP YEAR OPTIONS — SIPHO'S STORY",
+    "number": 9,
+    "sourceUnitSHA256": "c1dbb56e0a097c16e57c87ea730cb2e102c14b31bfbb74996a052eb68998b2a0",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l10-010",
+    "grade": 12,
+    "term": 2,
+    "title": "ENTREPRENEURSHIP AFTER FORM 4 — LETHABO'S DECISION",
+    "number": 10,
+    "sourceUnitSHA256": "537de5c97a6c9dea88364a6a40dd3466882f48334156840c6ef6004c1c7098ca",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l11-011",
+    "grade": 12,
+    "term": 2,
+    "title": "FIRST-YEAR TERTIARY EXPERIENCE — THE REAL VERSION",
+    "number": 11,
+    "sourceUnitSHA256": "200ae8740348df7ae27e4c4223543fd4185228a6905827a518e776dc07183cd7",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l12-012",
+    "grade": 12,
+    "term": 2,
+    "title": "STARTING WORK — YOUR FIRST PAYSLIP",
+    "number": 12,
+    "sourceUnitSHA256": "cf62dc8dfb00d30abb00567094f9fdd77feb35708450eac65d1c563be38c3591",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l13-013",
+    "grade": 12,
+    "term": 2,
+    "title": "MOVING OUT? — THE REAL COST OF INDEPENDENCE",
+    "number": 13,
+    "sourceUnitSHA256": "2af04702e601d707c84b0f88d01e449797ddcf839ee5af5ab5a571f0aba63930",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l14-014",
+    "grade": 12,
+    "term": 2,
+    "title": "ROOMMATES AND SHARING — MYAH'S AGREEMENT TEMPLATE",
+    "number": 14,
+    "sourceUnitSHA256": "e0cf82e7bd5ccae627e4f3f988f9b6800e5259bf7f04fb062c2c9e4d433a01f5",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l15-015",
+    "grade": 12,
+    "term": 2,
+    "title": "PROJECT LAUNCH — MY POST-O-LEVEL TRANSITION PLAN",
+    "number": 15,
+    "sourceUnitSHA256": "d0c007daf658633d61dcf5fdd1ff700354fdfc5b074cfeba59c02514aa61a875",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l16-016",
+    "grade": 12,
+    "term": 2,
+    "title": "PROJECT WORKSHOP — FEEDBACK AND REVISION",
+    "number": 16,
+    "sourceUnitSHA256": "e103cce241871dcd909d89d2cc247c9db836f9efc14b04bbb34f47f503155858",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l17-017",
+    "grade": 12,
+    "term": 2,
+    "title": "TRANSITION PLAN PRESENTATIONS — DAY 1",
+    "number": 17,
+    "sourceUnitSHA256": "78fc41144f282633887b9d906c01780dfe757ae2b542a5e5306c4ad849c26792",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l18-018",
+    "grade": 12,
+    "term": 2,
+    "title": "PROJECT PRESENTATIONS — DAY 2",
+    "number": 18,
+    "sourceUnitSHA256": "7e58eb1d168e7f745b8e7444f282a4e61f917821d12a9633252c128d5aac3d43",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l19-019",
+    "grade": 12,
+    "term": 2,
+    "title": "TRANSITION CYCLE REFLECTION",
+    "number": 19,
+    "sourceUnitSHA256": "55532d3f76c1aa55a7fed34b2ca49e724d49d796090614d79b8149d6eae3734d",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t1-l20-020",
+    "grade": 12,
+    "term": 2,
+    "title": "TRANSITION PORTFOLIO & LETTER TO FUTURE SELF",
+    "number": 20,
+    "sourceUnitSHA256": "65053754f3980241de5dc135c8dd99404b28f3467d21fb5c0cf946b9de43816f",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l21-021",
+    "grade": 12,
+    "term": 2,
+    "title": "THE WORLD OF WORK — WHAT AWAITS YOU IN ZIMBABWE",
+    "number": 21,
+    "sourceUnitSHA256": "099a38f5b422a06dc22a5047ad4eaa504b5065f08894d82b7794d3ada215514e",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l22-022",
+    "grade": 12,
+    "term": 2,
+    "title": "THE HIDDEN JOB MARKET — NETWORKS AND RELATIONSHIPS",
+    "number": 22,
+    "sourceUnitSHA256": "4b94290025fce93cfa3bab847096508230714bed1770b7ec6aa427bb1f419747",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l23-023",
+    "grade": 12,
+    "term": 2,
+    "title": "YOUR CV — THE MARKETING DOCUMENT",
+    "number": 23,
+    "sourceUnitSHA256": "a1f6a64c367c219c282b0ed54e746c180ea96e222ef924ae6e9c15fe4340b842",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l24-024",
+    "grade": 12,
+    "term": 2,
+    "title": "THE COVER LETTER — YOUR FIRST CONVERSATION",
+    "number": 24,
+    "sourceUnitSHA256": "9158d4fc45d6f84172a996f00b76005a94e8eacd337bf7143e597e561edd6f2a",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l25-025",
+    "grade": 12,
+    "term": 2,
+    "title": "INTERVIEWS — THE QUESTIONS THEY WILL ASK",
+    "number": 25,
+    "sourceUnitSHA256": "4dd8f0d1a099d1460c9805d624688f6f852e87314211ccaf282ea890970b25d4",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l26-026",
+    "grade": 12,
+    "term": 2,
+    "title": "INTERVIEWS — THE QUESTIONS YOU SHOULD ASK",
+    "number": 26,
+    "sourceUnitSHA256": "a92261ea157270b201c6e100e5b420a824d2ac3aefbe8d3a4306c702e8d3f206",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l27-027",
+    "grade": 12,
+    "term": 2,
+    "title": "THEMBA ON JOB HUNTING — THE 15 APPLICATIONS",
+    "number": 27,
+    "sourceUnitSHA256": "694cf73543bc50408e1a0e68cc58a44f9eb061854a07904a36df9b0442f20d71",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l28-028",
+    "grade": 12,
+    "term": 2,
+    "title": "SIDE HUSTLES, FREELANCING & MULTIPLE INCOME STREAMS",
+    "number": 28,
+    "sourceUnitSHA256": "e6d40dd8aef078305dc974c5484ee47f8883e6f6dfc42294fd3dd30c346be1c3",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l29-029",
+    "grade": 12,
+    "term": 2,
+    "title": "THE GIG ECONOMY — FLEXIBILITY, COSTS & CONTRACT RISK",
+    "number": 29,
+    "sourceUnitSHA256": "8b4261b3e013d249b724dc5c4321a2cb36fe4e673349a88475dc6b419575ff0f",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l30-030",
+    "grade": 12,
+    "term": 2,
+    "title": "PROFESSIONAL COMMUNICATION — EMAILS, MEETINGS, AND DIFFICULT CONVERSATIONS",
+    "number": 30,
+    "sourceUnitSHA256": "e65ad97bd49f53bf534a4af893eeca205730eef4cb56f87818419290da83e456",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l31-031",
+    "grade": 12,
+    "term": 2,
+    "title": "PERSONAL BRANDING — WHO ARE YOU ONLINE?",
+    "number": 31,
+    "sourceUnitSHA256": "9120d1442cbff1d76e38163adcaa9c21623d70e540618935fe514e09aa5073fb",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l32-032",
+    "grade": 12,
+    "term": 2,
+    "title": "PROFESSIONAL NETWORKING — BUILDING RELATIONSHIPS THAT LAST",
+    "number": 32,
+    "sourceUnitSHA256": "9351692f4f0aba963a7d6b38d1bcba5265119d9f14dd52e6527fe8e436ae9a22",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l33-033",
+    "grade": 12,
+    "term": 2,
+    "title": "THE SIDE HUSTLE DEEP DIVE — FROM IDEA TO INCOME",
+    "number": 33,
+    "sourceUnitSHA256": "92900a30c77b12a7d9610194ff4610eb64e41b9896c88c3d4de867cfc271d9e6",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l34-034",
+    "grade": 12,
+    "term": 2,
+    "title": "FREELANCING — YOUR SKILLS, YOUR TERMS",
+    "number": 34,
+    "sourceUnitSHA256": "a1b8cc8b4c42638d37a524897de1f0642e727223490d1a9069b31046836956f1",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l35-035",
+    "grade": 12,
+    "term": 2,
+    "title": "MR. PATEL ON WHAT EMPLOYERS LOOK FOR",
+    "number": 35,
+    "sourceUnitSHA256": "4d9dc6ce2a96dfdb0e608938eb14c8dd428ea05e4821cf95f18ec3583b431365",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l36-036",
+    "grade": 12,
+    "term": 2,
+    "title": "PERSONAL BRANDING DEEP DIVE — YOUR STORY, YOUR VOICE",
+    "number": 36,
+    "sourceUnitSHA256": "11b1e715e2a2633d65dc2bad457321bc4821a6c6bec16a4012025fa2943a104e",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l37-037",
+    "grade": 12,
+    "term": 2,
+    "title": "MANAGING YOUR ONLINE REPUTATION",
+    "number": 37,
+    "sourceUnitSHA256": "37ec30b273fe98793611553a15547b18c5bc427c1a3fa903e1dc086e3d7308ba",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l38-038",
+    "grade": 12,
+    "term": 2,
+    "title": "PROJECT LAUNCH — MY CAREER LAUNCH PLAN",
+    "number": 38,
+    "sourceUnitSHA256": "10bc89733813067887f35e61945012f7753eb06cc86dda619030bfafafb83d75",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l39-039",
+    "grade": 12,
+    "term": 2,
+    "title": "PROJECT WORKSHOP — FEEDBACK AND REVISION",
+    "number": 39,
+    "sourceUnitSHA256": "48659fcc92d1b0a0729157c33483f1cc3007cc7c14f36fc2649b733acc939717",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t2-l40-040",
+    "grade": 12,
+    "term": 2,
+    "title": "FORM 4 TERM 2 — CAREER LAUNCH REFLECTION & LETTER",
+    "number": 40,
+    "sourceUnitSHA256": "c5676424b6399c3ad2169ef378ca9f1a543b9ac7af78a97b2318296366608acb",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l41-041",
+    "grade": 12,
+    "term": 3,
+    "title": "WHAT IS RISK? — THE ADULT DEFINITION",
+    "number": 41,
+    "sourceUnitSHA256": "5ee19a0eed09ea8279312cc91a67007b6546ed99bca8d4c059192b711021424e",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l42-042",
+    "grade": 12,
+    "term": 3,
+    "title": "INSURANCE DEEP DIVE — TRANSFERRING THE RISKS YOU CANNOT CARRY",
+    "number": 42,
+    "sourceUnitSHA256": "d7ddc641743202ab92bfb620ac9a969b4bcdf21d2d0878a0bbd7a686cfb0cb72",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l43-043",
+    "grade": 12,
+    "term": 3,
+    "title": "BUSINESS INSURANCE AND LIABILITY — THABO'S LESSON",
+    "number": 43,
+    "sourceUnitSHA256": "ede8729488a625be3fc095c89152e2ad2a8bda92eda229729b634279c0e70328",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l44-044",
+    "grade": 12,
+    "term": 3,
+    "title": "ESTATE PLANNING — WILLS, ESTATES & BENEFICIARIES IN ZIMBABWE",
+    "number": 44,
+    "sourceUnitSHA256": "0b3be43ff5173e109565fb10a8a5fbcc97d653cc59bc0c96151bb2288e794e56",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l45-045",
+    "grade": 12,
+    "term": 3,
+    "title": "TRUSTS, BENEFICIARY NOMINATIONS & DOCUMENT ALIGNMENT",
+    "number": 45,
+    "sourceUnitSHA256": "1f5a67b236acbe3bcbc4a991ab701ee379462a977dc455630e75e1dd0da703f9",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l46-046",
+    "grade": 12,
+    "term": 3,
+    "title": "INVESTMENT CONSOLIDATION — SEEING THE WHOLE PORTFOLIO",
+    "number": 46,
+    "sourceUnitSHA256": "4bf3861095532229a595116c37d1b1bcb60a1129e2d9c02e31d03db73e2f9ac8",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l47-047",
+    "grade": 12,
+    "term": 3,
+    "title": "FRAUD PREVENTION — THE PAUSE THAT PROTECTS YOU",
+    "number": 47,
+    "sourceUnitSHA256": "23c9e713dfe0c3bb969c57ac2567f37ce7c00a17069a3e533b7b04bf08663ad3",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l48-048",
+    "grade": 12,
+    "term": 3,
+    "title": "DIGITAL SECURITY — PROTECTING YOUR MONEY AND IDENTITY ONLINE",
+    "number": 48,
+    "sourceUnitSHA256": "e1b070db87f622cef887eb65e646e51bca8d2fb0638f2e402b3f323283921063",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l49-049",
+    "grade": 12,
+    "term": 3,
+    "title": "GOGO MARIA'S FINAL LESSON — WEALTH BEYOND MONEY",
+    "number": 49,
+    "sourceUnitSHA256": "b4f3263ed69157aea9c4e00e5e99c009a9c9e98e104c9fcc831187c23c19308f",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l50-050",
+    "grade": 12,
+    "term": 3,
+    "title": "PROJECT LAUNCH — MY RISK AND PROTECTION PLAN",
+    "number": 50,
+    "sourceUnitSHA256": "cc89148da393bef445259b27ea5defdc499ae794792cd3dd44942d47fef6fc50",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l51-051",
+    "grade": 12,
+    "term": 3,
+    "title": "PROJECT WORKSHOP — FEEDBACK AND REVISION",
+    "number": 51,
+    "sourceUnitSHA256": "5db5c2e8ddba71dccc49bf738348658155bc22c44b7e44a6d6e70873b1be60f4",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t3-l52-052",
+    "grade": 12,
+    "term": 3,
+    "title": "RISK & PROTECTION CYCLE REFLECTION",
+    "number": 52,
+    "sourceUnitSHA256": "915df46842528fcdbe48279ce47b4c5c1e0ec0cb867759019e202dc35fd1b5d2",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l61-053",
+    "grade": 12,
+    "term": 3,
+    "title": "FORM 4 JOURNEY REVIEW — READY TO INTEGRATE",
+    "number": 61,
+    "sourceUnitSHA256": "8d87e03e21aa99f55491f2c7dcf8ed53d4fb2ff8dbf1fe35a22ab4d8fc07ae7b",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l62-054",
+    "grade": 12,
+    "term": 3,
+    "title": "INTEGRATION — CONNECTING ALL YOUR PLANS",
+    "number": 62,
+    "sourceUnitSHA256": "d19eb287cd9b0ecc27bdd25d94504e6f624edc36a30e1a191b7c1c24bf0f870e",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l63-055",
+    "grade": 12,
+    "term": 3,
+    "title": "MY TRANSITION PLAN — FINAL FORM 4 UPDATE",
+    "number": 63,
+    "sourceUnitSHA256": "39d0c77ba0534dc3b4f0193014ee065fa4eb3fdfeb92cdefb89220c43b712b91",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l64-056",
+    "grade": 12,
+    "term": 3,
+    "title": "MY CAREER LAUNCH & RISK PLANS — FINAL UPDATE",
+    "number": 64,
+    "sourceUnitSHA256": "a4a4d5b1a2860a3cac27c0868441a9ee0435618bb9d1aa89de44b46d465cd9d0",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l65-057",
+    "grade": 12,
+    "term": 3,
+    "title": "MY LEGACY VISION — FINAL FORM 4 UPDATE",
+    "number": 65,
+    "sourceUnitSHA256": "01a9bec8510f1ab2aeadd6bedd740b07a487fe060fb6ce6291c48866a46e9e03",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l66-058",
+    "grade": 12,
+    "term": 3,
+    "title": "MS. DANIELS' FINAL LESSON — THE WISDOM OF TWENTY YEARS",
+    "number": 66,
+    "sourceUnitSHA256": "eb260915237cacd2097b38b303f1d8647f7bb565819c82f80f900e6e74d2708b",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l67-059",
+    "grade": 12,
+    "term": 3,
+    "title": "MAMA ROSE'S LAST VISIT — THE KITCHEN, ONE FINAL TIME",
+    "number": 67,
+    "sourceUnitSHA256": "0ee8ade95868dc27c3445971b781497dbea09f7eaa4c64a50905a23ee368ab83",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l68-060",
+    "grade": 12,
+    "term": 3,
+    "title": "FINAL CAPSTONE LAUNCH — MY LIFE LAUNCH PLAN",
+    "number": 68,
+    "sourceUnitSHA256": "51f2a4f8dddd2249563e18deb20b66fff887da0e9b71cb0bba12f4ac1e2e1c3f",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l69-061",
+    "grade": 12,
+    "term": 3,
+    "title": "FINAL CAPSTONE WORKSHOP — DRAFTING YOUR LIFE LAUNCH PLAN",
+    "number": 69,
+    "sourceUnitSHA256": "49976da9dca6a830daa3370b42518bc7b2606a64763c9f9c0a582ce2214b53d1",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l70-062",
+    "grade": 12,
+    "term": 3,
+    "title": "FINAL CAPSTONE WORKSHOP — FEEDBACK & REFINEMENT",
+    "number": 70,
+    "sourceUnitSHA256": "0ae02bd46a185ba47bcb5a5265c5fabd6358b1c30c877341b87be3056cb0213f",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l71-063",
+    "grade": 12,
+    "term": 3,
+    "title": "LIFE LAUNCH PLAN PRESENTATIONS — DAY 1",
+    "number": 71,
+    "sourceUnitSHA256": "5c103a815935c8fb6a4377cc4305c3ed9c22fcb3aa622e77f6abd1b3e75c3f90",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l72-064",
+    "grade": 12,
+    "term": 3,
+    "title": "LIFE LAUNCH PLAN PRESENTATIONS — DAY 2",
+    "number": 72,
+    "sourceUnitSHA256": "c597acf7d2424c6e7ccb5c85a3f1ed7e566b1900ac237dec1499d079c52670ab",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l73-065",
+    "grade": 12,
+    "term": 3,
+    "title": "REVIEW — THE FORM 4 LAUNCH YEAR",
+    "number": 73,
+    "sourceUnitSHA256": "bc263159bae98f62fe3d3c0696fd305d7e17418a6344cbdd46a2cb1bb4ca560f",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l74-066",
+    "grade": 12,
+    "term": 3,
+    "title": "INTEGRATION — CONNECTING ALL YOUR PLANS",
+    "number": 74,
+    "sourceUnitSHA256": "7e64b0498455269b137ddc1a917f0747f2c1e7b1c8e21385c9f6a91a678fec66",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l75-067",
+    "grade": 12,
+    "term": 3,
+    "title": "MY TRANSITION PLAN — FINAL EVIDENCE UPDATE",
+    "number": 75,
+    "sourceUnitSHA256": "afd7f9fe2f972ad471fcbbe86bf3578581f648f67e5e84b606f396c76c3e97b3",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l76-068",
+    "grade": 12,
+    "term": 3,
+    "title": "MY CAREER LAUNCH & RISK PLANS — FINAL EVIDENCE UPDATE",
+    "number": 76,
+    "sourceUnitSHA256": "d9f15fec13f7ebd97634aff7de9c679eaeb859517465c176909e1451dd834217",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l77-069",
+    "grade": 12,
+    "term": 3,
+    "title": "THE FIVE MODES — MYAH'S FOUR-FORM ARC",
+    "number": 77,
+    "sourceUnitSHA256": "73c08ce76b4b309be246b94684bc3bce8bdd4f811ca3b652deca56463812baf9",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l78-070",
+    "grade": 12,
+    "term": 3,
+    "title": "GRATITUDE — THE PEOPLE WHO SHAPED US",
+    "number": 78,
+    "sourceUnitSHA256": "48f3afe17cc189d14568a3303df2d3547de38ed59c84df47b634020ddddd5562",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l79-071",
+    "grade": 12,
+    "term": 3,
+    "title": "MS. DANIELS' FINAL LESSON — THE WISDOM OF TWENTY YEARS",
+    "number": 79,
+    "sourceUnitSHA256": "87bd9182d1ee9740488587e1621d0a734247291d475c5f9eeab9f5c6cfd572f9",
+    "benchmark": false
+  },
+  {
+    "id": "g12-t4-l80-072",
+    "grade": 12,
+    "term": 3,
+    "title": "THE LIFE LAUNCH PLAN — FINAL CAPSTONE",
+    "number": 80,
+    "sourceUnitSHA256": "d919a572f53fd0b1f4264bff1323cff36a6fec2c8b6535ba08bfcbfa05a11e1d",
+    "benchmark": false
+  }
+]

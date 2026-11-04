@@ -1,0 +1,72 @@
+name: Applied Commerce Zimbabwe CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Task identity tests
+        run: python scripts/test_block_identity.py
+
+      - name: Curriculum tests
+        run: npm test
+
+      - name: Synthetic database restore and volume drill
+        run: npm run verify:operations
+
+      - name: Typecheck
+        run: |
+          set -o pipefail
+          mkdir -p test-results
+          npm run typecheck -- --pretty false 2>&1 | tee test-results/typecheck.log
+
+      - name: Lint
+        run: |
+          set -o pipefail
+          mkdir -p test-results
+          npm run lint 2>&1 | tee test-results/lint.log
+
+      - name: Production build
+        run: npm run build
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser presentation acceptance
+        run: npx playwright test --config=playwright.zimbabwe.config.mjs
+
+      - name: Refresh presentation census evidence
+        run: node scripts/semantic-census.mjs test-results/zimbabwe-semantic-census.json
+
+      - name: Upload presentation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: applied-commerce-semantic-v3-${{ github.sha }}
+          path: test-results
+          if-no-files-found: ignore
+          retention-days: 14

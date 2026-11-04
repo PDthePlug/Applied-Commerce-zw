@@ -1,0 +1,1203 @@
+"use client";
+import {teachingHeading} from "@/lib/classroom/teaching-plan";
+
+import { responseView, persistResponseKey } from "@/lib/response-identity";
+import {LessonWrap} from "./lesson-wrap";
+import {lessonWrapFor} from "@/lib/lesson-wrap";
+import {ConfidenceLegend,ConfidenceMarkers,SourceSelectionControl} from "./learner-annotations";
+import {sourceSelection} from "@/lib/source-selections";
+import {abilityAnnotations,confidenceSlot,deepeningHeading,reviewedInteraction} from "@/lib/learner-interactions";
+import {Fragment} from "react";
+import { Plus } from "lucide-react";
+import type { ContentBlock, TextBlockType, UnitContent } from "@/lib/types";
+import type {LearningSection} from "@/lib/semantic-learning";
+import { cleanMarkup, isRemovedLogBlock, sanitizeRemovedLogReferences } from "@/lib/portfolio-model";
+import { DeepeningInsightPanel, LearningNotice, LearningOutcomesIntro, LessonSectionHeading, PortfolioCaptureNotice, ResponseSurface, StoryHeading, ThinkingEquationNotice, QuestionHeading } from "./presentation-system";
+import outcomeIcons from "@/lib/lesson-outcome-icons.json";
+import { authoredScale, authoredTaskContext, choiceMeaning, learningSections, sourceCopy, valueSelection } from "@/lib/semantic-learning";
+import { HorizonChoicesControl, RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
+import { isFinancialHorizonPrompt } from "@/lib/horizon-response";
+import { hasAuthoredCurrencyInputs } from "@/lib/authored-currency-tables";
+
+type PromptContext = "activity" | "reflection" | "checkpoint" | "home" | null;
+type PromptMode = "checkpoint" | "home";
+type StructuredPrompt = { prompt:string; helper?:string; slot?:string };
+type PromptBreakdown = { groupLabel?:string; intro?:string; prompts:StructuredPrompt[]; originalCount?:number; retainedSlots?:string[] };
+type IndexedBlock = { block: ContentBlock; index: number };
+
+type Props = {
+  blocks: ContentBlock[];
+  unitId: string;
+  unitType?: UnitContent["type"];
+  promptResponses: Record<string,string>;
+  onSavePromptResponse: (promptId:string,value:string)=>void;
+  partGuidance?: (block:ContentBlock)=>React.ReactNode;
+  sectionGuidance?: (section:LearningSection,edge:"before"|"after")=>React.ReactNode;
+};
+
+const BLANK_RE= /_{3,}/;
+const STANDALONE_NUMBER_RE=/^\d+[.)]?$/;
+const QUESTION_RE=/^(?:Question|Q)\s*\d+\s*(?::|—|-|\.|\))/i;
+const INTERROGATIVE_RE=/(?:^|[.!?]\s+)(?:what|why|how|which|who|where|when|if|do|did|can|could|would|have|has|are|is)\b/i;
+const IMPERATIVE_RE=/(?:^|[.!?]\s+)(?:write|list|name|describe|explain|identify|record|state|answer|choose)\b/i;
+const TENSION_RE=/tension\s*\/\s*experiment\s+log/i;
+const PART_HEADING_RE=/^Part\s+[A-Z]\s*:/i;
+const INSTRUCTION_ONLY_RE=/^(?:Complete|Fill in|Use)\s+(?:this|the|these)\s+(?:page|table|section|activity|worksheet|space|sentences|questions)(?:\s+below)?\.?$/i;
+const NUMBER_WORDS:Record<string,number>={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10};
+const HOME_HEADING_RE=/^(?:🏠\s*)?Try This at Home(?:\s*(?:—|-)\s*(.+))?$/i;
+const HOME_ALTERNATIVE_RE=/^(?:If you cannot|If you can't|If you are unable|If there is no|If no one|If you do not|If you don't|If you share\b|If you want\b|Otherwise\b)/i;
+const QUESTION_GROUP_RE=/^((?:Question|Q)\s*\d+(?:\s*[—-]\s*[^:]+)?)\s*:\s*(.*)$/i;
+const SCAFFOLD_START_RE=/^(?:Is it because|Or because|Or is it|Could it be|For example|For instance|It might be|Maybe|Say,)\b/i;
+const GUIDANCE_START_RE=/^(?:Be specific|Write both\.?$|Do not |Don't |Listen\b|Just listen\b|Just receive\b|Read\b|Look at\b|Review\b|Think about\b|Consider\b)/i;
+const STRUCTURED_IMPERATIVE_RE=/^(?:(?:Now\s+)?Design|Write|Answer|Explain|Name|List|Give|Describe|Identify|Calculate|Show|Predict|Record|State|Complete|Choose|Trace|Map|Draw)\b/i;
+const ASSESSMENT_NUMBER_RE=/^\d+\.\s+/;
+const ASSESSMENT_SUBPART_RE=/^[a-h]\)\s+/i;
+const ASSESSMENT_DIRECTIVE_RE=/^(?:\d+\.\s+)?(?:what|why|how|which|who|where|when|name|list|give|describe|explain|identify|calculate|show|state|compare|suggest|draw|evaluate|define)\b/i;
+
+type AssessmentChoice={key:string;label:string};
+type AssessmentChoicePrompt={question:string;options:AssessmentChoice[]};
+
+function parseAssessmentChoices(text:string):AssessmentChoicePrompt|null{
+  const value=displayText(text).trim();
+  if(!ASSESSMENT_NUMBER_RE.test(value)) return null;
+  const first=value.search(/\s+a\)\s+/i);
+  if(first<0) return null;
+
+  const question=value.slice(0,first).trim();
+  const optionText=value.slice(first).trim();
+  const matches=[...optionText.matchAll(/(?:^|\s)([a-d])\)\s+/gi)];
+  if(matches.length<2) return null;
+
+  const options=matches.map((match,index)=>{
+    const start=(match.index??0)+match[0].length;
+    const end=index+1<matches.length?(matches[index+1].index??optionText.length):optionText.length;
+    return {key:match[1].toLowerCase(),label:optionText.slice(start,end).trim()};
+  }).filter(option=>option.label);
+
+  return options.length>=2?{question,options}:null;
+}
+
+function assessmentSubparts(text:string):StructuredPrompt[]{
+  const value=displayText(text).trim();
+  const matches=[...value.matchAll(/(?:^|\s)([a-h])\)\s+/gi)];
+  if(!matches.length||!ASSESSMENT_SUBPART_RE.test(value)) return [];
+  return matches.map((match,index)=>{
+    const start=match.index??0;
+    const end=index+1<matches.length?(matches[index+1].index??value.length):value.length;
+    return {prompt:value.slice(start,end).trim()};
+  }).filter(part=>part.prompt);
+}
+
+function isAssessmentAnswerPrompt(text:string){
+  const value=displayText(text).trim();
+  if(ASSESSMENT_SUBPART_RE.test(value)) return true;
+  if(!ASSESSMENT_NUMBER_RE.test(value)) return false;
+  const afterNumber=value.replace(ASSESSMENT_NUMBER_RE,"").trim();
+  return afterNumber.includes("?")||ASSESSMENT_DIRECTIVE_RE.test(afterNumber);
+}
+
+
+function displayText(text:string){
+  return sanitizeRemovedLogReferences(text);
+}
+
+function promptId(unitId:string,blockIndex:number,slot:string|number){
+  return `${unitId}::block-${blockIndex}::${slot}`;
+}
+
+function portfolioMessage(instruction:string){
+  return <PortfolioCaptureNotice instruction={instruction}/>;
+}
+
+
+function homeTaskSubtype(text:string){
+  const match=displayText(text).trim().match(HOME_HEADING_RE);
+  return match ? (match[1]?.trim() || "Try This at Home") : null;
+}
+
+function maskQuotedText(text:string){
+  const quotes:string[]=[];
+  const masked=text.replace(/(["“])[\s\S]*?(["”])/g,match=>{
+    const token=`__AC_QUOTE_${quotes.length}__`;
+    quotes.push(match);
+    return token;
+  });
+  return {masked,quotes};
+}
+
+function restoreQuotedText(text:string,quotes:string[]){
+  return quotes.reduce((value,quote,index)=>value.split(`__AC_QUOTE_${index}__`).join(quote),text);
+}
+
+function splitAuthorSentences(text:string){
+  const {masked,quotes}=maskQuotedText(text);
+  const coarse=masked.match(/.+?(?:[?!](?=\s|$)|\.(?=\s|$)|$)/g)??[masked];
+  const directiveSplit=/\s+(?=(?:Write\b|Answer\b|Then track\b|Now write\b|Then write\b|Show your (?:calculations|working)\b))/;
+  return coarse
+    .flatMap(value=>value.trim().split(directiveSplit))
+    .map(value=>restoreQuotedText(value.trim(),quotes))
+    .filter(Boolean);
+}
+
+function sentenceCase(value:string){
+  return value ? value.charAt(0).toUpperCase()+value.slice(1) : value;
+}
+
+function splitCompoundInterrogative(sentence:string){
+  const {masked,quotes}=maskQuotedText(sentence);
+  const match=masked.match(/\s+(?:—\s*)?and\s+(?=(?:what|why|how|where|who|which|when|would|could|do|does|did|is|are)\b)/i);
+  if(!match||!masked.includes("?")) return [sentence];
+  const start=match.index??0;
+  const left=restoreQuotedText(masked.slice(0,start).replace(/[\s,—]+$/,""),quotes);
+  const right=restoreQuotedText(masked.slice(start+match[0].length).trim(),quotes);
+  return [
+    left.endsWith("?")?left:`${left}?`,
+    sentenceCase(right.endsWith("?")?right:`${right}?`),
+  ];
+}
+
+function splitCompoundImperative(sentence:string){
+  if(/^Write down\s+(?:their|the person's)\s+name\s+and\s+(?:the\s+)?date\s+you\s+told\s+them\.?$/i.test(sentence.trim())){
+    return ["Who did you tell?","What date did you tell them?"];
+  }
+  return [sentence];
+}
+
+function normaliseStructuredPrompt(text:string){
+  return text
+    .replace(/^\(\d+\)\s*/,"")
+    .replace(/^(?:Then\s+track\s+[^:]+:\s*)\(\d+\)\s*/i,"")
+    .replace(/^(?:Now write|Then write)\s*:\s*/i,"")
+    .trim();
+}
+
+function appendPromptHelper(prompt:StructuredPrompt,value:string){
+  prompt.helper=[prompt.helper,value].filter(Boolean).join(" ").trim();
+}
+
+function buildPromptBreakdown(text:string,mode:PromptMode):PromptBreakdown{
+  let raw=displayText(text).trim();
+  let groupLabel:string|undefined;
+  const groupMatch=raw.match(QUESTION_GROUP_RE);
+  if(groupMatch){
+    groupLabel=groupMatch[1].trim();
+    raw=groupMatch[2].trim();
+  }
+
+  const sentences=splitAuthorSentences(raw)
+    .flatMap(splitCompoundImperative)
+    .flatMap(splitCompoundInterrogative);
+  const prompts:StructuredPrompt[]=[];
+  const intro:string[]=[];
+
+  sentences.forEach(sentence=>{
+    const value=normaliseStructuredPrompt(sentence);
+    if(!value) return;
+
+    if(SCAFFOLD_START_RE.test(value)&&prompts.length){
+      appendPromptHelper(prompts[prompts.length-1],value);
+      return;
+    }
+
+    if(GUIDANCE_START_RE.test(value)){
+      if(prompts.length&&/^(?:Be specific|Write both\.?$|Do not |Don't |Listen\b|Just listen\b|Just receive\b)/i.test(value)){
+        appendPromptHelper(prompts[prompts.length-1],value);
+      }else{
+        intro.push(value);
+      }
+      return;
+    }
+
+    const {masked}=maskQuotedText(value);
+    if(masked.includes("?")){
+      prompts.push({prompt:value});
+      return;
+    }
+
+    if(/^For each,\s*(?:state|explain|describe|identify|record)\b/i.test(value)){
+      prompts.push({prompt:value});
+      return;
+    }
+
+    if(STRUCTURED_IMPERATIVE_RE.test(value)){
+      if(mode==="home"&&/^Write (?:a )?reflection on\b/i.test(value)){
+        intro.push(value);
+      }else{
+        prompts.push({prompt:value});
+      }
+      return;
+    }
+
+    if(prompts.length){
+      appendPromptHelper(prompts[prompts.length-1],value);
+    }else{
+      intro.push(value);
+    }
+  });
+
+  // These authored phrases qualify the preceding answer; they are not a new
+  // question. Keep their former slots inspectable without renumbering any slot.
+  const merged:StructuredPrompt[]=[];
+  const retainedSlots:string[]=[];
+  prompts.forEach((part,index)=>{
+    const slot=prompts.length>1?`response-${index}`:"response";
+    if(merged.length&&/^(?:Write honestly|Answer honestly|Write the evidence|Write it down|Name it|Name both|Write both)\.?$/i.test(part.prompt)){
+      appendPromptHelper(merged[merged.length-1],[part.prompt,part.helper].filter(Boolean).join(" "));
+      retainedSlots.push(slot);
+    }else merged.push({...part,slot});
+  });
+  return {groupLabel,intro:intro.join(" ").trim()||undefined,prompts:merged,originalCount:prompts.length,retainedSlots};
+}
+
+function compactStructuredPrompt(prompt:string){
+  const value=prompt.trim();
+  return value.length<92&&/^(?:Who\b|When\b|What date\b|How many\b|Name\b|Which\b|What is ONE\b|What was the clause\b|Are you\b|Did you\b)/i.test(value);
+}
+
+function isEquationMarker(block:ContentBlock){
+  if(block.kind!=="text" || block.type!=="equation") return false;
+  const text=cleanMarkup(displayText(block.text)).replace(/^⬜\s*/,"").trim();
+  return /^Thinking Equation$/i.test(text);
+}
+
+function looksLikeEquationValue(block?:ContentBlock){
+  if(!block || block.kind!=="text" || !(block.type==="paragraph"||(block.type==="portfolio"&&block.text.includes("=")))) return false;
+  const text=displayText(block.text).trim();
+  if(!text || text.length>180 || text.includes("?")) return false;
+  if(PART_HEADING_RE.test(text)) return false;
+  return true;
+}
+
+function TextBlockView({block,unitId}:{block:Extract<ContentBlock,{kind:"text"}>;unitId:string}) {
+  const text=displayText(block.text);
+  if(/^(?:(?:🔍|💡|🛠️?|🔬|⚖️?|🌟)\s*)*By the end of this lesson, you will be able to:$/u.test(text)){
+    return <LearningOutcomesIntro text={text} symbols={(outcomeIcons.symbolsByUnit as Record<string,string>)[unitId]}/>;
+  }
+  if(PART_HEADING_RE.test(text)) return <h3 className="module-part-heading">{text}</h3>;
+  if(/^My Term\s+\d+\s+Portfolio Entry/i.test(text)) return <h3 className="module-section-heading">{text}</h3>;
+  switch(block.type){
+    case "list": return <li>{text}</li>;
+    case "section": return <LessonSectionHeading title={text}/>;
+    case "activity": return <LearningNotice tone="activity" title={text.replace(/^✍️\s*/,"")}/>;
+    case "reflection": return <LearningNotice tone="reflection" title={text.replace(/^💭\s*/,"")}/>;
+    case "checkpoint": return <LearningNotice tone="checkpoint" title={text.replace(/^✅\s*/,"")}/>;
+    case "portfolio": return portfolioMessage(text);
+    case "story": return <StoryHeading title={text}/>;
+    case "learning": return <p className="learning-line">{text}</p>;
+    case "equation": return <p className="equation-reference">{text}</p>;
+    default: return <p>{text}</p>;
+  }
+}
+
+function ResponseStatus({value}:{value:string}){
+  return value.trim()?<span className="response-status saved">Captured</span>:null;
+}
+
+function ResponseArea({
+  id,
+  value,
+  onChange,
+  label,
+  compact=false,
+}:{
+  id:string;
+  value:string;
+  onChange:(value:string)=>void;
+  label:string;
+  compact?:boolean;
+}){
+  if(compact){
+    return <div className="short-response-wrap">
+      <input
+        className="short-response printable-response-input"
+        aria-label={label}
+        autoComplete="off"
+        value={value}
+        onChange={event=>onChange(event.target.value)}
+        placeholder="Type your answer"
+      />
+      <span className="printed-response">{value||"—"}</span>
+      <ResponseStatus value={value}/>
+    </div>;
+  }
+  return <div className="prompt-response-control">
+    <textarea
+      id={id}
+      aria-label={label}
+      autoComplete="off"
+      rows={3}
+      value={value}
+      onChange={event=>onChange(event.target.value)}
+      placeholder="Write your response here…"
+    />
+    <span className="printed-response">{value||"—"}</span>
+    <ResponseStatus value={value}/>
+  </div>;
+}
+
+
+
+function AssessmentMultipleChoice({
+  question,
+  options,
+  id,
+  value,
+  onChange,
+}:{
+  question:string;
+  options:AssessmentChoice[];
+  id:string;
+  value:string;
+  onChange:(value:string)=>void;
+}){
+  return <ResponseSurface
+    tone="assessment"
+    prompt={<p className="question-prompt assessment-question-prompt">{question}</p>}
+  >
+    <div className="assessment-choice-list" role="radiogroup" aria-label={question}>
+      {options.map(option=><label className={value===option.key?"selected":""} key={option.key}>
+        <input
+          type="radio"
+          name={id}
+          value={option.key}
+          checked={value===option.key}
+          onChange={()=>onChange(option.key)}
+        />
+        <span><b>{option.key.toUpperCase()}</b><em>{option.label}</em></span>
+      </label>)}
+    </div>
+    <ResponseStatus value={value}/>
+  </ResponseSurface>;
+}
+
+
+function PreviousCombinedResponse({value}:{value:string}){
+  if(!value.trim()) return null;
+  return <details className="previous-combined-response">
+    <summary>Previous combined response</summary>
+    <p>{value}</p>
+    <small>This answer was kept from before the question was separated into individual response fields.</small>
+  </details>;
+}
+
+function StructuredResponseGroup({
+  breakdown,
+  unitId,
+  blockIndex,
+  promptResponses,
+  onSavePromptResponse,
+  tone="default",
+  startNumber=1,
+}:{
+  breakdown:PromptBreakdown;
+  unitId:string;
+  blockIndex:number;
+  promptResponses:Record<string,string>;
+  onSavePromptResponse:(promptId:string,value:string)=>void;
+  tone?:"default"|"activity"|"reflection"|"checkpoint"|"home"|"assessment";
+  startNumber?:number;
+}){
+  const many=breakdown.prompts.length>1;
+  const legacyId=promptId(unitId,blockIndex,"response");
+  const legacyValue=(breakdown.originalCount??breakdown.prompts.length)>1?(promptResponses[legacyId]??""):"";
+  // Source question numbers group compound prompts; visible checkpoint numbers
+  // instead count each existing response in order. Storage slots stay untouched.
+  const groupLabel=tone==="checkpoint"
+    ?breakdown.groupLabel?.replace(/^(?:Question|Q)\s*\d+\s*(?:[—-]\s*)?/i,"").trim()
+    :breakdown.groupLabel;
+
+  return <section className="structured-response-group">
+    {(groupLabel||breakdown.intro)&&<header className="structured-response-heading">
+      {groupLabel&&<strong>{groupLabel}</strong>}
+      {breakdown.intro&&<p>{breakdown.intro}</p>}
+    </header>}
+
+    <div className="structured-response-parts">
+      {breakdown.prompts.map((part,index)=>{
+        const slot=part.slot??(many?`response-${index}`:"response");
+        const id=promptId(unitId,blockIndex,slot);
+        const value=promptResponses[id]??"";
+        const compact=compactStructuredPrompt(part.prompt);
+        return <ResponseSurface
+          key={id}
+          compact={compact}
+          tone={tone}
+          prompt={<QuestionHeading text={part.prompt} number={tone==="checkpoint"||many&&tone!=="assessment"?startNumber+index:undefined} helper={part.helper} checkpoint={tone==="checkpoint"}/>}
+        >
+          <ResponseArea
+            compact={compact}
+            id={id}
+            value={value}
+            onChange={next=>onSavePromptResponse(id,next)}
+            label={part.prompt}
+          />
+        </ResponseSurface>;
+      })}
+    </div>
+
+    <PreviousCombinedResponse value={legacyValue}/>
+    {breakdown.retainedSlots?.map(slot=><PreviousCombinedResponse key={slot} value={promptResponses[promptId(unitId,blockIndex,slot)]??""}/>)}
+  </section>;
+}
+
+function HomeAlternative({children}:{children:React.ReactNode}){
+  return <details className="home-alternative-path">
+    <summary>If the main task is not possible</summary>
+    <div>{children}</div>
+  </details>;
+}
+
+function parseMultiBlankFields(text:string){
+  const blanks=[...text.matchAll(/_{3,}/g)];
+  if(blanks.length<2) return null;
+  const segments=text.split(/_{3,}/);
+  const labels:string[]=[];
+  let heading="";
+
+  for(let index=0;index<blanks.length;index+=1){
+    const segment=segments[index].trim();
+    const lastColon=segment.lastIndexOf(":");
+    if(lastColon<0) return null;
+    const before=segment.slice(0,lastColon).trim();
+    if(index===0){
+      const previousColon=before.lastIndexOf(":");
+      if(previousColon>=0){
+        heading=before.slice(0,previousColon).trim();
+        labels.push(before.slice(previousColon+1).trim()||`Response ${index+1}`);
+      } else {
+        labels.push(before||`Response ${index+1}`);
+      }
+    } else {
+      const previousColon=before.lastIndexOf(":");
+      labels.push((previousColon>=0?before.slice(previousColon+1):before).trim()||`Response ${index+1}`);
+    }
+  }
+
+  return {heading,labels};
+}
+
+function MultiBlankFields({
+  text,
+  unitId,
+  blockIndex,
+  promptResponses,
+  onSavePromptResponse,
+}:{
+  text:string;
+  unitId:string;
+  blockIndex:number;
+  promptResponses:Record<string,string>;
+  onSavePromptResponse:(promptId:string,value:string)=>void;
+}){
+  const parsed=parseMultiBlankFields(text);
+  if(!parsed) return null;
+  return <div className="multi-field-answerable">
+    {parsed.heading&&<h4>{parsed.heading}</h4>}
+    <div className="multi-field-grid">
+      {parsed.labels.map((label,index)=>{
+        const id=promptId(unitId,blockIndex,`blank-${index}`);
+        const value=promptResponses[id]??"";
+        return <label key={id}><span>{label}</span><input className="printable-response-input" value={value} onChange={event=>onSavePromptResponse(id,event.target.value)} placeholder="Type your answer"/><span className="printed-response">{value||"—"}</span>{value.trim()&&<small>Saved</small>}</label>;
+      })}
+    </div>
+  </div>;
+}
+
+function FillBlankLine({
+  text,
+  unitId,
+  blockIndex,
+  promptResponses,
+  onSavePromptResponse,
+  slotPrefix="blank",
+}:{
+  text:string;
+  unitId:string;
+  blockIndex:number;
+  promptResponses:Record<string,string>;
+  onSavePromptResponse:(promptId:string,value:string)=>void;
+  slotPrefix?:string;
+}){
+  const parts=text.split(/(_{3,})/g);
+  let slot=0;
+  return <div className="fill-response-line">
+    {parts.map((part,index)=>{
+      if(!/^_{3,}$/.test(part)) return part?<span key={index} className="fill-response-copy">{displayText(part)}</span>:null;
+      const currentSlot=slot++;
+      const id=promptId(unitId,blockIndex,`${slotPrefix}-${currentSlot}`);
+      const value=promptResponses[id]??"";
+      return <span className="fill-response-field" key={id}>
+        <input
+          className="printable-response-input"
+          aria-label={`Answer for: ${displayText(text).replace(/_{3,}/g,"blank")}`}
+          autoComplete="off"
+          value={value}
+          onChange={event=>onSavePromptResponse(id,event.target.value)}
+          placeholder="Type your answer"
+        />
+        <span className="printed-response">{value||"—"}</span>
+        {value.trim()&&<small>Saved</small>}
+      </span>;
+    })}
+  </div>;
+}
+
+function ChoiceBlock({
+  text,
+  unitId,
+  blockIndex,
+  promptResponses,
+  onSavePromptResponse,
+  instruction="",
+}:{
+  text:string;
+  unitId:string;
+  blockIndex:number;
+  promptResponses:Record<string,string>;
+  onSavePromptResponse:(promptId:string,value:string)=>void;
+  instruction?:string;
+}){
+  const cleaned=displayText(text);
+  const parts=cleaned.split("☐");
+  const prefix=(parts.shift()??"").trim();
+  const options=parts.map(value=>value.trim()).filter(Boolean).filter(value=>!TENSION_RE.test(value));
+  const choiceId=promptId(unitId,blockIndex,"choice");
+  if(unitId==="g10-t4-l60-060"&&isFinancialHorizonPrompt(cleaned)) return <HorizonChoicesControl
+    id={choiceId} value={promptResponses[choiceId]??""} onChange={value=>onSavePromptResponse(choiceId,value)}/>;
+  const selected=(promptResponses[choiceId]??"").split("\n").map(value=>value.trim()).filter(Boolean);
+  const meaning=choiceMeaning(cleaned,instruction);
+  const singleChoice=meaning?.kind==="single";
+
+  if(meaning?.kind==="ranking") return <ResponseSurface prompt={prefix?<p className="question-prompt">{prefix}</p>:undefined} mode="decide">
+    <RankingControl options={options} label={prefix||instruction} value={promptResponses[choiceId]??""} onChange={value=>onSavePromptResponse(choiceId,value)}/>
+  </ResponseSurface>;
+
+  const toggle=(option:string)=>{
+    if(singleChoice){
+      onSavePromptResponse(choiceId,selected.includes(option)?"":option);
+      return;
+    }
+    const next=selected.includes(option)?selected.filter(value=>value!==option):[...selected,option];
+    onSavePromptResponse(choiceId,next.join("\n"));
+  };
+
+  return <div className="choice-answerable" data-learning-mode="decide">
+    {prefix&&<div className="choice-prefix">
+      {BLANK_RE.test(prefix)
+        ? <FillBlankLine text={prefix} unitId={unitId} blockIndex={blockIndex} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} slotPrefix="choice-prefix"/>
+        : <p>{prefix}</p>}
+    </div>}
+    <div className="choice-options" role={singleChoice?"radiogroup":"group"} aria-label={prefix||"Select options"}>
+      {options.map((rawOption,index)=>{
+        const hasDetail=BLANK_RE.test(rawOption);
+        const option=cleanMarkup(rawOption.replace(/_{3,}/g,"")).trim()||`Option ${index+1}`;
+        const active=selected.includes(option);
+        const detailId=promptId(unitId,blockIndex,`choice-${index}-detail`);
+        return <div className={`choice-option-wrap ${active?"selected":""}`} key={`${option}-${index}`}>
+          <button
+            type="button"
+            className="choice-option"
+            role={singleChoice?"radio":"checkbox"}
+            aria-checked={active}
+            onKeyDown={event=>{
+              if(!singleChoice||!["ArrowDown","ArrowUp","ArrowLeft","ArrowRight"].includes(event.key)) return;
+              event.preventDefault();
+              const offset=event.key==="ArrowDown"||event.key==="ArrowRight"?1:-1;
+              const nextIndex=(index+offset+options.length)%options.length;
+              const nextOption=cleanMarkup(options[nextIndex].replace(/_{3,}/g,"")).trim();
+              onSavePromptResponse(choiceId,nextOption);
+              const controls=event.currentTarget.closest(".choice-options")?.querySelectorAll<HTMLButtonElement>(".choice-option");
+              controls?.[nextIndex]?.focus();
+            }}
+            onClick={()=>toggle(option)}
+          ><span aria-hidden="true">{active?"✓":""}</span><strong>{option}</strong></button>
+          {hasDetail&&active&&<><input
+            className="choice-detail printable-response-input"
+            value={promptResponses[detailId]??""}
+            onChange={event=>onSavePromptResponse(detailId,event.target.value)}
+            placeholder="Add details"
+            aria-label={`Details for ${option}`}
+          /><span className="printed-response">{promptResponses[detailId]||"—"}</span></>}
+        </div>;
+      })}
+    </div>
+    <ResponseStatus value={selected.join(" ")}/>
+  </div>;
+}
+
+function isMajorBoundary(block:ContentBlock){
+  if(block.kind!=="text") return false;
+  if(homeTaskSubtype(block.text)) return true;
+  if(["activity","reflection","checkpoint","portfolio","story","section"].includes(block.type)) return true;
+  return PART_HEADING_RE.test(block.text.trim());
+}
+
+function pruneTensionContent(blocks:ContentBlock[]):IndexedBlock[]{
+  const output:IndexedBlock[]=[];
+  let suppressSection=false;
+
+  blocks.forEach((block,index)=>{
+    if(suppressSection){
+      if(isMajorBoundary(block)&&!isRemovedLogBlock(block)) suppressSection=false;
+      else return;
+    }
+
+    if(block.kind==="text"&&TENSION_RE.test(block.text)&&isMajorBoundary(block)){
+      suppressSection=true;
+      return;
+    }
+
+    if(isRemovedLogBlock(block)) return;
+    output.push({block,index});
+  });
+
+  return output;
+}
+
+const isDeepeningInsight=deepeningHeading;
+
+function isInsightBoundary(block:ContentBlock){
+  return block.kind==="text"&&(Boolean(homeTaskSubtype(block.text))||["activity","reflection","checkpoint","portfolio","story","section"].includes(block.type));
+}
+
+function hasDedicatedInput(block?:ContentBlock){
+  return Boolean(block?.kind==="text"&&(BLANK_RE.test(block.text)||STANDALONE_NUMBER_RE.test(block.text)));
+}
+
+function isGenericActivityLabel(text:string,context:PromptContext,nextBlock?:ContentBlock){
+  if(!context||context==="home") return false;
+  const value=text.trim();
+  if(!value.endsWith(":")||PART_HEADING_RE.test(value)) return false;
+  if(/^(?:Learning Outcomes|Key Vocabulary|You met|You learned|Tell your future self|Complete these sentences|Answer these questions)\s*:/i.test(value)) return false;
+  if(nextBlock?.kind==="table") return false;
+  if(nextBlock?.kind==="text"&&nextBlock.type==="list") return false;
+  return true;
+}
+
+function isAnswerPrompt(text:string,context:PromptContext,type:TextBlockType,nextBlock?:ContentBlock){
+  const value=displayText(text).trim();
+  if(!value||INSTRUCTION_ONLY_RE.test(value)) return false;
+  if(hasDedicatedInput(nextBlock)&&/^(?:Write|Complete|Fill in|Now list|Now write|Choose one thing|Identify one small problem)\b/i.test(value))return false;
+  if(QUESTION_RE.test(value)) return true;
+  if(!context) return false;
+  if(INTERROGATIVE_RE.test(value)&&value.includes("?")) return true;
+  if(isGenericActivityLabel(value,context,nextBlock)) return true;
+  if(type==="activity"||type==="reflection"||type==="checkpoint"||type==="portfolio") return false;
+  if((context==="reflection"||context==="checkpoint")&&value.includes("?")) return true;
+  if(context&&/(?:\.\.\.|…)\s*$/.test(value)) return true;
+  if(context&&context!=="home"&&IMPERATIVE_RE.test(value)&&!hasDedicatedInput(nextBlock)) return true;
+  return false;
+}
+
+function inferMinimumRows(items:IndexedBlock[],position:number){
+  let numberedMax=0;
+  for(let offset=1;offset<=12&&position-offset>=0;offset+=1){
+    const block=items[position-offset].block;
+    if(block.kind!=="text") continue;
+    const match=displayText(block.text).trim().match(/^(\d+)[.)]?$/);
+    if(match) numberedMax=Math.max(numberedMax,Number(match[1]));
+    else if(numberedMax>0) break;
+  }
+  if(numberedMax>=2&&numberedMax<=10) return numberedMax;
+
+  const nearby=items.slice(Math.max(0,position-5),position)
+    .map(item=>item.block.kind==="text"?displayText(item.block.text):"")
+    .join(" ");
+  const explicit=nearby.match(/(?:at least|write|list|include|create)[^.!?]{0,45}?\b(one|two|three|four|five|six|seven|eight|nine|ten|\d+)\b/i);
+  if(explicit){
+    const token=explicit[1].toLowerCase();
+    const value=NUMBER_WORDS[token]??Number(token);
+    if(Number.isFinite(value)&&value>=1&&value<=10) return value;
+  }
+  return 3;
+}
+
+function TableBlockView({
+  block,
+  unitId,
+  blockIndex,
+  promptResponses,
+  onSavePromptResponse,
+  minimumRows=3,
+  regionLabel,
+  activityContext=false,
+}:{
+  block:Extract<ContentBlock,{kind:"table"}>;
+  unitId:string;
+  blockIndex:number;
+  promptResponses:Record<string,string>;
+  onSavePromptResponse:(promptId:string,value:string)=>void;
+  minimumRows?:number;
+  regionLabel?:string;
+  activityContext?:boolean;
+}){
+  const headers=(block.rows[0]??[]).map(value=>sourceCopy(displayText(value)));
+  const headerOnly=block.rows.length===1;
+  const hasWorkbookCells=headerOnly||block.rows.slice(1).some(row=>row.some(cell=>{
+    const value=sourceCopy(cell);
+    return !value||/^_+$/.test(value)||(activityContext&&/^(?:-?R|%)$/.test(value));
+  }));
+  const countId=promptId(unitId,blockIndex,"row-count");
+  const storedCount=Number(promptResponses[countId]??"");
+  const generatedRows=headerOnly?Math.max(minimumRows,Number.isFinite(storedCount)&&storedCount>0?storedCount:0):0;
+  const rows=headerOnly
+    ? [block.rows[0],...Array.from({length:generatedRows},()=>Array.from({length:headers.length},()=>""))]
+    : block.rows;
+  const bodyRows=rows.slice(1);
+  const responsiveRows=
+    headers.length>0
+    && headers.length<=4
+    && headers.every(Boolean)
+    && bodyRows.length>0
+    && bodyRows.every(row=>row.length<=headers.length);
+  const wideTable=headers.length>4;
+
+  return <div
+    data-learning-mode={hasWorkbookCells?"do":"understand"}
+    className={`source-table-wrap ${hasWorkbookCells?"workbook-table":""} ${responsiveRows?"responsive-row-table":""} ${wideTable?"wide-source-table":""}`}
+    tabIndex={wideTable?0:undefined}
+    role={wideTable?"region":undefined}
+    aria-label={wideTable?(regionLabel??"Scrollable curriculum table"):undefined}
+  >
+    <table>
+      <thead>
+        <tr>{headers.map((header,colIndex)=><th scope="col" key={colIndex}>{header}</th>)}</tr>
+      </thead>
+      <tbody>
+        {bodyRows.map((row,rowOffset)=>{
+          const rowIndex=rowOffset+1;
+          return <tr key={rowIndex}>
+            {row.map((cell,colIndex)=>{
+              const cleaned=sourceCopy(displayText(cell));
+              const unitPlaceholder=activityContext&&/^(?:-?R|%)$/.test(cleaned);
+              const unitName=cleaned==="%"?"percent":cleaned==="-R"?"rand, deduction":"rand";
+              const editable=hasWorkbookCells&&(!cleaned||/^_+$/.test(cleaned)||unitPlaceholder);
+              const containsBlank=BLANK_RE.test(cleaned);
+              const dataLabel=headers[colIndex]||undefined;
+
+              if(editable){
+                const id=promptId(unitId,blockIndex,`table-${rowIndex}-${colIndex}`);
+                const value=promptResponses[id]??"";
+                const rowLabel=cleanMarkup(row.find((value,index)=>index!==colIndex&&cleanMarkup(value))??"");
+                const label=[rowLabel,headers[colIndex],headerOnly?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ")||"Table response";
+                const meaningful=(value:string)=>{const text=cleanMarkup(value);return text&&!/^(?:-?R|%)$/.test(text)?text:"";};
+                const amountRow=meaningful(row[colIndex-1]??"")||meaningful(row[0]??"");
+                const pairedHeader=headers.filter(header=>header===headers[colIndex]).length>1?headers[colIndex-1]:"";
+                const amountLabel=[amountRow,pairedHeader,headers[colIndex],!amountRow?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ");
+                const scale=authoredScale(headers[colIndex]);
+                if(scale) return <td className="editable-cell rating-cell" data-label={dataLabel} key={colIndex}>
+                  <RatingControl scale={scale} label={label} value={value} onChange={next=>onSavePromptResponse(id,next)}/>
+                </td>;
+                const control=<>
+                  {unitPlaceholder&&<span aria-hidden="true">{cleaned}</span>}
+                  <textarea
+                    aria-label={unitPlaceholder?`${amountLabel} (${unitName})`:label}
+                    rows={2}
+                    value={value}
+                    onChange={event=>onSavePromptResponse(id,event.target.value)}
+                    placeholder="Type your answer"
+                  />
+                  <span className="printed-response">{value||"—"}</span>
+                  {value.trim()&&<small>Saved</small>}
+                </>;
+                return <td className="editable-cell" data-label={dataLabel} key={colIndex}>
+                  {unitPlaceholder?<div className="authored-amount-cell">{control}</div>:control}
+                </td>;
+              }
+
+              if(containsBlank){
+                return <td className="inline-blank-cell" data-label={dataLabel} key={colIndex}>
+                  <FillBlankLine
+                    text={cleaned}
+                    unitId={unitId}
+                    blockIndex={blockIndex}
+                    promptResponses={promptResponses}
+                    onSavePromptResponse={onSavePromptResponse}
+                    slotPrefix={`table-${rowIndex}-${colIndex}`}
+                  />
+                </td>;
+              }
+
+              return <td data-label={dataLabel} key={colIndex}>{cleaned}</td>;
+            })}
+          </tr>;
+        })}
+      </tbody>
+    </table>
+    {headerOnly&&<button className="add-table-row" type="button" onClick={()=>onSavePromptResponse(countId,String(generatedRows+1))}><Plus/>Add another row</button>}
+  </div>;
+}
+
+export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:storedResponses,onSavePromptResponse:saveResponse,sectionGuidance,partGuidance}:Props) {
+  const promptResponses=responseView(unitId,blocks,storedResponses);
+  const onSavePromptResponse=(key:string,value:string)=>saveResponse(persistResponseKey(unitId,blocks,key),value);
+  const indexed=pruneTensionContent(blocks);
+  const annotations=abilityAnnotations(unitId,blocks);
+  const wrap=unitType==="lesson"?lessonWrapFor(unitId,blocks):null;
+  const closingStartId=wrap?.closingStartId??wrap?.authoredHeadingId;
+  const authoredWrapIndex=closingStartId?blocks.findIndex(block=>block.id===closingStartId):-1;
+
+  const renderIndexedBlocks=(items:IndexedBlock[],allowInsightGrouping=true,initialContext:PromptContext=null)=>{
+    const views:React.ReactNode[]=[];
+    let list:Array<{text:string;index:number}>=[];
+    let context:PromptContext=initialContext;
+    let checkpointQuestionNumber=1;
+
+    const flush=()=>{
+      if(list.length){
+        views.push(<ul key={`list-${list[0].index}`}>{list.map(item=><li key={item.index}>{displayText(item.text)}</li>)}</ul>);
+        list=[];
+      }
+    };
+
+    for(let position=0;position<items.length;position+=1){
+      const {block,index}=items[position];
+
+      const decision=reviewedInteraction(unitId,block);
+      if(block.kind==="text"&&block.type==="list"&&!block.text.includes("☐")&&!BLANK_RE.test(block.text)&&decision?.kind!=="reflection"){
+        list.push({text:block.text,index});
+        continue;
+      }
+      flush();
+
+      // Only reviewed standalone Part/Step headings are eligible; grouped lists,
+      // tables and Deepening Insight contents are never split by annotations.
+      if(teachingHeading(block)){
+        const guidance=partGuidance?.(block);
+        if(guidance)views.push(<Fragment key={`part-guidance-${index}`}>{guidance}</Fragment>);
+      }
+
+      if(block.id===wrap?.authoredHeadingId) continue;
+      if(annotations?.instructionId===block.id) continue;
+      if(annotations?.ids[0]===block.id)views.push(<ConfidenceLegend key="ability-legend"/>);
+      if(decision?.kind==="instruction"&&block.kind==="text"){
+        const group=context==="checkpoint"?displayText(block.text).match(QUESTION_GROUP_RE):null;
+        // The original group number is source metadata; visible numbering counts
+        // its following answer fields, just as it does for structured groups.
+        const instructionBlock=group?{...block,text:group[2]}:block;
+        views.push(<Fragment key={`instruction-${index}`}><TextBlockView block={instructionBlock} unitId={unitId}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"blank-0")]??""}/></Fragment>);
+        continue;
+      }
+      if(decision?.kind==="projections"&&block.kind==="text"){
+        const prompts=block.text.split(":").map(text=>text.trim()).filter(Boolean).map(prompt=>({prompt}));
+        views.push(<StructuredResponseGroup key={`projections-${index}`} breakdown={{prompts}} unitId={unitId} blockIndex={index} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} tone={context??"activity"}/>);
+        continue;
+      }
+      if(decision?.kind==="circle-map"&&block.kind==="text"){
+        views.push(<section className="circle-map-control" key={`circle-map-${index}`} aria-label="My circle map">
+          <p>{displayText(block.text)}</p>
+          {(["Inner","Middle","Outer"] as const).map(circle=><fieldset key={circle}><legend>{circle} circle</legend>{[["people","Who is in it?"],["beliefs","What do they teach me about money (directly or indirectly)?"]].map(([slot,label])=>{
+            const id=promptId(unitId,index,`circle-${circle.toLowerCase()}-${slot}`);
+            return <label key={id}><span>{label}</span><ResponseArea id={id} label={`${circle} circle: ${label}`} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/></label>;
+          })}</fieldset>)}
+          <PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/>
+        </section>);
+        continue;
+      }
+      if(decision?.kind==="skills"&&block.kind==="text"){
+        const [label,...rest]=block.text.split(":");
+        const options=rest.join(":").split(",").map(text=>text.trim()).filter(Boolean);
+        const id=promptId(unitId,index,"response");
+        views.push(<ResponseSurface key={`skills-${index}`} mode="decide" prompt={<QuestionHeading text={label}/>}><ValuesControl itemName="skill" options={options} count={5} allowCustom label={label} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/></ResponseSurface>);
+        continue;
+      }
+      const selectionTask=sourceSelection(unitId,blocks,index,promptResponses);
+      if(selectionTask&&block.kind==="text"){
+        const id=promptId(unitId,index,selectionTask.slot);
+        const label=displayText(block.text).replace(/_{3,}/g,"").trim();
+        views.push(<ResponseSurface key={`selection-${index}`} mode="decide" prompt={<QuestionHeading text={label}/>}>
+          <SourceSelectionControl label="Your selection" options={selectionTask.options} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/>
+          {selectionTask.reasoning&&<ResponseArea id={promptId(unitId,index,"response")} label={label} value={promptResponses[promptId(unitId,index,"response")]??""} onChange={value=>onSavePromptResponse(promptId(unitId,index,"response"),value)}/>}
+          {!selectionTask.reasoning&&<PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/>}
+        </ResponseSurface>);
+        continue;
+      }
+      if(decision?.kind==="reflection"&&block.kind==="text"){
+        const breakdown=buildPromptBreakdown(block.text,"checkpoint");
+        // Existing combined evidence stays available beside the independently
+        // addressable parts. No field is added to completion requirements.
+        const prompts=breakdown.prompts;
+        if(prompts.length){
+          views.push(<StructuredResponseGroup key={`insight-reflection-${index}`} breakdown={{...breakdown,prompts}} unitId={unitId} blockIndex={index} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} tone="reflection"/>);
+        }else views.push(<TextBlockView key={`insight-reading-${index}`} block={block} unitId={unitId}/>);
+        continue;
+      }
+      if(allowInsightGrouping&&isDeepeningInsight(block)){
+        context=null;
+        let end=position+1;
+        while(end<items.length&&!isInsightBoundary(items[end].block)) end+=1;
+        const insightBlocks=items.slice(position+1,end);
+        views.push(<DeepeningInsightPanel sourceTitle={block.kind==="text"?block.text:undefined} key={`insight-${index}`}>{renderIndexedBlocks(insightBlocks,false)}</DeepeningInsightPanel>);
+        position=end-1;
+        continue;
+      }
+
+      if(block.kind==="text"&&block.type==="equation"){
+        if(isEquationMarker(block)){
+          const next=items[position+1]?.block;
+          if(looksLikeEquationValue(next) && next?.kind==="text"){
+            views.push(<ThinkingEquationNotice equation={displayText(next.text)} key={`equation-${index}`}/>);
+            position+=1;
+          }else{
+            views.push(<ThinkingEquationNotice equation="Pause here and hold this idea." key={`equation-${index}`}/>);
+          }
+        }else{
+          views.push(<p className="equation-reference" key={`equation-reference-${index}`}>{displayText(block.text)}</p>);
+        }
+        continue;
+      }
+
+      if(block.kind==="table"){
+        views.push(<TableBlockView
+          block={block}
+          unitId={unitId}
+          blockIndex={index}
+          // Delivery annotations add distinct table landmarks. Default learner
+          // markup and every original block/response identity remain unchanged.
+          regionLabel={sectionGuidance||partGuidance?`Scrollable curriculum table ${blocks.slice(0,index+1).filter(item=>item.kind==="table").length}`:undefined}
+          promptResponses={promptResponses}
+          onSavePromptResponse={onSavePromptResponse}
+          minimumRows={inferMinimumRows(items,position)}
+          activityContext={context==="activity"&&hasAuthoredCurrencyInputs(unitId,block.id)}
+          key={`table-${index}`}
+        />);
+        continue;
+      }
+
+      if(block.kind==="text"){
+        const homeSubtype=homeTaskSubtype(block.text);
+        if(homeSubtype){
+          context="home";
+          views.push(<LearningNotice tone="home" title={homeSubtype} key={`home-${index}`}/>);
+          continue;
+        }
+      }
+
+      if(block.type==="activity"||block.type==="reflection"||authoredTaskContext(block)==="checkpoint"){
+        context=authoredTaskContext(block);
+        if(context==="checkpoint") checkpointQuestionNumber=1;
+        views.push(context==="checkpoint"&&block.type==="section"
+          ?<LearningNotice tone="checkpoint" title={displayText(block.text)} key={`text-${index}`}/>
+          :<TextBlockView block={block} unitId={unitId} key={`text-${index}`}/>);
+        continue;
+      }
+
+      if(block.type==="portfolio"){
+        if(block.text.includes("=")&&!/^Portfolio:/i.test(block.text.trim())){
+          views.push(<p className="equation-reference" key={`formula-${index}`}>{displayText(block.text)}</p>);
+          continue;
+        }
+        views.push(<TextBlockView block={block} unitId={unitId} key={`text-${index}`}/>);
+        continue;
+      }
+
+      if(block.type==="story") context=null;
+      // Activity parts keep their task context; unrelated sections end it.
+      if(block.type==="section"&&!PART_HEADING_RE.test(block.text)&&!/^OR$/i.test(block.text.trim())) context=null;
+
+      if(unitType==="assessment"&&block.kind==="text"){
+        const choice=parseAssessmentChoices(block.text);
+        if(choice){
+          const id=promptId(unitId,index,"choice");
+          views.push(<AssessmentMultipleChoice
+            key={"assessment-choice-"+index}
+            question={choice.question}
+            options={choice.options}
+            id={id}
+            value={promptResponses[id]??""}
+            onChange={value=>onSavePromptResponse(id,value)}
+          />);
+          continue;
+        }
+
+        const subparts=assessmentSubparts(block.text);
+        if(subparts.length>1){
+          views.push(<StructuredResponseGroup
+            key={"assessment-parts-"+index}
+            breakdown={{prompts:subparts}}
+            unitId={unitId}
+            blockIndex={index}
+            promptResponses={promptResponses}
+            onSavePromptResponse={onSavePromptResponse}
+            tone="assessment"
+          />);
+          continue;
+        }
+
+        if(isAssessmentAnswerPrompt(block.text)){
+          const id=promptId(unitId,index,"response");
+          const compact=/\(\s*[12]\s+marks?\s*\)\s*$/i.test(displayText(block.text).trim())&&displayText(block.text).length<110;
+          views.push(<ResponseSurface
+            key={"assessment-response-"+index}
+            compact={compact}
+            tone="assessment"
+            prompt={<p className="question-prompt assessment-question-prompt">{displayText(block.text)}</p>}
+          >
+            <ResponseArea
+              compact={compact}
+              id={id}
+              value={promptResponses[id]??""}
+              onChange={value=>onSavePromptResponse(id,value)}
+              label={displayText(block.text)}
+            />
+          </ResponseSurface>);
+          continue;
+        }
+      }
+
+      if(block.text.includes("☐")){
+        views.push(<ChoiceBlock
+          text={block.text}
+          unitId={unitId}
+          blockIndex={index}
+          promptResponses={promptResponses}
+          onSavePromptResponse={onSavePromptResponse}
+          instruction={items[position-1]?.block.kind==="text"?(items[position-1].block as Extract<ContentBlock,{kind:"text"}>).text:""}
+          key={`choice-${index}`}
+        />);
+        continue;
+      }
+
+      if(BLANK_RE.test(block.text)){
+        // A labelled checkpoint answer uses its original blank slot, with the
+        // numbered question above it. Multi-blank calculations keep their units
+        // and authored field geometry in the specialised paths below.
+        if(context==="checkpoint"&&!QUESTION_RE.test(displayText(block.text))&&(block.text.match(/_{3,}/g)??[]).length===1&&/_{3,}[.\s]*$/.test(block.text)){
+          const id=promptId(unitId,index,"blank-0");
+          views.push(<ResponseSurface key={`checkpoint-blank-${index}`} tone="checkpoint" prompt={<QuestionHeading text={displayText(block.text).replace(/_{3,}/g,"").trim()} number={checkpointQuestionNumber++} checkpoint/>}>
+            <ResponseArea id={id} label={`Answer for: ${displayText(block.text).replace(/_{3,}/g,"blank")}`} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/>
+          </ResponseSurface>);
+          continue;
+        }
+        const selection=valueSelection(blocks,index);
+        if(selection){
+          const id=promptId(unitId,index,"blank-0");
+          const options=selection.fromIndex===undefined?selection.options:(promptResponses[promptId(unitId,selection.fromIndex,"blank-0")]??"").split("\n").filter(Boolean);
+          views.push(<ResponseSurface key={`values-${index}`} mode="decide" prompt={<p className="question-prompt">{sourceCopy(displayText(block.text)).replace(/_{3,}/g,"").trim()}</p>}>
+            <ValuesControl options={options} count={selection.count} allowCustom={selection.allowCustom} label={displayText(block.text)}
+              value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)}/>
+          </ResponseSurface>);
+          continue;
+        }
+        const multi=parseMultiBlankFields(block.text);
+        if(multi){
+          views.push(<MultiBlankFields text={block.text} unitId={unitId} blockIndex={index} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse} key={`multi-${index}`}/>);
+        } else {
+          views.push(<div className={`answerable-block fill-answerable-block${annotations?.ids.includes(block.id??"")?" annotated-statement":""}`} key={`fill-${index}`}>
+            <FillBlankLine text={block.text} unitId={unitId} blockIndex={index} promptResponses={promptResponses} onSavePromptResponse={onSavePromptResponse}/>
+            {annotations?.ids.includes(block.id??"")&&<ConfidenceMarkers label={block.text.replace(/_{3,}/g,"").trim()} value={promptResponses[promptId(unitId,index,confidenceSlot)]??""} onChange={value=>onSavePromptResponse(promptId(unitId,index,confidenceSlot),value)}/>}
+          </div>);
+        }
+        continue;
+      }
+
+      if(STANDALONE_NUMBER_RE.test(block.text)){
+        const id=promptId(unitId,index,"numbered");
+        views.push(<div className="numbered-response" key={`numbered-${index}`}>
+          <strong>{displayText(block.text)}</strong>
+          <ResponseArea compact id={id} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)} label={`Response ${displayText(block.text)}`}/>
+        </div>);
+        continue;
+      }
+
+      const nextBlock=items[position+1]?.block;
+
+      // A ranking instruction belongs to the following native control. Preserve
+      // any older written answer, but do not ask the learner to rank twice.
+      if(/^Rank\b/i.test(displayText(block.text))&&nextBlock?.kind==="text"&&nextBlock.text.includes("☐")){
+        views.push(<div className="ranking-instruction" key={`ranking-instruction-${index}`}>
+          <p>{displayText(block.text)}</p>
+          <PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/>
+        </div>);
+        continue;
+      }
+
+      if(context==="checkpoint"&&block.kind==="text"){
+        const breakdown=buildPromptBreakdown(block.text,"checkpoint");
+        if(breakdown.prompts.length>1||QUESTION_RE.test(displayText(block.text).trim())){
+          if(breakdown.prompts.length){
+            views.push(<StructuredResponseGroup
+              breakdown={breakdown}
+              unitId={unitId}
+              blockIndex={index}
+              promptResponses={promptResponses}
+              onSavePromptResponse={onSavePromptResponse}
+              tone="checkpoint"
+              startNumber={checkpointQuestionNumber}
+              key={`structured-checkpoint-${index}`}
+            />);
+            checkpointQuestionNumber+=breakdown.prompts.length;
+            continue;
+          }
+        }
+      }
+
+      if(context==="home"&&block.kind==="text"){
+        const alternative=HOME_ALTERNATIVE_RE.test(displayText(block.text).trim());
+        const legacyValue=promptResponses[promptId(unitId,index,"response")]??"";
+
+        if(hasDedicatedInput(nextBlock)){
+          const instruction=<div className="home-task-instruction">
+            <p>{displayText(block.text)}</p>
+            <PreviousCombinedResponse value={legacyValue}/>
+          </div>;
+          views.push(alternative
+            ? <HomeAlternative key={`home-alt-${index}`}>{instruction}</HomeAlternative>
+            : <div key={`home-instruction-${index}`}>{instruction}</div>);
+          continue;
+        }
+
+        const breakdown=buildPromptBreakdown(block.text,"home");
+        if(breakdown.prompts.length){
+          const responses=<StructuredResponseGroup
+            breakdown={breakdown}
+            unitId={unitId}
+            blockIndex={index}
+            promptResponses={promptResponses}
+            onSavePromptResponse={onSavePromptResponse}
+            tone="home"
+          />;
+          views.push(alternative
+            ? <HomeAlternative key={`home-alt-${index}`}>{responses}</HomeAlternative>
+            : <div key={`home-response-${index}`}>{responses}</div>);
+          continue;
+        }
+
+        if(alternative){
+          views.push(<HomeAlternative key={`home-alt-${index}`}><p>{displayText(block.text)}</p></HomeAlternative>);
+          continue;
+        }
+      }
+
+      if(isAnswerPrompt(block.text,context,block.type,nextBlock)){
+        const id=promptId(unitId,index,"response");
+        const compact=/^(?:Date|Name|Education|Skills)\b/i.test(displayText(block.text).trim());
+        const checkpointNumber=context==="checkpoint"?checkpointQuestionNumber++:undefined;
+        views.push(<ResponseSurface key={`prompt-${index}`} compact={compact} tone={context??"default"} prompt={<QuestionHeading text={displayText(block.text)} number={checkpointNumber} checkpoint={context==="checkpoint"}/>}>
+          <ResponseArea compact={compact} id={id} value={promptResponses[id]??""} onChange={value=>onSavePromptResponse(id,value)} label={displayText(block.text)}/>
+        </ResponseSurface>);
+        continue;
+      }
+
+      views.push(<Fragment key={`text-${index}`}><TextBlockView block={block} unitId={unitId}/><PreviousCombinedResponse value={promptResponses[promptId(unitId,index,"response")]??""}/></Fragment>);
+    }
+
+    flush();
+    return views;
+  };
+
+  const sections=learningSections(blocks,unitType);
+  const renderSection=(section:LearningSection)=>{
+      const items=indexed.filter(item=>item.index>=section.start&&item.index<section.end);
+      if(!items.length) return null;
+      return <section className={`learning-section learning-mode-${section.mode}`} data-learning-mode={section.mode} id={section.anchor} key={section.anchor}>
+        {sectionGuidance?.(section,"before")}
+        {renderIndexedBlocks(items,true,section.context)}
+        {sectionGuidance?.(section,"after")}
+      </section>;
+  };
+  return <div className="semantic-learning-document" data-semantic-renderer="applied-commerce-v4">
+    {sections.filter(section=>authoredWrapIndex<0||section.start<authoredWrapIndex).map(renderSection)}
+    {wrap&&<LessonWrap content={wrap}>{authoredWrapIndex>=0?sections.filter(section=>section.start>=authoredWrapIndex).map(renderSection):undefined}</LessonWrap>}
+  </div>;
+}
