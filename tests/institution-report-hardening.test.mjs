@@ -1,7 +1,19 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import ts from 'typescript';
 const cache=new Map();
 const client='data:text/javascript;base64,'+Buffer.from('export const createClient=()=>globalThis.__institutionClient;').toString('base64');
-function moduleUrl(file){file=path.resolve(file);if(cache.has(file))return cache.get(file);let code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;code=code.replace(/from "([^"]+)"/g,(full,ref)=>{if(ref==='@/lib/supabase/client')return 'from "'+client+'"';if(ref.startsWith('@/'))return 'from "'+moduleUrl(ref.slice(2)+'.ts')+'"';if(ref.startsWith('.'))return 'from "'+moduleUrl(path.resolve(path.dirname(file),ref)+'.ts')+'"';return full;});const result='data:text/javascript;base64,'+Buffer.from(code).toString('base64');cache.set(file,result);return result;}
+function moduleUrl(file){
+ file=path.resolve(file);if(cache.has(file))return cache.get(file);
+ if(file.endsWith('.json'))return 'data:text/javascript;base64,'+Buffer.from('export default '+fs.readFileSync(file,'utf8')+';').toString('base64');
+ let code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
+ code=code.replace(/from ["']([^"']+)["']/g,(full,ref)=>{
+  if(ref==='@/lib/supabase/client')return 'from "'+client+'"';
+  const suffix=ref.endsWith('.json')?'':'.ts';
+  if(ref.startsWith('@/'))return 'from "'+moduleUrl(ref.slice(2)+suffix)+'"';
+  if(ref.startsWith('.'))return 'from "'+moduleUrl(path.resolve(path.dirname(file),ref)+suffix)+'"';
+  return full;
+ });
+ const result='data:text/javascript;base64,'+Buffer.from(code).toString('base64');cache.set(file,result);return result;
+}
 const {loadCohortLearningInsights,loadCohortPeople,loadInstitutionalContext}=await import(moduleUrl('lib/institutional/provisioning.ts'));
 const unit='g8-t1-l01-001';const keys=[unit+'::prompt-answer::response',unit+'::prompt-second::response'];
 const content={id:unit,grade:8,term:1,title:'Fixture lesson',type:'lesson',label:'Lesson 1',blocks:[{id:'answer',kind:'text',type:'activity',text:'Explain one example.'},{id:'second',kind:'text',type:'activity',text:'Explain another example.'}]};

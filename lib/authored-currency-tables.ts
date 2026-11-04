@@ -1,3 +1,5 @@
+import {canonicalBlockId} from './source-bindings';
+import localPresentation from '../content/zimbabwe/presentation.json';
 // These original answer tables use bare currency/percentage markers.
 // Scope the repair to reviewed learner tasks; worked examples stay unchanged.
 const authoredCurrencyTables:Readonly<Record<string,readonly string[]>>={
@@ -34,5 +36,7 @@ const authoredCurrencyTables:Readonly<Record<string,readonly string[]>>={
 };
 
 export function hasAuthoredCurrencyInputs(unitId:string,blockId?:string){
- return blockId?(authoredCurrencyTables[unitId]?.includes(blockId)??false):false;
+ if(!blockId)return false;
+ const local=(localPresentation.currencyInputs as Record<string,string[]>)[unitId]?.includes(blockId)??false;
+ return local||(authoredCurrencyTables[unitId]?.includes(canonicalBlockId(unitId,blockId)!)??false);
 }

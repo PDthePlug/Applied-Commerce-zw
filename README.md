@@ -8,6 +8,7 @@ The current South African Applied Commerce application, with Zimbabwe's existing
 - The `baseline/south-africa` branch preserves its exact tree: `9318dbe6b29412ddaa94f34dc119a0b8511d5c06`.
 - Zimbabwe content: `PDthePlug/Applied-Commerce-Za`, commit `bb1e0664c92ebf2d0363f58d91a935b75367c311`.
 - The shared CSS, typography, layout, icons, menus, native response controls, account/session handling, persistence, portfolio, reporting infrastructure and PWA installation controls are retained from ZA. Edition labels and curriculum routing are adapted.
+- A subsequent [behavioural parity audit](docs/zimbabwe-parity/AUDIT.md) found that the original copy had not rebound ZA's source-dependent interaction rules. The corrected presentation compiler binds the current Zimbabwe source to those behaviours without changing learner answer identities. Backend and teacher activation remain incomplete as described below.
 
 ## Zimbabwe delivery
 

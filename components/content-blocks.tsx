@@ -18,6 +18,7 @@ import { authoredScale, authoredTaskContext, choiceMeaning, learningSections, so
 import { HorizonChoicesControl, RankingControl, RatingControl, ValuesControl } from "./semantic-controls";
 import { isFinancialHorizonPrompt } from "@/lib/horizon-response";
 import { hasAuthoredCurrencyInputs } from "@/lib/authored-currency-tables";
+import {lessonHeadingText} from '@/lib/lesson-icons';
 
 type PromptContext = "activity" | "reflection" | "checkpoint" | "home" | null;
 type PromptMode = "checkpoint" | "home";
@@ -735,7 +736,7 @@ function TableBlockView({
   const headerOnly=block.rows.length===1;
   const hasWorkbookCells=headerOnly||block.rows.slice(1).some(row=>row.some(cell=>{
     const value=sourceCopy(cell);
-    return !value||/^_+$/.test(value)||(activityContext&&/^(?:-?R|%)$/.test(value));
+    return !value||/^_+$/.test(value)||(activityContext&&/^(?:-?R|%|Currency \+ amount)$/.test(value));
   }));
   const countId=promptId(unitId,blockIndex,"row-count");
   const storedCount=Number(promptResponses[countId]??"");
@@ -769,8 +770,8 @@ function TableBlockView({
           return <tr key={rowIndex}>
             {row.map((cell,colIndex)=>{
               const cleaned=sourceCopy(displayText(cell));
-              const unitPlaceholder=activityContext&&/^(?:-?R|%)$/.test(cleaned);
-              const unitName=cleaned==="%"?"percent":cleaned==="-R"?"rand, deduction":"rand";
+              const unitPlaceholder=activityContext&&/^(?:-?R|%|Currency \+ amount)$/.test(cleaned);
+              const unitName=cleaned==="%"?"percent":cleaned==='Currency + amount'?'currency and amount':cleaned==="-R"?"rand, deduction":"rand";
               const editable=hasWorkbookCells&&(!cleaned||/^_+$/.test(cleaned)||unitPlaceholder);
               const containsBlank=BLANK_RE.test(cleaned);
               const dataLabel=headers[colIndex]||undefined;
@@ -780,7 +781,7 @@ function TableBlockView({
                 const value=promptResponses[id]??"";
                 const rowLabel=cleanMarkup(row.find((value,index)=>index!==colIndex&&cleanMarkup(value))??"");
                 const label=[rowLabel,headers[colIndex],headerOnly?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ")||"Table response";
-                const meaningful=(value:string)=>{const text=cleanMarkup(value);return text&&!/^(?:-?R|%)$/.test(text)?text:"";};
+                const meaningful=(value:string)=>{const text=cleanMarkup(value);return text&&!/^(?:-?R|%|Currency \+ amount)$/.test(text)?text:"";};
                 const amountRow=meaningful(row[colIndex-1]??"")||meaningful(row[0]??"");
                 const pairedHeader=headers.filter(header=>header===headers[colIndex]).length>1?headers[colIndex-1]:"";
                 const amountLabel=[amountRow,pairedHeader,headers[colIndex],!amountRow?`Entry ${rowIndex}`:""].filter(Boolean).join(" — ");
@@ -927,7 +928,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
         let end=position+1;
         while(end<items.length&&!isInsightBoundary(items[end].block)) end+=1;
         const insightBlocks=items.slice(position+1,end);
-        views.push(<DeepeningInsightPanel sourceTitle={block.kind==="text"?block.text:undefined} key={`insight-${index}`}>{renderIndexedBlocks(insightBlocks,false)}</DeepeningInsightPanel>);
+        views.push(<DeepeningInsightPanel sourceTitle={block.kind==="text"?lessonHeadingText(block.text):undefined} key={`insight-${index}`}>{renderIndexedBlocks(insightBlocks,false)}</DeepeningInsightPanel>);
         position=end-1;
         continue;
       }

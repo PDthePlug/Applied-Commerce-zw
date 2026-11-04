@@ -1,3 +1,4 @@
+import {canonicalBlockId} from './source-bindings';
 // The approved Lesson 60 repair keeps its original single response identity.
 // Older flat choices cannot be assigned to a horizon, so retain them verbatim.
 export const horizonResponseKey="g10-t4-l60-060::prompt-dfe0b8dcfd78fcd81bea25f0-1::choice";
@@ -38,7 +39,9 @@ export function changeHorizonResponse(value:string,horizon:Horizon,option:Stage|
 }
 
 export function displayHorizonResponse(responseKey:string,value:string){
-  if(responseKey!==horizonResponseKey) return value;
+  const match=responseKey.match(/^(.+)::prompt-(.+)::choice$/);
+  const sourceKey=match?`${match[1]}::prompt-${canonicalBlockId(match[1],match[2])}::choice`:responseKey;
+  if(sourceKey!==horizonResponseKey) return value;
   const {answers,legacy}=readHorizonResponse(value);
   const lines=financialHorizons.flatMap(label=>answers[label]?[`${label}: ${answers[label]}`]:[]);
   if(!lines.length) return legacy;

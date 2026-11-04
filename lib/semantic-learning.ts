@@ -8,7 +8,11 @@ export type ValueSelection = { count:number; options:string[]; fromIndex?:number
 
 // Presentation inference never rewrites source blocks or their response identities.
 export function sourceCopy(text:string){
-  return text.replace(/\*\*/g, "").replace(/^[📂✍️💭✅📘⬜]\s*/u, "").trim();
+  return text.replace(/\*\*/g, "").replace(/^(?:(?:📂|✍️?|💭|✅|📘|⬜|🏠)\s*)+/u, "").trim();
+}
+
+export function deepeningHeading(block:ContentBlock){
+ return block.kind==='text'&&['section','reflection'].includes(block.type)&&/^(?:Deepening Insight|The Deeper Look(?:\s*→\s*Truth\s*\/\s*Danger\s*\/\s*Your Move)?|Truth\s*\/\s*Danger\s*\/\s*Your Move)$/i.test(sourceCopy(block.text));
 }
 
 export function authoredScale(header:string):AuthoredScale|null{
@@ -35,6 +39,7 @@ export function choiceMeaning(text:string, instruction=""):ChoiceMeaning|null{
 
 export function authoredTaskContext(block:ContentBlock):LearningSection["context"]{
   if(block.kind!=="text")return null;
+  if(deepeningHeading(block))return null;
   if(/^Try This at Home\b/i.test(sourceCopy(block.text)))return "home";
   if(block.type==="checkpoint"||block.type==="section"&&/^Final Checkpoint\b/i.test(sourceCopy(block.text)))return "checkpoint";
   return block.type==="activity"||block.type==="reflection"?block.type:null;
@@ -42,6 +47,7 @@ export function authoredTaskContext(block:ContentBlock):LearningSection["context
 
 function boundaryMode(block:ContentBlock, unitType:UnitContent["type"]):LearningMode|null{
   if(block.kind!=="text") return null;
+  if(deepeningHeading(block))return 'understand';
   const text=sourceCopy(block.text);
   if(/^Try This at Home\b/i.test(text)) return "do";
   if(block.type==="activity") return "do";
