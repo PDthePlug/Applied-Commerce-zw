@@ -49,7 +49,7 @@ test('a bridge lesson keeps answers, notes, completion and home resume on the co
  await page.goto('/');await expect(page.locator('.home-continue-card')).toContainText('Form 4 · Term 1');
  await page.getByRole('link',{name:'Continue learning',exact:true}).click();await expect(page).toHaveURL(href(unit));
  await page.goto('/progress');await expect(page.locator('.progress-overview')).toContainText('1 of 382 lessons complete');
- await page.goto('/portfolio');await expect(page.getByText('Zimbabwe bridge lesson: evidence saved.',{exact:true})).toBeVisible();
+ await page.goto('/portfolio');await page.getByText('Notes you chose to keep',{exact:true}).click();await expect(page.getByText('Zimbabwe bridge lesson: evidence saved.',{exact:true})).toBeVisible();
 });
 
 test('invalid source years and fourth terms do not appear as Zimbabwe delivery routes',async({request})=>{
