@@ -4,7 +4,7 @@ import {createHash} from "node:crypto";
 import teachingEnvelope from "@/content/instructional/teaching-plans.v2.enc.json";
 import teachingManifest from "@/content/instructional/teaching-manifest.v2.json";
 import {validateTeachingPlan,type TeachingPlan} from "./teaching-plan";
-import catalogData from "@/content/instructional/catalog.v1.json";
+import catalogData from "@/public/zimbabwe-curriculum/classroom-catalog.json";
 import envelope from "@/content/instructional/benchmark-guides.v1.enc.json";
 import manifest from "@/content/instructional/benchmark-manifest.v1.json";
 import contextualEnvelope from "@/content/instructional/g8-t1-l08-008.contextual.v1.enc.json";
@@ -43,6 +43,8 @@ export async function loadContextualEnrichment(guide:TeacherGuide):Promise<Conte
 }
 
 export async function loadTeachingPlan(lessonId:string):Promise<TeachingPlan|null>{
+ // Zimbabwe guidance needs a release bound to the localised source.
+ if(!classroomCatalog.some(item=>item.id===lessonId&&item.benchmark))return null;
  const binding=teachingManifest.plans.find(item=>item.lessonId===lessonId);
  if(!binding)return null;
  const payload=JSON.parse(openContent(teachingEnvelope,await contentKey(),"applied-commerce-classroom-v1").toString("utf8")) as {version:string;plans:TeachingPlan[]};

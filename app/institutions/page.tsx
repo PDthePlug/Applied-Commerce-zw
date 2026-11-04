@@ -34,7 +34,7 @@ export default function InstitutionsPage() {
       <aside className="institutional-proof-card">
         <span>One learning architecture</span>
         <strong>Curriculum → action → evidence → portfolio → reporting</strong>
-        <p>Built first through the Applied Commerce Grades 8–12 learner experience, then designed to support other programmes too.</p>
+        <p>Built first through the Applied Commerce Forms 1–4 learner experience, then designed to support other programmes too.</p>
         <div>
           <small><BookOpenCheck/> Guided learning</small>
           <small><FileCheck2/> Evidence capture</small>
@@ -57,9 +57,9 @@ export default function InstitutionsPage() {
         <div className="institutional-offer-icon"><BookOpenCheck/></div>
         <p className="eyebrow">Offer 01</p>
         <h2>Deploy Applied Commerce®</h2>
-        <p>Bring our Grades 8–12 economic agency and adult-readiness learning journey to your learners.</p>
+        <p>Bring our Forms 1–4 economic agency and adult-readiness learning journey to your learners.</p>
         <ul>
-          <li>Five-grade curriculum journey</li>
+          <li>Four-Form curriculum journey</li>
           <li>Digital activities, projects and reflection</li>
           <li>Automatic learner portfolio evidence</li>
           <li>Institutional progress and evidence reporting</li>

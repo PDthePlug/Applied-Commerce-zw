@@ -1,4 +1,5 @@
 "use client";
+import {yearLabel, curriculumKeys} from "@/lib/edition";
 
 import { useCallback, useEffect, useState } from "react";
 import { Building2, GraduationCap, Plus, RefreshCw, ShieldCheck, Users } from "lucide-react";
@@ -217,11 +218,11 @@ export function InstitutionAdmin() {
         <section className={styles.panel}>
           <div className={styles.panelHead}><div><p className={styles.eyebrow}>Cohorts</p><h2>Create a delivery group</h2><p>These are the cohorts the facilitator workspace will read.</p></div><GraduationCap/></div>
           <form className={styles.form} onSubmit={e=>{e.preventDefault();void createCohort();}}>
-            <label>Cohort name<input value={cohortName} onChange={e=>setCohortName(e.target.value)} placeholder="Grade 10 · 2027 · Class A" required/></label>
-            <div className={styles.two}><label>Grade<select value={grade} onChange={e=>setGrade(e.target.value)}>{[8,9,10,11,12].map(g=><option key={g}>{g}</option>)}</select></label><label>Academic year<input type="number" value={academicYear} onChange={e=>setAcademicYear(e.target.value)} min="2020" max="2100" required/></label></div>
+            <label>Cohort name<input value={cohortName} onChange={e=>setCohortName(e.target.value)} placeholder="Form 3 · 2027 · Class A" required/></label>
+            <div className={styles.two}><label>Form<select value={grade} onChange={e=>setGrade(e.target.value)}>{curriculumKeys.map(g=><option key={g} value={g}>{yearLabel(g)}</option>)}</select></label><label>Academic year<input type="number" value={academicYear} onChange={e=>setAcademicYear(e.target.value)} min="2020" max="2100" required/></label></div>
             <button disabled={busy}><Plus/> Create cohort</button>
           </form>
-          <div className={styles.list}>{cohorts.map(c=><button key={c.id} className={selectedCohort===c.id?styles.listActive:styles.listButton} onClick={()=>setSelectedCohort(c.id)}><strong>{c.name}</strong><span>Grade {c.grade} · {c.academic_year} · {c.status}</span></button>)}</div>
+          <div className={styles.list}>{cohorts.map(c=><button key={c.id} className={selectedCohort===c.id?styles.listActive:styles.listButton} onClick={()=>setSelectedCohort(c.id)}><strong>{c.name}</strong><span>{yearLabel(c.grade)} · {c.academic_year} · {c.status}</span></button>)}</div>
         </section>
       </div>
 

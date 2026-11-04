@@ -1,4 +1,5 @@
 "use client";
+import {yearLabel, curriculumKeys} from "@/lib/edition";
 
 import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Building2, CheckCircle2, GraduationCap, Plus, ShieldCheck, UserPlus, UsersRound } from "lucide-react";
@@ -276,7 +277,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
               <header><div><p className="eyebrow">Cohorts</p><h2>Programme delivery groups</h2></div><span>{schoolCohorts.length}</span></header>
               <div className="institution-admin-list">
                 {schoolCohorts.map((cohort) => <button key={cohort.id} className={cohort.id === cohortId ? "active" : ""} onClick={() => setCohortId(cohort.id)}>
-                  <span><strong>{cohort.name}</strong><small>Grade {cohort.grade} · {cohort.academic_year} · {cohort.status}</small></span>
+                  <span><strong>{cohort.name}</strong><small>{yearLabel(cohort.grade)} · {cohort.academic_year} · {cohort.status}</small></span>
                   <ArrowRight />
                 </button>)}
                 {!schoolCohorts.length ? <p className="institution-admin-empty">No cohorts yet. Create the first delivery group below.</p> : null}
@@ -290,9 +291,9 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
                 }, "Cohort created.");
               }}>
                 <p className="eyebrow">Create cohort</p>
-                <label><span>Name</span><input required value={cohortName} onChange={(event) => setCohortName(event.target.value)} placeholder="Grade 10 · 2026" /></label>
+                <label><span>Name</span><input required value={cohortName} onChange={(event) => setCohortName(event.target.value)} placeholder="Form 3 · 2026" /></label>
                 <div className="institution-admin-form-grid">
-                  <label><span>Grade</span><select value={cohortGrade} onChange={(event) => setCohortGrade(Number(event.target.value))}>{[8,9,10,11,12].map((grade) => <option value={grade} key={grade}>Grade {grade}</option>)}</select></label>
+                  <label><span>Form</span><select value={cohortGrade} onChange={(event) => setCohortGrade(Number(event.target.value))}>{curriculumKeys.map((grade) => <option value={grade} key={grade}>{yearLabel(grade)}</option>)}</select></label>
                   <label><span>Academic year</span><input type="number" min="2020" max="2100" value={cohortYear} onChange={(event) => setCohortYear(Number(event.target.value))} /></label>
                 </div>
                 <button className="institutional-primary" disabled={busy || !cohortName.trim()}><Plus /> Create cohort</button>
@@ -300,7 +301,7 @@ export function InstitutionalAdmin({ initialSection = "overview" }: { initialSec
             </section>
 
             <section className="institution-admin-card" data-workspace-section="overview learners facilitators">
-              <header><div><p className="eyebrow">Selected cohort</p><h2>{selectedCohort?.name ?? "Choose a cohort"}</h2></div>{selectedCohort ? <span>Grade {selectedCohort.grade}</span> : null}</header>
+              <header><div><p className="eyebrow">Selected cohort</p><h2>{selectedCohort?.name ?? "Choose a cohort"}</h2></div>{selectedCohort ? <span>{yearLabel(selectedCohort.grade)}</span> : null}</header>
               {selectedCohort ? <>
                 {peopleLoading ? <p className="institution-admin-empty" role="status">Loading the selected cohort’s learners and staff…</p> : peopleUnavailable ? <p className="institution-admin-empty" role="alert">The selected cohort’s learners and staff could not be loaded. <button type="button" className="institutional-text-link" onClick={() => setCohortRevision(value => value + 1)}>Try again</button></p> : <>
                 <div className="institution-admin-people">

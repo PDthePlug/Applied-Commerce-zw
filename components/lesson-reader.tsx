@@ -1,4 +1,5 @@
 "use client";
+import {yearLabel} from "@/lib/edition";
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useModalFocus } from "@/lib/use-modal-focus";
 import Link from "next/link";
@@ -64,7 +65,7 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
  if(!unit||!termData) return <div className="reader-shell" data-presentation-contract="applied-commerce-v2">
   <div key="stage" className="reader-stage" id="lesson-content" tabIndex={-1}>
    {loadError
-    ? <div className="reader-loading"><h1>Lesson unavailable</h1><p role="alert">{loadError} Your saved work is preserved.</p><button type="button" onClick={()=>retryLoad(value=>value+1)}>Try again</button><button type="button" onClick={()=>router.push("/learn/"+grade)}>Return to grade map</button></div>
+    ? <div className="reader-loading"><h1>Lesson unavailable</h1><p role="alert">{loadError} Your saved work is preserved.</p><button type="button" onClick={()=>retryLoad(value=>value+1)}>Try again</button><button type="button" onClick={()=>router.push("/learn/"+grade)}>Return to Form map</button></div>
     : <div className="reader-loading" role="status">Opening lesson…</div>}
   </div>
  </div>;
@@ -80,13 +81,13 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
       />;
  return <div className={`reader-shell${teaching&&printing?" contextual-printing":""}`} data-presentation-contract="applied-commerce-v2">
   <header className="reader-topbar">
-   <Link href={`/learn/${grade}`} className="reader-brand"><span>AC</span><div><strong>Grade {grade}</strong><small>Term {term}</small></div></Link>
+   <Link href={`/learn/${grade}`} className="reader-brand"><span>AC</span><div><strong>{yearLabel(grade)}</strong><small>Term {term}</small></div></Link>
    <div className="reader-progress" role="group" aria-label={`Lesson ${pos+1} of ${sequence.length}`}><span>{unit.label}</span><div className="progress-track" role="progressbar" aria-label="Position in this term" aria-valuetext={`${pos+1} of ${sequence.length} units`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct}><i style={{width:`${pct}%`}}/></div><strong>{pos+1}/{sequence.length}</strong></div>
    <button ref={menuTrigger} className="reader-menu-button" onClick={()=>compact?setMenu(true):railRef.current?.querySelector<HTMLElement>('[aria-current="page"]')?.focus()} aria-label="Open term map" aria-haspopup={compact?"dialog":undefined} aria-expanded={compact?menu:undefined} aria-controls="term-map"><Menu/></button>
   </header>
   <aside ref={railRef} id="term-map" className={`reader-rail ${menu&&compact?"open":""}`} role={menu&&compact?"dialog":undefined} aria-modal={menu&&compact?true:undefined} aria-label="Term map" tabIndex={-1} inert={compact&&!menu} aria-hidden={compact&&!menu?true:undefined}>
-   <div className="rail-head"><div><p>Grade {grade}</p><strong>Term {term}</strong></div><button onClick={closeMenu} aria-label="Close term map"><X/></button></div>
-   <Link className="rail-back" href={`/learn/${grade}`}><ArrowLeft/> Grade map</Link>
+   <div className="rail-head"><div><p>{yearLabel(grade)}</p><strong>Term {term}</strong></div><button onClick={closeMenu} aria-label="Close term map"><X/></button></div>
+   <Link className="rail-back" href={`/learn/${grade}`}><ArrowLeft/> Form map</Link>
    <nav aria-label="Term lessons">{sequence.map((u,i)=><Link aria-current={u.id===unitId?"page":undefined} onClick={()=>setMenu(false)} className={`${u.id===unitId?"current":""} ${completedIds.has(u.id)?"complete":""}`} href={unitHref(u)} key={u.id}><span>{completedIds.has(u.id)?<Check/>:i+1}</span><div><small>{u.label}</small><strong>{u.title}</strong></div></Link>)}</nav>
   </aside>
   {menu&&compact&&<button className="reader-scrim" data-modal-backdrop tabIndex={-1} onClick={closeMenu} aria-label="Close term map overlay"/>}
@@ -94,7 +95,7 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
     {saveError&&<p role="alert" className="save-error">{saveError}</p>}
     {syncError&&<p role="alert" className="save-error">{syncError}</p>}
     <article className="lesson-document">
-      <header className="lesson-heading"><p className="eyebrow">Grade {grade} · Term {term} · {unit.label}</p><h1>{unit.title}</h1>
+      <header className="lesson-heading"><p className="eyebrow">{yearLabel(grade)} · Term {term} · {unit.label}</p><h1>{unit.title}</h1>
         <LessonIconKey/>
         <nav className="lesson-outline" aria-label="In this lesson"><p className="eyebrow">In this lesson</p>
           {classroomContext&&<Link className="teacher-context-link" href={`/facilitator/classroom?${new URLSearchParams({lesson:unitId})}`}>Back to teacher guidance</Link>}
@@ -107,7 +108,7 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
       {presentationOnly&&<p className="learner-presentation-notice">Learner presentation · Use your own copy of the lesson for answers.</p>}
       {presentationOnly?<fieldset className="learner-projection" disabled aria-label="Learner presentation material">{lessonContent}</fieldset>:lessonContent}
     </article>
-    {teaching&&printing&&plan&&<TeachingPrintGuide plan={plan} guide={teacher.guide} title={`Grade ${grade} · Term ${term} · ${unit.label} · ${unit.title}`}/>}
+    {teaching&&printing&&plan&&<TeachingPrintGuide plan={plan} guide={teacher.guide} title={`${yearLabel(grade)} · Term ${term} · ${unit.label} · ${unit.title}`}/>}
     {!presentationOnly&&!teaching&&<>
     <section className="workbook-panel">
       <div className="workbook-title"><NotebookPen/><div><p className="eyebrow">Lesson notes</p><h2>Anything you want to remember</h2></div></div>
@@ -122,7 +123,7 @@ export function LessonReader({grade,term,unitId,classroomContext=false,presentat
     </>}
     <footer className="reader-footer">
       {prev?<Link href={unitHref(prev)}><ArrowLeft/><span><small>Previous</small><strong>{prev.title}</strong></span></Link>:<span/>}
-      {next?<Link className="next" href={unitHref(next)}><span><small>Next</small><strong>{next.title}</strong></span><ArrowRight/></Link>:<Link className="next" href={`/learn/${grade}`}><span><small>Term complete</small><strong>Return to Grade {grade}</strong></span><ArrowRight/></Link>}
+      {next?<Link className="next" href={unitHref(next)}><span><small>Next</small><strong>{next.title}</strong></span><ArrowRight/></Link>:<Link className="next" href={`/learn/${grade}`}><span><small>Term complete</small><strong>Return to {yearLabel(grade)}</strong></span><ArrowRight/></Link>}
     </footer>
   </div>
  </div>

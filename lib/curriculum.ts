@@ -36,7 +36,7 @@ async function decodeCompressedJson<T>(encoded:string):Promise<T>{
 
 async function loadCompressedParts(paths:string[],label:string){
   const responses=await Promise.all(paths.map(path=>
-    fetch(path.startsWith("/")?path:`/curriculum/${path}`,{cache:"no-store"})
+    fetch(path.startsWith("/")?path:`/zimbabwe-curriculum/${path}`,{cache:"no-store"})
   ));
   if(responses.some(response=>!response.ok)) throw new Error(`Could not load ${label}.`);
   return (await Promise.all(responses.map(response=>response.text()))).join("");
@@ -126,7 +126,7 @@ function applyPatch(bundle:GradeBundle,patch:GradePatch){
 let indexPromise: Promise<CurriculumIndex> | null = null;
 function loadIndex(){
   if(!indexPromise){
-    const pending=getJson<CurriculumIndex>("/curriculum/index.json");
+    const pending=getJson<CurriculumIndex>("/zimbabwe-curriculum/index.json");
     indexPromise=pending;
     void pending.catch(()=>{if(indexPromise===pending)indexPromise=null;});
   }
@@ -189,4 +189,4 @@ export const curriculum={
   }
 };
 
-export const gradeThemes:Record<number,string>={8:"Mindset & Financial Philosophy",9:"Work, Value & Enterprise",10:"Building Lasting Value",11:"The Leverage Year",12:"The Launch Year"};
+export const gradeThemes:Record<number,string>={8:"Identity, Money & Habits",9:"Work, Value & Enterprise",10:"Assets, Systems, Leverage & Leadership",12:"Wealth, Adult Systems & Life Launch"};

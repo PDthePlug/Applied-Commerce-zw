@@ -1,4 +1,5 @@
 "use client";
+import {yearLabel} from "@/lib/edition";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -71,7 +72,7 @@ export function ProfileDashboard() {
 
   const rows = [
     { href: "/settings", title: "Settings", detail: "Profile, appearance, reading and account security", Icon: Settings2 },
-    { href: "/learn", title: "Learning", detail: `Continue your Grade ${grade} learning journey`, Icon: BookOpen },
+    { href: "/learn", title: "Learning", detail: `Continue your ${yearLabel(grade)} learning journey`, Icon: BookOpen },
     { href: "/portfolio", title: "Portfolio", detail: "Review saved learning evidence", Icon: Archive },
   ];
 
@@ -81,7 +82,7 @@ export function ProfileDashboard() {
       <div className="profile-hub-title">
         <p className="eyebrow">My Applied Commerce</p>
         <h1>{displayName}</h1>
-        <p>{user?.email ?? `Grade ${grade} learner`}</p>
+        <p>{user?.email ?? `${yearLabel(grade)} learner`}</p>
       </div>
     </section>
 

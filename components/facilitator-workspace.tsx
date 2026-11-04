@@ -1,4 +1,5 @@
 "use client";
+import {yearLabel} from "@/lib/edition";
 import {displayLearnerResponse} from "@/lib/response-annotations";
 import { displayHorizonResponse } from "@/lib/horizon-response";
 import Link from "next/link";
@@ -195,7 +196,7 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
     <aside className="fac-sidebar">
       <div className="fac-context">
         <span className="fac-context-mark">AC</span>
-        <div><small>Facilitator workspace</small><strong>{grade?"Grade "+grade:"No grade selected"}</strong></div>
+        <div><small>Facilitator workspace</small><strong>{grade?yearLabel(grade):"No Form selected"}</strong></div>
       </div>
       <nav aria-label="Facilitator dashboard">
         <Link className="fac-classroom-link" href="/facilitator/classroom">Classroom teaching</Link>
@@ -216,7 +217,7 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
       <button className="fac-menu-scrim" type="button" aria-label="Close facilitator menu" onClick={()=>setFacMenuOpen(false)}/>
       <section className="fac-menu-sheet" role="dialog" aria-modal="true" aria-label="Facilitator menu">
         <header>
-          <div><span className="fac-context-mark">AC</span><div><strong>Facilitator workspace</strong><small>{grade?"Grade "+grade:"No grade selected"}</small></div></div>
+          <div><span className="fac-context-mark">AC</span><div><strong>Facilitator workspace</strong><small>{grade?yearLabel(grade):"No Form selected"}</small></div></div>
           <button type="button" onClick={()=>setFacMenuOpen(false)} aria-label="Close facilitator menu"><X/></button>
         </header>
         <nav>
@@ -255,7 +256,7 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
         <div><p className="eyebrow">Evidence & Assessment Engine</p><h1>{copy[section].title}</h1><p>{copy[section].description}</p></div>
         <div className="fac-header-context">
           <small>Current workspace</small>
-          <strong>{remoteWorkspace?.schoolName ?? (grade?"Grade "+grade+" · "+titleCase(stageForGrade(grade)):"No cohort selected")}</strong>
+          <strong>{remoteWorkspace?.schoolName ?? (grade?yearLabel(grade)+" · "+titleCase(stageForGrade(grade)):"No cohort selected")}</strong>
           <span>{remoteWorkspace?.cohortName ?? "No cohort selected"} </span>
           <span>{cohort.learnerCount} learners · {cohort.evidenceCount} evidence records</span>
         </div>
@@ -275,7 +276,7 @@ export function FacilitatorWorkspace({initialSection="overview",initialLearnerId
 }
 
 function NoGradeState(){
-  return <section className="fac-empty large"><UserRound/><h2>No learner grade selected</h2><p>Set the learner grade in Profile first. Evidence is interpreted against the learner developmental stage, so the dashboard should not guess the grade.</p></section>;
+  return <section className="fac-empty large"><UserRound/><h2>No learner Form selected</h2><p>Set the learner Form in Profile first. Evidence is interpreted against the learner developmental stage, so the dashboard should not guess the Form.</p></section>;
 }
 
 type OverviewProps={
@@ -378,7 +379,7 @@ function LearnersView({learner,learners,selectedLearnerId,onSelectLearner,learne
         <div className="fac-roster-table">
           <div className="fac-roster-head"><span>Learner</span><span>Lessons</span><span>Evidence</span><span>Review</span><span>Status</span></div>
           {learners.filter(item=>item.name.toLowerCase().includes(learnerSearch.trim().toLowerCase())).map(item=><button key={item.id} type="button" className={"fac-roster-row "+(item.id===selectedLearnerId?"active":"")} onClick={()=>onSelectLearner(item.id)}>
-            <span className="fac-person"><i>{item.name.slice(0,1).toUpperCase()}</i><b>{item.name}</b><small>Grade {item.grade??"—"}</small></span>
+            <span className="fac-person"><i>{item.name.slice(0,1).toUpperCase()}</i><b>{item.name}</b><small>{yearLabel(item.grade??"—")}</small></span>
             <span>{item.completedLessons}/{item.lessonTotal||"—"}</span><span>{item.evidenceCount}</span><span>{item.reviewRate}%</span>
             <span><em className={"learner-status "+item.status}>{statusLabel(item.status)}</em></span>
           </button>)}
@@ -388,7 +389,7 @@ function LearnersView({learner,learners,selectedLearnerId,onSelectLearner,learne
 
       <article className="fac-card fac-learner-detail">
         <header>
-          <div className="fac-person-large"><i>{learner.name.slice(0,1).toUpperCase()}</i><div><p className="eyebrow">Learner record</p><h2>{learner.name}</h2><span>Grade {learner.grade??"—"} · {statusLabel(learner.status)}</span></div></div>
+          <div className="fac-person-large"><i>{learner.name.slice(0,1).toUpperCase()}</i><div><p className="eyebrow">Learner record</p><h2>{learner.name}</h2><span>{yearLabel(learner.grade??"—")} · {statusLabel(learner.status)}</span></div></div>
           <div className="fac-detail-actions"><button type="button" onClick={onReview}>Review evidence</button><button type="button" onClick={onReport}>Open report</button></div>
         </header>
         <div className="fac-detail-metrics">
@@ -430,7 +431,7 @@ function ReviewView({loading,records,selected,selectedKey,setSelectedKey,reviews
       <div className="fac-review-filters">
         <label><Search/><input value={search} onChange={event=>setSearch(event.target.value)} placeholder="Search evidence"/></label>
         <div>
-          <select value={termFilter} onChange={event=>setTermFilter(Number(event.target.value))} aria-label="Filter by term"><option value={0}>All terms</option>{[1,2,3,4].map(term=><option value={term} key={term}>Term {term}</option>)}</select>
+          <select value={termFilter} onChange={event=>setTermFilter(Number(event.target.value))} aria-label="Filter by term"><option value={0}>All terms</option>{[1,2,3].map(term=><option value={term} key={term}>Term {term}</option>)}</select>
           <select value={statusFilter} onChange={event=>setStatusFilter(event.target.value as ReviewFilter)} aria-label="Filter by review state">
             <option value="all">All evidence</option><option value="unreviewed">Unreviewed</option><option value="verification">Needs verification</option><option value="revision">Needs revision</option><option value="reviewed">Reviewed</option>
           </select>
@@ -484,7 +485,7 @@ function EvidenceReviewPanel({record,existing,onSave,onAdvance}:{record:Evidence
   return <article className="fac-evidence-card" aria-busy={saving}>
     {saveFailure&&<p role="alert">{saveFailure}</p>}
     <header>
-      <div><p className="eyebrow">Grade {record.definition.grade} · Term {record.definition.term}{record.definition.lessonNumber?" · Lesson "+record.definition.lessonNumber:""}</p><h2>{record.definition.unitTitle}</h2>
+      <div><p className="eyebrow">{yearLabel(record.definition.grade)} · Term {record.definition.term}{record.definition.lessonNumber?" · Lesson "+record.definition.lessonNumber:""}</p><h2>{record.definition.unitTitle}</h2>
         <div className="fac-evidence-flags"><span>{titleCase(record.definition.kind)}</span><span>{titleCase(record.definition.assessmentMode)}</span>{record.definition.portfolioEligible?<span className="portfolio">Portfolio candidate</span>:null}</div>
       </div>
       <em className={"fac-review-status "+status}>{titleCase(status)}</em>
@@ -540,7 +541,7 @@ function CoverageView({learner,domains,terms,kinds,gradeLessonTotal,completionRa
   const missingDomains=allDomains.filter(domain=>!domains.some(row=>row.key===domain));
   return <div className="fac-section-stack">
     <section className="fac-metrics">
-      <Metric icon={BookOpenCheck} value={learner.completedLessons} label="Lessons completed" hint={completionRate+"% of "+(gradeLessonTotal||"—")+" grade lessons"}/>
+      <Metric icon={BookOpenCheck} value={learner.completedLessons} label="Lessons completed" hint={completionRate+"% of "+(gradeLessonTotal||"—")+" Form lessons"}/>
       <Metric icon={FileCheck2} value={learner.evidenceCount} label="Evidence records" hint={learner.portfolioCount+" portfolio candidates"}/>
       <Metric icon={ClipboardCheck} value={learner.reviewedCount} label="Reviewed evidence" hint={learner.reviewRate+"% review coverage"}/>
       <Metric icon={Layers3} value={domains.length} label="Domains evidenced" hint={missingDomains.length+" domains not yet represented"}/>
@@ -566,7 +567,7 @@ function ReportsView({report,learner,gradeLessonTotal,completionRate}:ReportsVie
   return <div className="fac-section-stack">
     <section className="fac-report-actions"><div><p className="eyebrow">Current report</p><h2>{report.learnerName}</h2><p>Built from actual saved responses and facilitator review decisions.</p></div><button type="button" onClick={()=>window.print()}>Print learner report</button></section>
     <section className="fac-report-sheet">
-      <header><div><span>Applied Commerce</span><h2>Learning, action & evidence report</h2><p>{report.grade?"Grade "+report.grade:""}{report.stage?" · "+titleCase(report.stage):""}</p></div><div><small>Learner</small><strong>{report.learnerName}</strong></div></header>
+      <header><div><span>Applied Commerce</span><h2>Learning, action & evidence report</h2><p>{report.grade?yearLabel(report.grade):""}{report.stage?" · "+titleCase(report.stage):""}</p></div><div><small>Learner</small><strong>{report.learnerName}</strong></div></header>
       <div className="fac-report-summary">
         <article><strong>{completionRate}%</strong><span>lesson completion</span><small>{learner.completedLessons}/{gradeLessonTotal||"—"} lessons</small></article>
         <article><strong>{report.totals.responses}</strong><span>evidence records</span><small>{report.totals.portfolioEligible} portfolio candidates</small></article>

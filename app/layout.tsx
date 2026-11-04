@@ -13,9 +13,9 @@ import { LearningStoreProvider } from "@/lib/learning-store";
 import { PersonalisationProvider } from "@/components/personalisation-provider";
 
 export const metadata: Metadata = {
-  title: { default: "Applied Commerce", template: "%s · Applied Commerce" },
-  description: "Applied Commerce learning platform for Grades 8–12.",
-  appleWebApp: { capable: true, title: "Applied Commerce", statusBarStyle: "default" },
+  title: { default: "Applied Commerce Zimbabwe", template: "%s · Applied Commerce" },
+  description: "Applied Commerce Zimbabwe learning platform for Forms 1–4.",
+  appleWebApp: { capable: true, title: "AC Zimbabwe", statusBarStyle: "default" },
   icons: { icon: "/icon.svg", apple: "/pwa/apple-touch-icon.png" },
 };
 

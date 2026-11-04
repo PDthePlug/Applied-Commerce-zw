@@ -1,4 +1,5 @@
 "use client";
+import {yearLabel} from "@/lib/edition";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, FileText, LockOpen } from "lucide-react";
@@ -19,11 +20,11 @@ export function GradeMap({grade}:{grade:number}){
  },[grade,attempt]);
  const completed=useMemo(()=>data?data.terms.flatMap(t=>t.units).filter(u=>completedIds.has(u.id)).length:0,[data,completedIds]);
  const pct=data?.unitCount?Math.round(completed/data.unitCount*100):0;
- if(!data) return <div className="page loading-page"><Link className="back-link" href="/learn"><ArrowLeft/> All grades</Link>{current?.error?<p role="alert">Your saved work is preserved, but Grade {grade} could not be loaded. <button type="button" className="text-link" onClick={()=>setAttempt(value=>value+1)}>Try again</button></p>:<p role="status">Opening Grade {grade}…</p>}</div>;
+ if(!data) return <div className="page loading-page"><Link className="back-link" href="/learn"><ArrowLeft/> All Forms</Link>{current?.error?<p role="alert">Your saved work is preserved, but {yearLabel(grade)} could not be loaded. <button type="button" className="text-link" onClick={()=>setAttempt(value=>value+1)}>Try again</button></p>:<p role="status">Opening {yearLabel(grade)}…</p>}</div>;
  return <div className="page grade-map-page">
-  <Link className="back-link" href="/learn"><ArrowLeft/> All grades</Link>
+  <Link className="back-link" href="/learn"><ArrowLeft/> All Forms</Link>
   <section className="grade-hero">
-   <div><p className="eyebrow">Grade {grade} · {gradeThemes[grade]}</p><h1>{data.title.replace(/^APPLIED COMMERCE\s*[—-]\s*/i,"")}</h1><p>Four-term Applied Commerce learning journey</p></div>
+   <div><p className="eyebrow">{yearLabel(grade)} · {gradeThemes[grade]}</p><h1>{data.title.replace(/^APPLIED COMMERCE\s*[—-]\s*/i,"")}</h1><p>Three-term Applied Commerce learning journey</p></div>
    <div className="grade-progress"><strong>{pct}%</strong><span>{completed} of {data.unitCount} lessons complete</span><div className="progress-track"><i style={{width:`${pct}%`}}/></div></div>
   </section>
   <div className="term-grid">

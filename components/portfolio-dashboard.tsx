@@ -1,4 +1,5 @@
 "use client";
+import {yearLabel} from "@/lib/edition";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Archive, NotebookPen, ChevronDown } from "lucide-react";
@@ -160,7 +161,7 @@ export function PortfolioDashboard(){
        {artifacts.map(entry=><article className="portfolio-artifact" key={entry.definition.id}>
         <header>
          <div>
-          <p>Grade {entry.meta.grade} · Term {entry.meta.term} · {entry.meta.label}</p>
+          <p>{yearLabel(entry.meta.grade)} · Term {entry.meta.term} · {entry.meta.label}</p>
           <h3>{entry.definition.title}</h3>
           <span>{entry.definition.instruction}</span>
          </div>
@@ -192,7 +193,7 @@ export function PortfolioDashboard(){
     <summary><div className="portfolio-section-heading"><NotebookPen/><div><p className="eyebrow">Personal notes</p><h2>Notes you chose to keep</h2><span>{notes.length} saved {notes.length===1?"note":"notes"}</span></div></div><ChevronDown aria-hidden="true"/></summary>
     <div className="portfolio-list">
      {notes.map(entry=><article key={entry.id}>
-      <header><div><p>Grade {entry.meta.grade} · Term {entry.meta.term} · {entry.meta.label}</p><h3>{entry.meta.title}</h3></div><Link href={`/learn/${entry.meta.grade}/term/${entry.meta.term}/${entry.id}`}>Open <ArrowRight/></Link></header>
+      <header><div><p>{yearLabel(entry.meta.grade)} · Term {entry.meta.term} · {entry.meta.label}</p><h3>{entry.meta.title}</h3></div><Link href={`/learn/${entry.meta.grade}/term/${entry.meta.term}/${entry.id}`}>Open <ArrowRight/></Link></header>
       <p>{entry.value}</p>
      </article>)}
     </div>

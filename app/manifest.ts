@@ -3,9 +3,9 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "Applied Commerce",
-    short_name: "Applied Commerce",
-    description: "Your Applied Commerce learning platform for Grades 8–12.",
+    name: "Applied Commerce Zimbabwe",
+    short_name: "AC Zimbabwe",
+    description: "Your Applied Commerce learning platform for Forms 1–4.",
     start_url: "/",
     scope: "/",
     display: "standalone",

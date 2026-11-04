@@ -1,7 +1,8 @@
 "use client";
+import {yearLabel, curriculumKeys} from "@/lib/edition";
 
 import Link from "next/link";
-import availability from "@/content/instructional/teaching-availability.v2.json";
+import availability from "@/content/zimbabwe/teaching-availability.json";
 import {StandaloneTeachingPlan} from "./teaching-plan-view";
 import {useEffect,useRef,useState} from "react";
 import {useAuth} from "@/lib/auth-context";
@@ -38,7 +39,7 @@ export function ClassroomWorkspace({initialLessonId}:{initialLessonId:string}){
  const select=(id:string)=>{setSelectedId(id);window.history.pushState(null,"",`/facilitator/classroom?${new URLSearchParams({lesson:id})}`);};
  return <div className="classroom-workspace">
   <nav className="classroom-topnav classroom-controls" aria-label="Teaching workspace"><Link href="/facilitator">Facilitator workspace</Link><Link href="/learn">Learner library</Link></nav>
-  <header className="classroom-heading"><p className="eyebrow">Applied Commerce · Grades 8–12</p><h1>Classroom teaching</h1><p>Prepare, teach and check understanding using the existing learner lessons.</p></header>
+  <header className="classroom-heading"><p className="eyebrow">Applied Commerce · Forms 1–4</p><h1>Classroom teaching</h1><p>Prepare, teach and check understanding using the existing learner lessons.</p></header>
   {loading?<p role="status">Checking your account…</p>:!user?<section className="classroom-card"><h2>Sign in to open teacher guidance.</h2><p>Your institution grants educator access. Learner lessons remain available independently.</p><Link href="/auth">Staff sign in</Link></section>:!current?<p role="status">Loading authorised teaching guidance…</p>:current.error?<section className="classroom-card" role="alert"><h2>{current.status===403?"Teacher access is not assigned.":"Teacher guidance is unavailable."}</h2><p>{current.error}</p><button type="button" onClick={()=>setRevision(value=>value+1)}>Try again</button><Link href="/auth">Sign in</Link></section>:current.data?<ClassroomExperience key={current.data.selected.id} payload={current.data} onSelect={select}/>:null}
  </div>;
 }
@@ -54,14 +55,14 @@ export function ClassroomExperience({payload,onSelect}:{payload:ClassroomPayload
  const closePresentation=()=>{setPresentation(false);requestAnimationFrame(()=>presentationTrigger.current?.focus());};
  return <>
   <div className="classroom-catalog classroom-controls">
-   <label>Grade<select value={selected.grade} onChange={event=>chooseGrade(Number(event.target.value))}>{[8,9,10,11,12].map(grade=><option key={grade} value={grade}>Grade {grade}</option>)}</select></label>
-   <label>Term<select value={selected.term} onChange={event=>chooseTerm(Number(event.target.value))}>{[1,2,3,4].map(term=><option key={term} value={term}>Term {term}</option>)}</select></label>
-   <label>Lesson<select value={selected.id} onChange={event=>onSelect(event.target.value)}>{catalog.filter(entry=>entry.grade===selected.grade&&entry.term===selected.term).map(entry=><option key={entry.id} value={entry.id}>Lesson {entry.number} · {entry.title}{availability.lessonIds.includes(entry.id)?" · Classroom draft available":" · Guide not developed"}</option>)}</select></label>
+   <label>Form<select value={selected.grade} onChange={event=>chooseGrade(Number(event.target.value))}>{curriculumKeys.map(grade=><option key={grade} value={grade}>{yearLabel(grade)}</option>)}</select></label>
+   <label>Term<select value={selected.term} onChange={event=>chooseTerm(Number(event.target.value))}>{[1,2,3].map(term=><option key={term} value={term}>Term {term}</option>)}</select></label>
+   <label>Lesson<select value={selected.id} onChange={event=>onSelect(event.target.value)}>{catalog.filter(entry=>entry.grade===selected.grade&&entry.term===selected.term).map(entry=><option key={entry.id} value={entry.id}>Lesson {entry.number} · {entry.title}{(availability.lessonIds as string[]).includes(entry.id)?" · Classroom draft available":" · Guide not developed"}</option>)}</select></label>
   </div>
-  <header className="classroom-lesson-heading"><p>Grade {selected.grade} · Term {selected.term} · Lesson {selected.number}</p><h2>{selected.title}</h2>
+  <header className="classroom-lesson-heading"><p>{yearLabel(selected.grade)} · Term {selected.term} · Lesson {selected.number}</p><h2>{selected.title}</h2>
    <div className="classroom-actions classroom-controls"><Link href={learnerHref}>Open integrated lesson</Link>{plan&&!guide&&<button type="button" onClick={()=>window.print()}>Print teacher guide</button>}{guide&&<><button ref={presentationTrigger} type="button" aria-pressed={presentation} onClick={()=>setPresentation(value=>!value)}>Presentation prompts</button><button type="button" onClick={()=>window.print()}>Print {presentation?"current prompts":"teacher guide"}</button></>}</div>
   </header>
-  {plan&&!presentation?<StandaloneTeachingPlan plan={plan} guide={guide} title={`Grade ${selected.grade} · Term ${selected.term} · Lesson ${selected.number} · ${selected.title}`}/>:!guide?<section className="classroom-card"><h3>This classroom guide has not been developed yet.</h3><p>Grade 8 Term 1 and the five original benchmarks have classroom drafts. Further grade-and-term batches await owner and educator review; no teaching plan is inferred from this title.</p><p>The authored learner lesson remains available.</p></section>:presentation?<section className="classroom-presentation" aria-label="Learner-facing classroom prompts">
+  {plan&&!presentation?<StandaloneTeachingPlan plan={plan} guide={guide} title={`${yearLabel(selected.grade)} · Term ${selected.term} · Lesson ${selected.number} · ${selected.title}`}/>:!guide?<section className="classroom-card"><h3>This classroom guide has not been developed yet.</h3><p>Zimbabwe teacher guidance has not yet been released against the localised curriculum. The classroom workspace and access controls are retained; no teaching plan is inferred from this title.</p><p>The authored learner lesson remains available.</p></section>:presentation?<section className="classroom-presentation" aria-label="Learner-facing classroom prompts">
    <p className="classroom-draft">Classroom prompts · Private indicative answers are not shown in this mode.</p>
    <label className="classroom-controls">Period<select value={periodIndex} onChange={event=>{setPeriodIndex(Number(event.target.value));setStageIndex(0);}}>{guide.periods.map((period,index)=><option key={period.title} value={index}>{period.title}</option>)}</select></label>
    <p>Stage {stageIndex+1} of {guide.periods[periodIndex].stages.length} · {guide.periods[periodIndex].stages[stageIndex].minutes} minutes</p>
@@ -85,6 +86,6 @@ export function TeacherGuideView({guide,teachingOnly=false}:{guide:TeacherGuide;
   <section id="teacher-adaptations"><h3>Differentiation and classroom conditions</h3>{Object.entries({"Additional support":guide.differentiation.support,"Extension":guide.differentiation.extension,"Quiet participation":guide.differentiation.quietParticipation,"Large classes":guide.differentiation.largeClass,"Limited technology":guide.differentiation.lowTechnology,"Reading support":guide.differentiation.readingSupport}).map(([label,items])=><div key={label}><h4>{label}</h4><Bullets items={items}/></div>)}</section>
   <section id="teacher-continuity"><h3>Learning continuity</h3><p>{guide.continuity.connection}</p><p>{guide.continuity.nextUse}</p><h4>Independent learning</h4><Bullets items={guide.independentLearning}/></section>
   {!teachingOnly&&<details className="classroom-source-details"><summary>Source basis and review status</summary><p>{guide.selectionRationale}</p><p>Guide {guide.version} · Existing lesson {guide.lessonId}. New guidance is separate from the authored learner content.</p><ul>{guide.sourceReferences.map(ref=><li key={ref.blockId}>{ref.label} <code>{ref.blockId}</code></li>)}</ul><h3>Quality self-review</h3><dl>{guide.review.qualityChecks.map(check=><div key={check.criterion}><dt>{check.criterion} · {check.disposition==="pilot-required"?"Pilot required":"Draft self-review"}</dt><dd>{check.evidence}</dd></div>)}</dl><Bullets items={guide.review.limits}/><p>{guide.review.reviewedBy}</p></details>}
-  <footer className="classroom-print-source">Applied Commerce · Grade {guide.grade}, Term {guide.term} · {guide.originalTitle}{!teachingOnly&&<> · {guide.lessonId} · {guide.version}</>} · Draft teacher guidance; human educator approval pending.</footer>
+  <footer className="classroom-print-source">Applied Commerce · {yearLabel(guide.grade)}, Term {guide.term} · {guide.originalTitle}{!teachingOnly&&<> · {guide.lessonId} · {guide.version}</>} · Draft teacher guidance; human educator approval pending.</footer>
  </article>;
 }

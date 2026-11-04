@@ -4,11 +4,11 @@ import { ArrowLeft, ArrowRight, Check, School, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Deploy Applied Commerce",
-  description: "Institutional deployment options for the Applied Commerce Grades 8–12 learning journey.",
+  description: "Institutional deployment options for the Applied Commerce Forms 1–4 learning journey.",
 };
 
 const included = [
-  "Grades 8–12 Applied Commerce learning journey",
+  "Forms 1–4 Applied Commerce learning journey",
   "Guided digital learner experience",
   "Activities, reflection, projects and assessments",
   "Automatic portfolio evidence capture",
@@ -22,9 +22,9 @@ export default function DeployAppliedCommercePage() {
 
     <section className="institutional-detail-hero">
       <p className="eyebrow">Offer 01 · Deploy Applied Commerce®</p>
-      <h1>Economic agency and adult readiness, from Grade 8 to Grade 12.</h1>
+      <h1>Economic agency and adult readiness, from Form 1 to Form 4.</h1>
       <p>
-        Applied Commerce is a structured five-grade learning journey designed to help learners understand money, work,
+        Applied Commerce is a structured four-Form learning journey designed to help learners understand money, work,
         value, enterprise and opportunity by using what they learn in the real world.
       </p>
       <div className="institutional-actions">
@@ -42,11 +42,10 @@ export default function DeployAppliedCommercePage() {
         </div>
       </article>
       <aside className="institutional-grade-journey">
-        <span><strong>8</strong><small>Money, beliefs & observation</small></span>
-        <span><strong>9</strong><small>Work, value & enterprise</small></span>
-        <span><strong>10</strong><small>Systems & value creation</small></span>
-        <span><strong>11</strong><small>Leadership, leverage & wealth</small></span>
-        <span><strong>12</strong><small>Launch & transition</small></span>
+        <span><strong>1</strong><small>Money, beliefs & observation</small></span>
+        <span><strong>2</strong><small>Work, value & enterprise</small></span>
+        <span><strong>3</strong><small>Systems & value creation</small></span>
+        <span><strong>4</strong><small>Launch & transition</small></span>
       </aside>
     </section>
 
@@ -57,8 +56,8 @@ export default function DeployAppliedCommercePage() {
         <p>These are current commercial anchors for early institutional conversations; larger deployments are scoped separately.</p>
       </div>
       <div className="institutional-pricing-grid">
-        <article><School/><span>Pilot</span><strong>R45,000</strong><p>Single-grade, defined-cohort implementation.</p></article>
-        <article><Users/><span>Institutional licence</span><strong>R150,000 / year</strong><p>Grades 8–12 for an agreed institutional scope.</p></article>
+        <article><School/><span>Pilot</span><strong>R45,000</strong><p>Single-Form, defined-cohort implementation.</p></article>
+        <article><Users/><span>Institutional licence</span><strong>R150,000 / year</strong><p>Forms 1–4 for an agreed institutional scope.</p></article>
         <article><Users/><span>Sponsored deployment</span><strong>R325 / learner</strong><p>Useful for funded school or community access.</p></article>
       </div>
     </section>

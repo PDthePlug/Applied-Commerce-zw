@@ -1,0 +1,839 @@
+{
+  "targetUnitId": "g10-t4-l70-070",
+  "sourceCommit": "b20395c1469354f4f97713c1d683533f61815d09",
+  "sourceUnitIds": [
+    "g10-t4-l70-070",
+    "g10-t4-l71-checkpoint-20261004",
+    "g10-t4-l72-checkpoint-20261004",
+    "g10-t4-l73-checkpoint-20261004",
+    "g10-t4-l74-checkpoint-20261004"
+  ],
+  "reason": "The existing Zimbabwe Lessons 70–74 range has no content. Restore all five approved ZA workshop texts inside that existing range, retaining its identity and allocation.",
+  "blocks": [
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Workshop 70 · VISION AND GOALS WORKSHOP"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Learning Outcomes"
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Connect your life vision to realistic financial goals."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Name the trade-offs and assumptions behind a goal."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Define a first action and a review date."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Myah places her final project outline beside her notebook. Her vision says she wants a useful business, time for people she loves, and the freedom to keep learning. Her goals say only that she wants more money. The two pages do not yet speak to each other."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Ms. Daniels asks her to describe an ordinary week in the life she wants. How much time goes to work? What must her income support? What is she prepared to give up, and what would she protect? Myah realises that a financial goal needs a reason, a boundary, and a next step. A large number by itself cannot tell her whether her life is improving."
+    },
+    {
+      "kind": "text",
+      "type": "equation",
+      "text": "Thinking Equation"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "A usable goal = a valued outcome + an affordable next action + a review date. This is a planning prompt, not a numerical formula."
+    },
+    {
+      "kind": "text",
+      "type": "reflection",
+      "text": "Pause and Reflect"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Which goal would still matter if nobody else knew you had achieved it?"
+    },
+    {
+      "kind": "text",
+      "type": "activity",
+      "text": "Activity 70 Vision and goals workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "1. Read your life vision from Lesson 69. Rewrite it as a description of the work, relationships, health, learning, and contribution you want to sustain."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "2. Choose three goals with different time horizons. For each, state the outcome, your reason for wanting it, and one measurable sign of progress."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "3. Record what you know about the cost and what you still need to research. Label estimates as estimates; do not invent certainty."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "4. Name the time or money each goal competes with. Write one trade-off you can accept and one boundary you will protect."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "5. Choose a first action you can take with your current resources. Set a review date and a sign that would tell you to revise the goal."
+    },
+    {
+      "kind": "text",
+      "type": "portfolio",
+      "text": "Evidence to Keep"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Keep your revised vision and three goal records in the Vision and Goals section of your Financial Independence Plan."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "For each goal, include: outcome; reason; current position; next action; assumption; trade-off; review date; failure signal."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Deeper Look"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "A plan can be ambitious and honest at the same time. Your current resources limit the next step, not the value of your life. If the step requires money or support you do not have, redesign it into research, practice, or a smaller action. Do not turn a planning exercise into a promise you cannot keep."
+    },
+    {
+      "kind": "text",
+      "type": "checkpoint",
+      "text": "Checkpoint"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 1: Which goal would still matter if nobody else knew you had achieved it?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 2: What evidence shows that your next action is possible under your current conditions?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 3: If the cost or deadline changes, what will you revise before sacrificing a boundary you value?"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Try This at Home"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Explain one goal to a trusted person and ask what cost or obstacle you have overlooked. You may use an invented example instead of sharing private household information. If no one is available, write a short response from the perspective of someone who has to help carry the cost."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Tension and Experiment Log"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Date: ____________________ Lesson: 70 What I tried: __________________________________________________ What I predicted: ______________________________________________ What happened: ________________________________________________ What I learned: ________________________________________________ My next action and review date: _________________________________"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Lesson Wrap"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Before moving on, check that you have completed the activity, saved your evidence, and named one action you can take. If a step is still uncertain, record the question and who or what could help you answer it."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Workshop 71 · INCOME AND INVESTING WORKSHOP"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Learning Outcomes"
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Connect possible income sources to your skills, time, and costs."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Distinguish an investment assumption from verified information."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Explain how uncertainty changes your plan."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Thabo lists delivery work as his main income source and adds online sales as a second stream. He has written the sales he hopes to make, but has left out transport, materials, time, and the days when no orders arrive. Lethabo asks a simple question: \"How much remains after the work costs you something?\""
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Across the table, Myah has written a return beside an investment she has not researched. Ms. Daniels asks her where the figure came from and whether it is guaranteed. Myah cannot answer yet. Both learners have found a useful gap: their plans need evidence before their predictions can guide a decision."
+    },
+    {
+      "kind": "text",
+      "type": "equation",
+      "text": "Thinking Equation"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Income available for your plan = income received minus the costs required to earn it. Future investment outcomes remain uncertain."
+    },
+    {
+      "kind": "text",
+      "type": "reflection",
+      "text": "Pause and Reflect"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Which income estimate depends most on something outside your control?"
+    },
+    {
+      "kind": "text",
+      "type": "activity",
+      "text": "Activity 71 Income and investing workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "1. List your current or possible income sources. For each, name the skill, time, equipment, customers or employer, and costs it depends on."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "2. Build a modest working estimate using clearly labelled assumptions. Compare it with a lower-income case so your plan does not depend on the best possible month."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "3. Identify one step that could improve your capacity to earn without requiring a purchase: practice, a portfolio sample, customer research, or a conversation."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "4. Compare two investment options already discussed in Form 3. Record the purpose, access conditions, fees, risks, and source date you would need to verify before deciding."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "5. Explain what you would do if income fell or investment performance disappointed you. Keep emergency needs and longer-term goals visible in the same plan."
+    },
+    {
+      "kind": "text",
+      "type": "portfolio",
+      "text": "Evidence to Keep"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Keep an income worksheet with costs and assumptions, a comparison of two investment options, and a lower-income response."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Use a fictional budget if you prefer. This workshop does not require opening an account, buying a product, borrowing money, or disclosing family finances."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Deeper Look"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Adding more income streams can add more work, costs, and fragility. A second stream is useful only if you understand what keeps it operating. A return estimate can help you explore a scenario; it cannot promise your future. Your plan becomes stronger when it names what it does not know."
+    },
+    {
+      "kind": "text",
+      "type": "checkpoint",
+      "text": "Checkpoint"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 1: Which income estimate depends most on something outside your control?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 2: What information must you verify before treating an investment option as suitable for your goal?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 3: If your income is lower than expected, which commitment changes first and why?"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Try This at Home"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Check one claim in your worksheet against a current provider document or another reliable primary source. Record the source and date. If you cannot access it, keep the claim marked unverified and write the question you need answered."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Tension and Experiment Log"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Date: ____________________ Lesson: 71 What I tried: __________________________________________________ What I predicted: ______________________________________________ What happened: ________________________________________________ What I learned: ________________________________________________ My next action and review date: _________________________________"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Lesson Wrap"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Before moving on, check that you have completed the activity, saved your evidence, and named one action you can take. If a step is still uncertain, record the question and who or what could help you answer it."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Workshop 72 · PROTECTION AND LONG TERM PLANNING WORKSHOP"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Learning Outcomes"
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Connect protection needs to the risks in your own plan."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Identify questions that require current information or qualified help."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Build a realistic sequence for longer-term planning."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Myah has given every section of her plan a confident heading: insurance, tax, retirement, estate. Under several headings she has written only \"sort this out later.\" Thabo has done the opposite. He has listed every possible product he has heard of, without checking what it costs or what it protects."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Ms. Daniels asks them to begin with the situation, not the product. What could interrupt the plan? Which risks can they reduce through habits or preparation? Which questions need current information? Neither learner has to solve every adult decision today. They do need a sequence that makes uncertainty visible."
+    },
+    {
+      "kind": "text",
+      "type": "equation",
+      "text": "Thinking Equation"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "A protection plan = a named risk + a practical response + a person or source to consult + a review date."
+    },
+    {
+      "kind": "text",
+      "type": "reflection",
+      "text": "Pause and Reflect"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "What would most seriously disrupt your plan, and what can you do before it happens?"
+    },
+    {
+      "kind": "text",
+      "type": "activity",
+      "text": "Activity 72 Protection and long term planning workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "1. Identify three risks that could interrupt your income, learning, health, or ability to meet essential costs. Explain the consequence of each."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "2. For each risk, separate actions you can take now from decisions that require money, eligibility, current rules, or qualified advice."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "3. Review the insurance, tax, retirement, and estate sections from earlier lessons. Record the questions you still need answered; do not assume an example is a current rule."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "4. Place the next steps in order. Explain why the first one is more urgent than the others and whether it is affordable."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "5. Check that your protection steps still leave time and resources for ordinary life. Include a date to review your priorities as your circumstances change."
+    },
+    {
+      "kind": "text",
+      "type": "portfolio",
+      "text": "Evidence to Keep"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Keep a risk and response list, an unanswered-questions list, and a dated sequence for longer-term planning."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "You may use a fictional person. Do not include identity numbers, passwords, account details, or private family documents in your portfolio."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Deeper Look"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Knowing when to seek help is part of competence. You do not need to pretend to be an expert to build a thoughtful plan. An unanswered question with a clear route to an answer is more useful than a confident sentence that has not been checked."
+    },
+    {
+      "kind": "text",
+      "type": "checkpoint",
+      "text": "Checkpoint"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 1: What would most seriously disrupt your plan, and what can you do before it happens?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 2: Which part of your plan needs a current source or qualified guidance rather than confidence alone?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 3: How will you know that the cost of protection is becoming unaffordable?"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Try This at Home"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Ask a trusted adult what practical question they wish they had asked before making a long-term commitment. Record the question rather than their private financial details. Alternatively, use your own plan to write three questions for a future consultation."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Tension and Experiment Log"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Date: ____________________ Lesson: 72 What I tried: __________________________________________________ What I predicted: ______________________________________________ What happened: ________________________________________________ What I learned: ________________________________________________ My next action and review date: _________________________________"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Lesson Wrap"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Before moving on, check that you have completed the activity, saved your evidence, and named one action you can take. If a step is still uncertain, record the question and who or what could help you answer it."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Workshop 73 · FEEDBACK AND REVISION WORKSHOP"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Learning Outcomes"
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Give specific feedback using evidence and questions."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Revise a plan without losing its purpose."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Keep a record of what changed and why."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Lethabo reads Myah's plan and says, \"It sounds good.\" Myah thanks her, but the sentence gives her nothing to improve. They try again. Lethabo names one clear strength, points to one assumption, and asks what happens if Myah's first income source starts later than expected."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "This time Myah can act. She adds a delay scenario and moves a purchase further down her timeline. The feedback has not made her less ambitious. It has made the plan more usable. She also keeps a suggestion she disagrees with in her notes, explaining why she chose another response."
+    },
+    {
+      "kind": "text",
+      "type": "equation",
+      "text": "Thinking Equation"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Useful feedback = a specific observation + a reason + a question or possible revision."
+    },
+    {
+      "kind": "text",
+      "type": "reflection",
+      "text": "Pause and Reflect"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Which feedback question helped you see an assumption you had overlooked?"
+    },
+    {
+      "kind": "text",
+      "type": "activity",
+      "text": "Activity 73 Feedback and revision workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "1. Share a redacted plan or fictional version with a classmate. Agree that you will assess the reasoning, not compare wealth or judge family circumstances."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "2. Check purpose, assumptions, costs, sequence, risks, and evidence. Name two strengths using examples from the plan."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "3. Identify two gaps. Ask a question about each rather than telling the author how to live."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "4. Revise your own plan. Record at least three changes or justified decisions to retain a section."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "5. Check that a change in one section is reflected elsewhere. A new income assumption may change the savings schedule, timeline, or protection priorities."
+    },
+    {
+      "kind": "text",
+      "type": "portfolio",
+      "text": "Evidence to Keep"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Keep the feedback sheet and a revision record: section; observation; decision; reason; change made; question still open."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Keep an earlier draft so you can show how feedback changed your thinking."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Deeper Look"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Receiving feedback does not mean surrendering your judgement. Giving feedback does not mean taking control of another person's life. Good review helps the author see choices, consequences, and uncertainty more clearly."
+    },
+    {
+      "kind": "text",
+      "type": "checkpoint",
+      "text": "Checkpoint"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 1: Which feedback question helped you see an assumption you had overlooked?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 2: What did you change, and what evidence supports the change?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 3: Which suggestion did you decline, and can you explain your decision respectfully?"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Try This at Home"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Review one part of the plan after a day away from it. Read it as though someone you care about will have to follow it. Write the one question you would want answered before they began."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Tension and Experiment Log"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Date: ____________________ Lesson: 73 What I tried: __________________________________________________ What I predicted: ______________________________________________ What happened: ________________________________________________ What I learned: ________________________________________________ My next action and review date: _________________________________"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Lesson Wrap"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Before moving on, check that you have completed the activity, saved your evidence, and named one action you can take. If a step is still uncertain, record the question and who or what could help you answer it."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Workshop 74 · FINAL COMPILATION WORKSHOP"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Learning Outcomes"
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Assemble a coherent Financial Independence Plan."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Check that evidence, assumptions, and actions are easy to locate."
+    },
+    {
+      "kind": "text",
+      "type": "list",
+      "text": "Prepare an explanation of your plan and its limits."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Myah has a vision page, an income worksheet, risk notes, and a revised timeline. They are all useful, but the folder is still a collection of parts. She finds one goal using a deadline she changed two lessons ago. A cost appears in two places with different amounts."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "She checks the pages against one another before designing her presentation. Ms. Daniels reminds the class that a clear plan is not the one with the most pages. It is the one another person can follow, question, and help improve. Myah writes her first action at the front and keeps her unresolved questions visible."
+    },
+    {
+      "kind": "text",
+      "type": "equation",
+      "text": "Thinking Equation"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "A coherent plan = connected sections + traceable evidence + consistent assumptions + a clear next action."
+    },
+    {
+      "kind": "text",
+      "type": "reflection",
+      "text": "Pause and Reflect"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Where can a reader find your first action and review date?"
+    },
+    {
+      "kind": "text",
+      "type": "activity",
+      "text": "Activity 74 Final compilation workshop"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "1. Arrange your plan using the sections introduced in Lesson 69. Give each section a clear heading and remove accidental duplicates."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "2. Check that goals, costs, assumptions, and dates agree across the document. Resolve differences or explain why two scenarios use different figures."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "3. Attach the evidence that supports your decisions. Label fictional examples, estimates, and information that still needs checking."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "4. Prepare a short presentation covering your purpose, your next action, one major risk, one revision, and one unresolved question."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "5. Complete a final review: Can someone find the next action? Can they see what would make you change course? Can they distinguish evidence from prediction?"
+    },
+    {
+      "kind": "text",
+      "type": "portfolio",
+      "text": "Evidence to Keep"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Keep the completed Financial Independence Plan, your evidence list, revision record, and presentation outline."
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Date the plan and write when you will review it. Protect private information before sharing it."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "The Deeper Look"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Finishing a plan does not finish the work. The document is a starting point for action and review. You can be proud of what you have built while remaining willing to change it when reality gives you new information."
+    },
+    {
+      "kind": "text",
+      "type": "checkpoint",
+      "text": "Checkpoint"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 1: Where can a reader find your first action and review date?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 2: Which assumption would most change the plan if it proved wrong?"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Question 3: What can your presentation demonstrate now, and what remains a prediction?"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Try This at Home"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Practise explaining the plan in three minutes. Ask a listener to repeat your next action and one risk. If they cannot, revise your explanation. If you practise alone, record yourself or write a short plain-language summary."
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Tension and Experiment Log"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Date: ____________________ Lesson: 74 What I tried: __________________________________________________ What I predicted: ______________________________________________ What happened: ________________________________________________ What I learned: ________________________________________________ My next action and review date: _________________________________"
+    },
+    {
+      "kind": "text",
+      "type": "section",
+      "text": "Lesson Wrap"
+    },
+    {
+      "kind": "text",
+      "type": "paragraph",
+      "text": "Before moving on, check that you have completed the activity, saved your evidence, and named one action you can take. If a step is still uncertain, record the question and who or what could help you answer it."
+    }
+  ]
+}

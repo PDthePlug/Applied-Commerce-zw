@@ -7,11 +7,11 @@ export function typescriptModule(file){
   return `data:text/javascript;base64,${Buffer.from(code).toString("base64")}`;
 }
 
-export async function runtimeUnits(){
+export async function runtimeUnits(curriculumPath="/curriculum"){
   const original=globalThis.fetch;
   globalThis.fetch=async url=>new Response(fs.readFileSync(path.join("public",url)));
   try{
-    const {curriculum}=await import(typescriptModule("lib/curriculum.ts"));
+    const {curriculum}=await import(`data:text/javascript;base64,${Buffer.from(ts.transpileModule(fs.readFileSync("lib/curriculum.ts","utf8").replaceAll("/zimbabwe-curriculum",curriculumPath),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString("base64")}`);
     const index=await curriculum.index();
     const units=[];
     for(const grade of index.grades){
@@ -26,9 +26,9 @@ export async function runtimeUnits(){
 
 export async function census(){
   const {learningSections,choiceMeaning,authoredScale,valueSelection}=await import(typescriptModule("lib/semantic-learning.ts"));
-  const units=await runtimeUnits();
+  const units=await runtimeUnits("/zimbabwe-curriculum");
   const rows=[];
-  for(const grade of [8,9,10,11,12]) for(const term of [1,2,3,4]){
+  for(const grade of [8,9,10,12]) for(const term of [1,2,3]){
     const selected=units.filter(unit=>unit.grade===grade&&unit.term===term);
     const modes={read:0,understand:0,decide:0,do:0,reflect:0,prove:0};
     let choices=0,rankings=0,scales=0,valueSteps=0;

@@ -1,4 +1,4 @@
-name: Applied Commerce CI
+name: Applied Commerce Zimbabwe CI
 
 on:
   push:
@@ -57,10 +57,10 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Browser presentation acceptance
-        run: npx playwright test --config=playwright.config.mjs
+        run: npx playwright test --config=playwright.zimbabwe.config.mjs
 
       - name: Refresh presentation census evidence
-        run: npm run census:presentation
+        run: node scripts/semantic-census.mjs test-results/zimbabwe-semantic-census.json
 
       - name: Upload presentation evidence
         if: always()

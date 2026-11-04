@@ -18,7 +18,7 @@ export function LearnLibrary(){
   return ()=>{cancelled=true;};
  },[attempt]);
  const progress=index?lessonProgress(index,state.completed):null;
- return <div className="page library-page"><section className="page-intro"><p className="eyebrow">Curriculum library</p><h1>Five grades. One learning journey.</h1><p>Select a grade to open its four-term map. Lesson numbering, projects and assessments follow the authored curriculum.</p></section>
+ return <div className="page library-page"><section className="page-intro"><p className="eyebrow">Curriculum library</p><h1>Four Forms. One learning journey.</h1><p>Select a Form to open its three-term map. Lesson numbering, projects and assessments follow the authored curriculum.</p></section>
   {error?<p role="alert">Your saved work is preserved, but the lesson catalogue could not be loaded. <button type="button" className="text-link" onClick={()=>{setError(false);setAttempt(value=>value+1);}}>Try again</button></p>:!index||!hydrated?<p role="status">Preparing the curriculum library…</p>:<div className="grade-grid compact">{index.grades.map(g=><GradeCard key={g.grade} grade={g} completed={progress?.grades.find(item=>item.grade===g.grade)?.done??0}/>)}</div>}
  </div>;
 }

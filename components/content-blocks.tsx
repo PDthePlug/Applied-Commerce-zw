@@ -833,7 +833,7 @@ export function ContentBlocks({blocks,unitId,unitType="lesson",promptResponses:s
   const onSavePromptResponse=(key:string,value:string)=>saveResponse(persistResponseKey(unitId,blocks,key),value);
   const indexed=pruneTensionContent(blocks);
   const annotations=abilityAnnotations(unitId,blocks);
-  const wrap=unitType==="lesson"?lessonWrapFor(unitId):null;
+  const wrap=unitType==="lesson"?lessonWrapFor(unitId,blocks):null;
   const closingStartId=wrap?.closingStartId??wrap?.authoredHeadingId;
   const authoredWrapIndex=closingStartId?blocks.findIndex(block=>block.id===closingStartId):-1;
 

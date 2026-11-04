@@ -1,4 +1,5 @@
 "use client";
+import {yearLabel} from "@/lib/edition";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
@@ -81,8 +82,8 @@ export function HomeDashboard(){
         </p>
       </div>
 
-      <aside className="home-today-status" aria-label="Current grade progress">
-        <span>Grade {currentGrade}</span>
+      <aside className="home-today-status" aria-label="Current Form progress">
+        <span>{yearLabel(currentGrade)}</span>
         <strong>{hydrated&&progress?`${progress.percent}% complete`:catalogueError?"Progress unavailable":"Loading progress"}</strong>
         <div className="home-progress-track" aria-hidden="true"><i style={{width:`${hydrated&&progress?progress.percent:0}%`}}/></div>
         <small>{hydrated&&progress?`${progress.done} of ${progress.total} lessons complete`:"Preparing your learning record"}</small>
@@ -93,15 +94,15 @@ export function HomeDashboard(){
     <section className="home-dashboard-grid" aria-label="Your learning today">
       <article className="home-dashboard-card home-continue-card">
         <p className="eyebrow">{state.lastOpened?"Continue your learning":"Start your learning"}</p>
-        <h2>{lesson?lesson.title:`Grade ${continueGrade}`}</h2>
+        <h2>{lesson?lesson.title:`${yearLabel(continueGrade)}`}</h2>
         <p>
           {lesson
-            ? `Grade ${lesson.grade} · Term ${lesson.term} · ${lesson.label}. Pick up exactly where you left off.`
-            : `Your Grade ${continueGrade} Applied Commerce journey is ready.`}
+            ? `${yearLabel(lesson.grade)} · Term ${lesson.term} · ${lesson.label}. Pick up exactly where you left off.`
+            : `Your ${yearLabel(continueGrade)} Applied Commerce journey is ready.`}
         </p>
         <small><BookOpenCheck/> {captured} responses captured so far</small>
         <Link className="home-primary-action" href={continueHref}>
-          {state.lastOpened?"Continue learning":`Start Grade ${currentGrade}`} <ArrowRight/>
+          {state.lastOpened?"Continue learning":`Start ${yearLabel(currentGrade)}`} <ArrowRight/>
         </Link>
       </article>
     </section>

@@ -1,94 +1,54 @@
-# Applied Commerce Learning Platform
+# Applied Commerce Zimbabwe
 
-A standalone digital learning system for the Applied Commerce® Grade 8–12 learner books.
+The current South African Applied Commerce application, with Zimbabwe's existing Forms 1–4 curriculum and three terms per Form.
 
-This repository is intentionally separate from Behaviour Intelligence. It reuses the **product principles** that worked in BIS — focused reading, visible progression, learner evidence, strong mobile ergonomics and a calm editorial interface — without carrying BIS labs, BEI metrics, investigations, terminology or database objects into this product.
+## Source and application parity
 
-## Current milestone
+- Application baseline: `PDthePlug/Applied-Commerce-`, commit `b20395c1469354f4f97713c1d683533f61815d09`.
+- The `baseline/south-africa` branch preserves its exact tree: `9318dbe6b29412ddaa94f34dc119a0b8511d5c06`.
+- Zimbabwe content: `PDthePlug/Applied-Commerce-Za`, commit `bb1e0664c92ebf2d0363f58d91a935b75367c311`.
+- The shared CSS, typography, layout, icons, menus, native response controls, account/session handling, persistence, portfolio, reporting infrastructure and PWA installation controls are retained from ZA. Edition labels and curriculum routing are adapted.
 
-The first production-shaped milestone includes:
+## Zimbabwe delivery
 
-- Grade 8, 9, 10, 11 and 12 curriculum library;
-- four-term grade maps driven by the supplied learner books;
-- focused lesson reader with previous/next navigation and a term map;
-- source-faithful rendering of paragraphs, lists, tables, activities, reflections, checkpoints, stories, equations and portfolio cues;
-- learner notes/responses attached to each lesson;
-- completion tracking and a learner portfolio with account-scoped local recovery and Supabase persistence;
-- responsive desktop/mobile shell;
-- curriculum compiler that converts the five DOCX learner books into structured runtime JSON.
+| Form | Term 1 | Term 2 | Term 3 | Lesson units |
+| --- | ---: | ---: | ---: | ---: |
+| 1 | 26 | 26 | 27 | 79 |
+| 2 | 34 | 20 | 21 | 75 |
+| 3 | 36 | 40 | 40 | 116 |
+| 4 | 40 | 40 | 32 | 112 |
 
-### Presentation Architecture 2.0
+The existing 382 lesson units and three assessments retain their identities. A source range may span several workshop sessions; lesson units are not a promise about classroom periods. Forms 5–6 are excluded.
 
-The learner reader now uses a shared semantic presentation contract: source-authored stories, activities, reflections, checkpoints, Thinking Equations, portfolio evidence, response surfaces and tables render through one consistent hierarchy. Simple source tables become labelled row cards on compact screens while wider or structurally irregular tables keep their table geometry. See `docs/APPLIED_COMMERCE_PRESENTATION_ARCHITECTURE_V2.md`.
+Internal delivery keys remain 8, 9, 10 and 12 to preserve the ZA schema contracts; the interface labels these Form 1, 2, 3 and 4. Each unit also retains `sourceGrade` and `sourceTerm`, including Grade 11 material split across Forms 3 and 4. Evidence interpretation uses the original source stage.
 
-### Semantic Learning Renderer 3.0
+`content/zimbabwe/` contains the pinned source bundles, explicit existing localisation rules and term allocation. `npm run compile:zimbabwe` builds `public/zimbabwe-curriculum/` and its provenance record. All localised blocks receive the ZA stable block identities. Lesson Wrap uses the same presentation component, with localised learning outcomes, current source bindings and the correct next lesson.
 
-Lessons now follow six source-derived presentation modes: Read, Understand, Decide, Do, Reflect and Prove. Explicit rankings, table rating scales and the Grade 9 values sort use native controls; list choices are interactive, equations retain their meaning and percentage blanks retain their units. Lesson outlines link to authored tasks, product navigation stays in reserved reader chrome, and Complete and continue saves before advancing. Source wording, sequence and answer identities remain intact.
+One existing Zimbabwe range, Lessons 70–74, was completely empty. `workshop-repair.json` restores the five current ZA workshops inside that existing unit, retaining its range identity and allocation. The only wording adaptation is “this grade” → “Form 3”; the workshops contain no country-specific financial rules.
 
-See `docs/APPLIED_COMMERCE_SEMANTIC_LEARNING_V3.md` for the interpretation and persistence contract. The repeatable census covers all 395 lessons and four assessments. Browser acceptance samples every grade and term at desktop, 430px and 360px and exercises the new control/persistence/error states.
+The original ZA source books, runtime, private encrypted release and regression fixtures remain as the preserved baseline. They are not the active learner catalogue.
 
-## Important source-preservation rule
+## Development and checks
 
-The compiler does **not** renumber or manufacture lessons to make the books look uniform. If a supplied book jumps between lesson numbers or contains a different number of lesson headings in a term, the platform preserves that source structure. Editorial `SITUATION REPORT` markers and `END OF ...` production markers are treated as source metadata rather than learner-facing lessons.
+Use Node >=22.13, npm and Python 3. No new package dependencies are required.
 
-## Curriculum build
-
-The generated runtime content is committed under `public/curriculum/`. To rebuild it from the source DOCX files:
-
-```bash
-python scripts/compile_curriculum.py content/source-books public/curriculum
-```
-
-Expected source filenames:
-
-- `APPLIED COMMERCE Grade 8.docx`
-- `APPLIED COMMERCE Grade 9.docx` (the revised Grade 9 learner book, stored under the compiler filename)
-- `APPLIED COMMERCE Grade 10.docx`
-- `APPLIED COMMERCE Grade 11.docx`
-- `APPLIED COMMERCE Grade 12.docx`
-
-## Installable app
-
-Applied Commerce includes a web app manifest, home screen icons and a production service worker for offline recovery. Open **Menu → Profile → Install Applied Commerce** for installation. A compact, expandable Profile action offers native installation when available, or instructions for your device. An open lesson retains the existing device-save behaviour when disconnected; installing does not download the curriculum. See [PWA behaviour, cache boundaries and verification](docs/PWA.md).
-
-## Development
-
-```bash
-npm install
+```sh
+npm ci
+npm run compile:zimbabwe
 npm run dev
-```
-
-Checks:
-
-```bash
 npm test
 npm run typecheck
 npm run lint
 npm run build
+npm run test:browser:zimbabwe
 ```
 
-## Backend and hardening status
+The existing ZA regression tests still run against the archived ZA content. Edition tests additionally load the active Zimbabwe release, render every lesson and assessment through the shared renderer, check allocation/provenance/answer persistence and prove deterministic compilation. The Zimbabwe browser suite covers all 12 Form/term combinations, six widths, saved work, home resume, progress, route rejection, signed-out classroom gates and the unchanged ZA PWA experience.
 
-The platform uses Next.js 16, React 19, and a dedicated Supabase backend for account-owned responses, notes, progress, preferences, institution/cohort management, and facilitator review. The South African production project is `upvbxplswxhoqzbvgdxv`; setup instructions for the inactive predecessor are obsolete.
+## Backend and teacher-content activation
 
-The 2026-10-12 audit changes are a release candidate for further validation, not a production certification. The security migration must be validated remotely and applied before releasing the updated review client. Use [supabase/ACTIVATION.md](supabase/ACTIVATION.md). Local tests never write to production.
+This repository is prepared in **local backend mode**, without credentials, learner records or live deployment configuration. The existing Zimbabwe project is `hkarxzjmttjetotduvyx`; its schema must be reconciled with the current ZA contracts before enabling account sync. These commits do not migrate or alter either country's database or deployment.
 
-## October 2026 manuscript checkpoint
+The classroom workspace, permissions and private-content infrastructure are copied. ZA teacher prose is source-bound to the ZA manuscripts. It must be localised and rebound before publication against the Zimbabwe curriculum; the active Zimbabwe teacher availability is deliberately empty. No South African guide is presented as approved Zimbabwe guidance. The learner curriculum remains available.
 
-The edited source books are versioned in `content/source-books/`. Grade 9 uses the revised learner edition, not the older reference manuscript. The assessment companion and change/verification record are in `docs/checkpoints/`.
-
-The runtime is rebuilt from these committed sources. It now contains 80 lessons each for Grades 8, 10, 11 and 12, and 75 for Grade 9. Grade 10 Lessons 70–74 are standalone workshops; Grade 12 Lessons 53–60 are new protection practice clinics. Grade 9's examination blocks remain assessments, including lesson-labelled memorandum references.
-
-`scripts/curriculum-unit-ids.json` preserves the prior runtime IDs for existing lessons and assessments so lesson-level saved responses and completion records remain attached to the same lesson. New lessons have checkpoint-specific IDs. Prompt-level keys depend on content positions, so this preservation does not guarantee that every previous activity answer maps to a revised prompt. Existing responses remain in local storage; no learner state is cleared.
-
-These additions require teacher review. Curriculum mapping, current legal/financial reference verification and full exam moderation remain release work.
-
-## Stable learner responses
-
-The response persistence milestone uses compiled block identities rather than document positions. Legacy positional answers appear in Portfolio under **Earlier answers kept for review**; they are preserved without guessing which revised question they answered. Before the first migration write, the previous record is backed up on the same device. New task answers and portfolio evidence share the same stable identities. See `docs/checkpoints/2026-10-04-response-persistence.md` for validation and limitations.
-
-## Classroom teaching drafts
-
-The owner-accepted classroom stack #76–#89 is consolidated against main in [PR #90](https://github.com/PDthePlug/Applied-Commerce-/pull/90). The [integration certificate and fresh checks](docs/programme-rollout/integration-76-89/README.md) record exact accepted-code preservation, genuine staging verification and the retained source branches. Main and live production remain unchanged pending explicit integration merge.
-
-The integrated `/facilitator/classroom` workspace now has contextual teaching support for all 395 authored lessons, preserving the accepted benchmarks, learner material and saved-work identities. Teacher guidance requires verified staff/admin access and a private content release; it is not included in public learner bundles. The [complete staging owner-review package](docs/programme-rollout/full-release/OWNER_REVIEW.md) records genuine role, persistence, layout, print and delivery evidence; educator moderation and timing trials remain pending. Coverage and remaining development are tracked in the [current programme rollout register](docs/programme-rollout/README.md). See the [classroom milestone deliverables](docs/classroom/README.md) for the complete 395-lesson inventory, teaching standard, review limits and safe local review procedure. Draft enrichment is separate from the canonical learner books and requires human educator approval before publication as approved teaching material.
+Existing Zimbabwe accounts, answers and older positional response keys require a reviewed migration before moving the existing live Zimbabwe deployment to this repository. No learner state has been deleted or automatically reinterpreted.

@@ -1,4 +1,5 @@
 "use client";
+import {yearLabel, curriculumKeys} from "@/lib/edition";
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
@@ -10,7 +11,7 @@ import type { LearnerProfile } from "@/lib/types";
 import { DEFAULT_PERSONALISATION, type Personalisation } from "@/lib/personalisation";
 import { usePersonalisation } from "@/components/personalisation-provider";
 
-const grades = [8, 9, 10, 11, 12];
+const grades = curriculumKeys;
 const accents: Array<{ value: Personalisation["accent"]; label: string }> = [
   { value: "commerce", label: "Commerce" }, { value: "blue", label: "Blue" }, { value: "amber", label: "Amber" }, { value: "sage", label: "Sage" },
 ];
@@ -39,7 +40,7 @@ function ProfileSettingsForm({ initialName, initialGrade, saveProfile, syncError
   return <>
     <form className="settings-form" onSubmit={submit}>
       <label className="settings-row"><span>Preferred name</span><input maxLength={80} value={name} onChange={event => setName(event.target.value)} placeholder="Add your name" autoComplete="name"/></label>
-      <label className="settings-row"><span>Current grade</span><select value={grade} onChange={event => setGrade(Number(event.target.value))}>{grades.map(value => <option key={value} value={value}>Grade {value}</option>)}</select></label>
+      <label className="settings-row"><span>Current Form</span><select value={grade} onChange={event => setGrade(Number(event.target.value))}>{grades.map(value => <option key={value} value={value}>{yearLabel(value)}</option>)}</select></label>
       <button className="settings-primary" type="submit">Save profile <Check aria-hidden="true"/></button>
     </form>
     {message ? <p className="settings-feedback" role="status">{message}</p> : null}
@@ -75,7 +76,7 @@ export function SettingsDashboard() {
   }
 
   const sectionLabels: Array<{ value: Section; label: string; detail: string }> = [
-    { value: "profile", label: "Profile", detail: "Name and learning grade" },
+    { value: "profile", label: "Profile", detail: "Name and learning Form" },
     { value: "appearance", label: "Appearance", detail: "Theme and accent" },
     { value: "reading", label: "Reading", detail: "Text size and page width" },
     { value: "account", label: "Account & security", detail: "Email and password" },

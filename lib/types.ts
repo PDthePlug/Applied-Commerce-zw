@@ -11,7 +11,7 @@ export type GradeSummary = { grade:number; title:string; bookTitle:string; unitC
 export type CurriculumIndex = { product:string; grades:GradeSummary[] };
 export type GradeIndex = { grade:number; title:string; bookTitle:string; sourceFile:string; preface:ContentBlock[]; unitCount:number; terms:TermSummary[] };
 export type TermIndex = { term:number; intro:ContentBlock[]; units:UnitSummary[]; assessments:UnitSummary[] };
-export type UnitContent = UnitSummary & { grade:number; term:number; position:number; blocks:ContentBlock[] };
+export type UnitContent = UnitSummary & { grade:number; term:number; position:number; sourceGrade?:number; sourceTerm?:number; blocks:ContentBlock[] };
 export type LearnerProfile = { displayName?:string; grade?:number };
 export type LearningState = {
   sync?:import("./learning-sync").LearningSync;

@@ -87,7 +87,7 @@ export function definitionForResponse(unit:UnitContent,responseKey:string,portfo
   const block=unit.blocks.find(item=>item.id===parsed.promptId);
   if(!block) return null;
   const prompt=promptFor(block,parsed.slot);
-  const stage=stageForGrade(unit.grade);
+  const stage=stageForGrade(unit.sourceGrade??unit.grade);
   const kind=inferKind(block,prompt,unit.title,parsed.slot);
   const key=`${unit.id}::${parsed.promptId}::${parsed.slot}`;
   const authoredRule=authoredAnswerRule(key);

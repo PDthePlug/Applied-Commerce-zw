@@ -17,7 +17,7 @@ test('failed grade bundle requests are evicted while successful catalogue data i
  const original=globalThis.fetch;let indexCalls=0,bundleCalls=0;
  const bundle={grade:8,terms:[{term:1,intro:[],units:[{id:'g8-t1-l01-001',grade:8,term:1,type:'lesson',label:'Lesson 1',title:'Fixture',position:0,blocks:[]}]}]};
  globalThis.fetch=async path=>{
-  if(path==='/curriculum/index.json'){indexCalls++;return Response.json(index);}
+  if(path==='/zimbabwe-curriculum/index.json'){indexCalls++;return Response.json(index);}
   return ++bundleCalls===1?new Response('',{status:503}):new Response(gzipSync(JSON.stringify(bundle)).toString('base64'));
  };
  try{const {curriculum}=await fresh('bundle');await assert.rejects(curriculum.grade(8),/Could not load/);assert.equal((await curriculum.grade(8)).unitCount,1);assert.equal(indexCalls,1);assert.equal(bundleCalls,2);}finally{globalThis.fetch=original;}

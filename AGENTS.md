@@ -1,12 +1,12 @@
-# Applied Commerce — engineering agent guide
+# Applied Commerce Zimbabwe — engineering agent guide
 
 ## Mission
-Harden the existing Applied Commerce Grade 8–12 platform end-to-end. Preserve its source-faithful curriculum, stable response identities, existing Supabase contracts, evidence, notes, progress, reporting and role boundaries. This is an engineering and UX quality pass, **not** a rebrand or a rewrite.
+Maintain the Zimbabwe Forms 1–4 adaptation of the current South African platform. Keep the ZA interface and behaviour identical except for edition identity, curriculum content and delivery labels. Preserve its source-faithful curriculum, stable response identities, existing Supabase contracts, evidence, notes, progress, reporting and role boundaries. This is an engineering and UX quality pass, **not** a rebrand or a rewrite.
 
 ## Repository and deployment truth
-- This repository (`PDthePlug/Applied-Commerce-`) is the primary South African Applied Commerce application.
-- Its production Vercel project is `applied-commerce`. Its isolated application staging project is `applied-commerce-sa-staging`.
-- The separate `Applied-Commerce-Za` repository and `applied-commerce-za` deployment are not substitutes for this codebase.
+- This repository (`PDthePlug/Applied-Commerce-zw`) is the new Zimbabwe application. Read README.md first; it records exact source commits, delivery keys, curriculum compilation and activation boundaries.
+- This new repository has no activated deployment in this task. Never redirect or modify either country’s existing production deployment as part of ordinary repository work.
+- `Applied-Commerce-Za` / `applied-commerce-za` is the older Zimbabwe implementation. Reuse its authored curriculum, not its older interface or application code. The exact ZA application is preserved on `baseline/south-africa`.
 - Read `README.md`, `docs/APPLIED_COMMERCE_PLATFORM_ARCHITECTURE_BASELINE.md`, `docs/APPLIED_COMMERCE_SEMANTIC_LEARNING_V3.md`, `docs/CROSS_DEVICE_VALIDATION.md` and `docs/CODEX_E2E_UIUX_HARDENING.md` before broad edits.
 
 ## Safety and fixtures (mandatory)
@@ -21,7 +21,7 @@ Harden the existing Applied Commerce Grade 8–12 platform end-to-end. Preserve 
 - Use Node >=22.13 (Node 22 or 24), npm and Python 3.
 - Run `bash scripts/codex-e2e-setup.sh` once per fresh environment. It installs pinned npm dependencies, Chromium and creates a local-mode production build.
 - Baseline gates: `npm run verify:runtime`, `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`.
-- Existing browser acceptance: `npx playwright test --config=playwright.config.mjs`.
+- Existing browser acceptance: `npx playwright test --config=playwright.zimbabwe.config.mjs`.
 - Additional UI/UX discovery sweep: `npx playwright test --config=playwright.audit.config.mjs`. Its screenshots are diagnostic evidence, **not** approved visual baselines.
 - Run relevant existing tests before and after each UI fix; add regression tests for each reproducible defect.
 

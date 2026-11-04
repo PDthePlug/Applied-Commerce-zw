@@ -1,3 +1,4 @@
+import {yearLabel} from "../edition";
 "use client";
 import { currentReviews } from "@/lib/evidence/current-reviews";
 import { readAllRows, readRowsByIds } from "@/lib/supabase/read-all";
@@ -96,7 +97,7 @@ export async function loadSupabaseFacilitatorWorkspace(userId: string, verifiedA
   const schoolNames = (schoolsResult.data ?? []).map(row => row.name);
   const schoolName = schoolNames.join(" · ") || "Assigned school";
   const cohortName = activeCohorts
-    .map(row => `${row.name} · Grade ${row.grade} · ${row.academic_year}`)
+    .map(row => `${row.name} · ${yearLabel(row.grade)} · ${row.academic_year}`)
     .join(" · ") || "Assigned cohort";
 
   const learnerIds = [...new Set((enrolments.data ?? []).map(row => row.learner_id))];

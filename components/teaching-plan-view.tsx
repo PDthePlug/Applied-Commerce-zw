@@ -2,7 +2,7 @@
 import Link from "next/link";
 import {useEffect,useState} from "react";
 import {useAuth} from "@/lib/auth-context";
-import availability from "@/content/instructional/teaching-availability.v2.json";
+import availability from "@/content/zimbabwe/teaching-availability.json";
 import type {ClassroomPayload,TeacherGuide} from "@/lib/classroom/model";
 import {validateTeachingPlan,teachingSource,type TeachingPlan,type TeachingMoment,type TeachingGroup} from "@/lib/classroom/teaching-plan";
 import type {UnitContent} from "@/lib/types";
@@ -16,7 +16,7 @@ export function useTeachingPlan(unitId:string,presentationOnly:boolean){
  const [intent,setIntent]=useState<{account:typeof user;session:typeof session;unitId:string}|null>(null);
  const requested=intent?.account===user&&intent?.session===session&&intent?.unitId===unitId;
  const [result,setResult]=useState<{account:typeof user;session:typeof session;unitId:string;revision:number;guide:TeacherGuide|null;plan?:TeachingPlan|null;error?:string}|null>(null);
- const eligible=availability.lessonIds.includes(unitId)&&!presentationOnly;
+ const eligible=(availability.lessonIds as string[]).includes(unitId)&&!presentationOnly;
  useEffect(()=>{
   if(!eligible)return;
   const refresh=()=>setRevision(value=>value+1);

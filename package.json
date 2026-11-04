@@ -1,5 +1,5 @@
 {
-  "name": "applied-commerce-learning-platform",
+  "name": "applied-commerce-zimbabwe",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -22,7 +22,10 @@
     "verify": "npm run verify:runtime && npm test && npm run typecheck && npm run lint && npm run build",
     "census:learner": "node scripts/audit-learner-semantics.mjs",
     "compile:wraps": "node scripts/compile-lesson-wraps.mjs",
-    "test:learner": "playwright test --config=playwright.learner-hardening.config.mjs"
+    "test:learner": "playwright test --config=playwright.learner-hardening.config.mjs",
+    "compile:zimbabwe": "node scripts/compile-zimbabwe.mjs",
+    "test:zimbabwe": "node --test tests/zimbabwe.test.mjs",
+    "test:browser:zimbabwe": "playwright test --config=playwright.zimbabwe.config.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
