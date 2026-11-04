@@ -1,0 +1,30 @@
+name: Copy South African baseline
+on:
+  push:
+    paths: ['.github/workflows/copy-za-baseline.yml']
+permissions:
+  contents: write
+jobs:
+  copy:
+    if: github.repository == 'PDthePlug/Applied-Commerce-zw'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Import the pinned South African source tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code origin refs/heads/baseline/south-africa >/dev/null 2>&1; then
+            echo "Baseline branch already exists; leaving it unchanged."
+            exit 0
+          fi
+          git remote add south-africa https://github.com/PDthePlug/Applied-Commerce-.git
+          git fetch --depth=1 south-africa b20395c1469354f4f97713c1d683533f61815d09
+          source_tree=$(git rev-parse FETCH_HEAD^{tree})
+          git read-tree --reset -u FETCH_HEAD
+          git config user.name "Codex"
+          git config user.email "codex@openai.com"
+          git commit -m "Clone South African Applied Commerce at b20395c"
+          test "$(git rev-parse HEAD^{tree})" = "$source_tree"
+          git push origin HEAD:refs/heads/baseline/south-africa
