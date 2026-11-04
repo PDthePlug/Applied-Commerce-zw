@@ -1,9 +1,11 @@
 import { createServerClient } from "@supabase/ssr";
 import { type NextRequest, NextResponse } from "next/server";
 import type { Database } from "./database.types";
+import { appliedCommerceBackendMode } from "@/lib/backend/config";
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
+  if (appliedCommerceBackendMode() !== "supabase") return response;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   if (!url || !key) return response;

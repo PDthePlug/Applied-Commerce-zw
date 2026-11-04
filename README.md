@@ -47,7 +47,7 @@ The existing ZA regression tests still run against the archived ZA content. Edit
 
 ## Backend and teacher-content activation
 
-This repository is prepared in **local backend mode**, without credentials, learner records or live deployment configuration. The existing Zimbabwe project is `hkarxzjmttjetotduvyx`; its schema must be reconciled with the current ZA contracts before enabling account sync. These commits do not migrate or alter either country's database or deployment.
+The new Vercel project is `applied-commerce-zw`, configured with the existing Zimbabwe project's public connection details and explicit **local backend mode**. Supabase `hkarxzjmttjetotduvyx` is paused; its restoration was refused because the account has reached its active-free-project limit. Its schema must be reconciled with the current ZA contracts before enabling account sync. See [activation status and remaining work](docs/zimbabwe-activation/RELEASE.md). No live learner records have been migrated.
 
 The classroom workspace, permissions and private-content infrastructure are copied. ZA teacher prose is source-bound to the ZA manuscripts. It must be localised and rebound before publication against the Zimbabwe curriculum; the active Zimbabwe teacher availability is deliberately empty. No South African guide is presented as approved Zimbabwe guidance. The learner curriculum remains available.
 
