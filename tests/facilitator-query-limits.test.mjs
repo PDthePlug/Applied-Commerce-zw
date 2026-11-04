@@ -13,9 +13,11 @@ const stubs={
 };
 function moduleUrl(file){
  file=path.resolve(file);if(cache.has(file))return cache.get(file);
+ if(file.endsWith('.json'))return dataUrl('export default '+fs.readFileSync(file,'utf8')+';');
  let code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
  code=code.replace(/from ["']([^"']+)["']/g,(whole,ref)=>{
-  const target=stubs[ref]??(ref.startsWith('@/')?moduleUrl(ref.slice(2)+'.ts'):ref.startsWith('.')?moduleUrl(path.resolve(path.dirname(file),ref)+'.ts'):null);
+  const suffix=ref.endsWith('.json')?'':'.ts';
+  const target=stubs[ref]??(ref.startsWith('@/')?moduleUrl(ref.slice(2)+suffix):ref.startsWith('.')?moduleUrl(path.resolve(path.dirname(file),ref)+suffix):null);
   return target?'from "'+target+'"':whole;
  });
  const url=dataUrl(code);cache.set(file,url);return url;

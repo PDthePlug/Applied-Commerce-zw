@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import ts from 'typescript';
+import {renderModule} from './lib/render-module.mjs';
 const moduleUrl=(file,replacements={})=>{
  let code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
  for(const [from,to] of Object.entries(replacements))code=code.replaceAll(`"${from}"`,`"${to}"`);
@@ -9,7 +10,7 @@ const moduleUrl=(file,replacements={})=>{
 };
 const identityUrl=moduleUrl('lib/response-identity.ts');
 const {responseView,persistResponseKey,parseLearningState}=await import(identityUrl);
-const {buildPortfolioDefinitions,responsesForPortfolio}=await import(moduleUrl('lib/portfolio-model.ts',{'./response-identity':identityUrl,'./horizon-response':moduleUrl('lib/horizon-response.ts'),'./response-annotations':moduleUrl('lib/response-annotations.ts')}));
+const {buildPortfolioDefinitions,responsesForPortfolio}=await import(moduleUrl('lib/portfolio-model.ts',{'./response-identity':identityUrl,'./horizon-response':renderModule('lib/horizon-response.ts'),'./response-annotations':moduleUrl('lib/response-annotations.ts')}));
 const unit='g8-t1-l01-001';
 test('runtime curriculum bypasses stale HTTP files and supplies identities to answer fields',async()=>{
  const originalFetch=globalThis.fetch;

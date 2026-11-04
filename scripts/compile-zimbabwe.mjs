@@ -109,4 +109,6 @@ fs.writeFileSync('content/zimbabwe/wraps.json',JSON.stringify(wraps)+'\n');
 fs.writeFileSync(path.join(output,'index.json'),JSON.stringify(index,null,2)+'\n');
 fs.writeFileSync(path.join(output,'provenance.json'),JSON.stringify({southAfricaCommit:'b20395c1469354f4f97713c1d683533f61815d09',zimbabweCommit:'bb1e0664c92ebf2d0363f58d91a935b75367c311',units:provenance},null,2)+'\n');
 fs.writeFileSync(path.join(output,'classroom-catalog.json'),JSON.stringify(catalog,null,2)+'\n');
+const presentation=spawnSync(process.execPath,['scripts/compile-zimbabwe-presentation.mjs'],{encoding:'utf8'});
+if(presentation.status!==0)throw new Error(presentation.stderr);
 console.log(JSON.stringify({forms:index.grades.map(g=>({form:g.form,lessons:g.unitCount,terms:g.terms.map(t=>t.unitCount)})),totalLessons:index.grades.reduce((n,g)=>n+g.unitCount,0),assessments:data.flatMap(b=>b.terms).flatMap(t=>t.units).filter(u=>u.type==='assessment').length},null,2));
