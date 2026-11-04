@@ -1,5 +1,5 @@
-import {yearLabel} from "../edition";
 "use client";
+import {yearLabel} from "../edition";
 import { currentReviews } from "@/lib/evidence/current-reviews";
 import { readAllRows, readRowsByIds } from "@/lib/supabase/read-all";
 
