@@ -24,12 +24,12 @@ jobs:
           source_tree=$(git rev-parse FETCH_HEAD^{tree})
           cp .github/workflows/copy-za-baseline.yml /tmp/copy-za-baseline.yml
           git read-tree --reset -u FETCH_HEAD
-          git rm -r --quiet .github/workflows
+          git rm -r -f --quiet .github/workflows
           mkdir -p .github/workflows
           cp /tmp/copy-za-baseline.yml .github/workflows/copy-za-baseline.yml
           git add .github/workflows/copy-za-baseline.yml
           git config user.name "Codex"
           git config user.email "codex@openai.com"
-          git commit -m "Clone South African Applied Commerce at b20395c"
+          git commit --quiet -m "Clone South African Applied Commerce at b20395c"
           echo "Source tree imported; workflow files will be restored through the connected GitHub app."
           git push origin HEAD:refs/heads/baseline/south-africa
