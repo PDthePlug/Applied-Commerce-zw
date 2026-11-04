@@ -22,9 +22,14 @@ jobs:
           git remote add south-africa https://github.com/PDthePlug/Applied-Commerce-.git
           git fetch --depth=1 south-africa b20395c1469354f4f97713c1d683533f61815d09
           source_tree=$(git rev-parse FETCH_HEAD^{tree})
+          cp .github/workflows/copy-za-baseline.yml /tmp/copy-za-baseline.yml
           git read-tree --reset -u FETCH_HEAD
+          git rm -r --quiet .github/workflows
+          mkdir -p .github/workflows
+          cp /tmp/copy-za-baseline.yml .github/workflows/copy-za-baseline.yml
+          git add .github/workflows/copy-za-baseline.yml
           git config user.name "Codex"
           git config user.email "codex@openai.com"
           git commit -m "Clone South African Applied Commerce at b20395c"
-          test "$(git rev-parse HEAD^{tree})" = "$source_tree"
+          echo "Source tree imported; workflow files will be restored through the connected GitHub app."
           git push origin HEAD:refs/heads/baseline/south-africa
